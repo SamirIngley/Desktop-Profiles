@@ -23,8 +23,8 @@ type Config struct {
 }
 
 func testingOpen() {
-	route := "/Volumes/Macintosh HD/Applications/Calculator.app"
-	err := open.Run(route)
+	// WORKS !!!
+	err := open.Run("/Volumes/Macintosh HD/Applications/Atom.app")
 	fmt.Print(err)
 }
 
@@ -48,8 +48,8 @@ func seekProfile(ext string, name string) bool {
 	var nameFile string
 	nameFile = name + ext
 
-	fmt.Println("seek profile ", nameFile)
-	fmt.Println("list of txt files: ", extList)
+	fmt.Println("seeking profile ", nameFile, "...")
+	// fmt.Println("list of txt files: ", extList)
 
 	// looks for our file
 	for i, file := range extList {
@@ -186,21 +186,24 @@ func getApplications(appnames string) {
 	result := strings.Split(appnames, ",")
 	result2 := strings.Split(string(appDir), ",")
 
-	fmt.Print("APPNAMES: ", appnames)
+	// fmt.Print("APPNAMES: ", appnames)
 
-	// OPTIMIZE FOR FASTER SEARCHING
+	// NEED TO OPTIMIZE FOR EFFICIENT SEARCHING
 	for _, item := range result {
 		// fmt.Print(item, "\n")
 		for _, item2 := range result2 {
 			// fmt.Print(item2, "\n")
 
 			if string(item) == string(item2) {
-				fmt.Print(" WE HAVE A WINNER !!!!!!! ")
-				fmt.Print(string(item) + "\n")
+				// fmt.Print(" WE HAVE A WINNER !!!!!!! ")
+				fmt.Print("Opening " + string(item) + "\n")
 				rootToApp := rootToApps + item + ext
-				fmt.Printf(rootToApp)
+				// fmt.Printf(rootToApp)
 				err := open.Run(string(rootToApp))
-				fmt.Print(err)
+				if err != nil {
+					fmt.Print(err)
+				}
+
 			}
 		}
 	}
@@ -241,10 +244,10 @@ func main() {
 
 			// CREATE APP DIRECTORY
 			if checkIfAppListing() {
-				fmt.Print("DIR EXISTS")
+				fmt.Print("appDir exists \n")
 			} else {
 				createAppListing()
-				fmt.Print("MAKE THE DIR")
+				fmt.Print("making appDir... \n")
 			}
 
 			// loop through lines, determine if it's a website or an application
@@ -257,8 +260,8 @@ func main() {
 				// print(line, "\n")
 				if lineID == site {
 					// FOR BROWSER WEBSITE
-					fmt.Printf("Opening browser: ", line)
-					// openBrowser(line)
+					// fmt.Print("Opening browser: ", line)
+					openBrowser(line)
 				} else if lineID == app {
 					// FOR DESKTOP APPLICATIONS
 					// fmt.Printf(lineID)
@@ -271,8 +274,7 @@ func main() {
 
 			// openApplications()
 			// fmt.Sprint(applications)
-			// getApplications(strings.TrimSuffix(applications, ","))
-			testingOpen()
+			getApplications(strings.TrimSuffix(applications, ","))
 
 		}
 	}

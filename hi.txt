@@ -3,4 +3,6 @@ https://www.yahoo.com
 appginormous
 apphumongous
 appbiggerthanyou
-appCalculator
+appAtom
+appnothing
+appSlack
