@@ -11,6 +11,8 @@ import (
 	"path/filepath"
 	"runtime"
 	"strings"
+
+	"github.com/skratchdot/open-golang/open"
 )
 
 type Config struct {
@@ -18,6 +20,12 @@ type Config struct {
 		name  string `json: name`
 		files string `json: files`
 	}
+}
+
+func testingOpen() {
+	route := "/Volumes/Macintosh HD/Applications/Calculator.app"
+	err := open.Run(route)
+	fmt.Print(err)
 }
 
 func seekProfile(ext string, name string) bool {
@@ -84,8 +92,66 @@ func openBrowser(url string) {
 
 }
 
-func getApplications(appnames string) (string, string) {
+func checkIfAppListing() bool {
+	path, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
 
+	exists := false
+	extList := []string{}
+
+	filepath.Walk(path, func(path string, fileInfo os.FileInfo, _ error) error {
+		if fileInfo.Name() == "appDir.txt" {
+			extList = append(extList, fileInfo.Name())
+			exists = true
+		}
+		return nil
+	})
+	return exists
+}
+
+func createAppListing() {
+
+	fmt.Print("CREATING APP DIRECTORY")
+
+	rootToApps := "/Volumes/Macintosh HD/Applications"
+	var appList string
+	ext := ".app"
+
+	// GET ALL APPS
+	filepath.Walk(rootToApps, func(getRoot string, fileInfo os.FileInfo, _ error) error {
+		if filepath.Ext(getRoot) == ext {
+			app := fileInfo.Name()
+			name := app[0 : len(app)-len(ext)]
+			appList += name + ","
+			// fmt.Printf(appnames)
+			// fmt.Print(name)
+
+		}
+		return nil
+	})
+
+	// SAVE TO CSV
+	newFile, err := os.Create("appDir.txt")
+	if err != nil {
+		log.Fatal("whoops", err)
+	}
+
+	// io.Copy(newFile, strings.NewReader(appList))
+
+	n, err := newFile.WriteString(appList)
+	if err != nil {
+		log.Fatal("whoops", err)
+	}
+
+	fmt.Println("bytes written: ", n)
+
+}
+
+func getApplications(appnames string) {
+
+	// GETTING THE USER OR ANY PART OF FILEPATH
 	// get current filepath
 	// _, b, _, _ := runtime.Caller(0)
 	// d := path.Join(path.Dir(b))
@@ -107,62 +173,44 @@ func getApplications(appnames string) (string, string) {
 	// 	}
 	// }
 
-	rootToApps := "/Applications/"
+	rootToApps := "/Volumes/Macintosh HD/Applications/"
 	// fmt.Printf("root to apps: ", string(rootToApps)+"\n")
-	var appList string
 	ext := ".app"
 
-	filepath.Walk(rootToApps, func(getRoot string, fileInfo os.FileInfo, _ error) error {
-		if filepath.Ext(getRoot) == ext {
-			app := fileInfo.Name()
-			name := app[0 : len(app)-len(ext)]
-			appList += name + ","
-
-			// fmt.Printf(appnames)
-			// fmt.Printf(name)
-		}
-		return nil
-	})
+	appDir, err := ioutil.ReadFile("appDir.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	// Split on comma.
-	result := strings.Split(appList, ",")
-	result2 := strings.Split(appnames, ",")
-	fmt.Printf("APPNAMES: ", appnames)
+	result := strings.Split(appnames, ",")
+	result2 := strings.Split(string(appDir), ",")
 
+	fmt.Print("APPNAMES: ", appnames)
+
+	// OPTIMIZE FOR FASTER SEARCHING
 	for _, item := range result {
+		// fmt.Print(item, "\n")
 		for _, item2 := range result2 {
+			// fmt.Print(item2, "\n")
+
 			if string(item) == string(item2) {
-				fmt.Printf(" WE HAVE A WINNER !!!!!!! ")
-				fmt.Printf(string(item) + "\n")
-				// rootToApp := rootToApps + item + ".app"
-				rootToApp2 := rootToApps + item
-				var bingo, err = os.OpenFile(rootToApp2, os.O_RDWR, 0644)
-				if err != nil {
-					fmt.Println(err.Error())
-				}
-				defer bingo.Close()
+				fmt.Print(" WE HAVE A WINNER !!!!!!! ")
+				fmt.Print(string(item) + "\n")
+				rootToApp := rootToApps + item + ext
+				fmt.Printf(rootToApp)
+				err := open.Run(string(rootToApp))
+				fmt.Print(err)
 			}
 		}
 	}
 
 	// fmt.Printf("appList: ", appList)
-	return appList, rootToApps
+	return
 }
 
-// func openApplications(appnames string) {
-// 	appList, root := getApplications()
-
-// 	for _, item := range appnames {
-// 		for _, item2 := range appList {
-// 			// fmt.Printf(string(item), "  ", item2)
-// 			if string(item) == string(item2) {
-// 				os.Open(root)
-// 			}
-// 		}
-// 	}
-// }
-
 func main() {
+
 	// figure out if adding to a profile or opening a profile
 	profile := flag.String("profile", "profile-name", "profile name")
 	open := flag.Bool("open", true, "open this profile")
@@ -191,6 +239,14 @@ func main() {
 			scanner := bufio.NewScanner(strings.NewReader(data))
 			var applications string
 
+			// CREATE APP DIRECTORY
+			if checkIfAppListing() {
+				fmt.Print("DIR EXISTS")
+			} else {
+				createAppListing()
+				fmt.Print("MAKE THE DIR")
+			}
+
 			// loop through lines, determine if it's a website or an application
 			for scanner.Scan() {
 				// fmt.Println(scanner.Text())
@@ -200,8 +256,11 @@ func main() {
 				app := "app"
 				// print(line, "\n")
 				if lineID == site {
+					// FOR BROWSER WEBSITE
+					fmt.Printf("Opening browser: ", line)
 					// openBrowser(line)
 				} else if lineID == app {
+					// FOR DESKTOP APPLICATIONS
 					// fmt.Printf(lineID)
 					// getting all the existing apps and sorting through at one time easier than pulling the app names every time
 					lineComma := line[3:] + ","
@@ -209,9 +268,11 @@ func main() {
 				}
 
 			}
+
 			// openApplications()
-			fmt.Sprint(applications)
-			getApplications(strings.TrimSuffix(applications, ","))
+			// fmt.Sprint(applications)
+			// getApplications(strings.TrimSuffix(applications, ","))
+			testingOpen()
 
 		}
 	}
