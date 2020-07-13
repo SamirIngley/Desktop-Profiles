@@ -1,13 +1,13 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"runtime"
+	"io/ioutil"
+	"log"
 	"os"
 	"os/exec"
-	"log"
-	"io/ioutil"
-	
+	"runtime"
 )
 
 // type profile struct {
@@ -27,7 +27,7 @@ func takeInput() {
 	fmt.Println(*name)
 	fmt.Println(*open)
 	fmt.Println(*edit)
-	
+
 }
 
 func createProfile() {
@@ -38,37 +38,6 @@ func openProfile() {
 
 }
 
-
-// reads Profile file
-func readFile(filename string) string {
-	dat, err := ioutil.ReadFile(filename)
-	if err != nil {
-		panic(err)
-	}
-
-	return string(dat)
-}
-
-
-// open url in browser
-func openBrowser(url string) {
-	var err error
-
-	switch runtime.GOOS {
-	case "linux":
-		err = exec.Command("xdg-open", url).Start()
-	case "windows":
-		err = exec.Command("rundll32", "url.dll,FileProtocolHandler", url).Start()
-	case "darwin":
-		err = exec.Command("open", url).Start()
-	default:
-		err = fmt.Errorf("unsupported platform")
-	}
-	if err != nil {
-		log.Fatal(err)
-	}
-
-}
 
 // open file with specified path
 func openFile() {
@@ -83,12 +52,7 @@ func openFile() {
 	fmt.Print(stringBody)
 }
 
-
 // open app on desktop
-
-
-
-
 
 // func main() {
 // 	// openBrowser("https://www.google.com")
