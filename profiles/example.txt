@@ -1,8 +1,8 @@
 https://www.google.com
 https://www.yahoo.com
-appginormous
-apphumongous
-appbiggerthanyou
+appThisWontOpen
+appHumongous
+appThisIsNotAnApp
 appAtom
-appnothing
+appNothing
 appSlack

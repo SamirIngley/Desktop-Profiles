@@ -35,6 +35,8 @@ func seekProfile(ext string, name string) bool {
 	}
 
 	extList := []string{}
+	path = path + "/profiles"
+	fmt.Print(path)
 
 	// finds all txt files in current directory
 	filepath.Walk(path, func(path string, fileInfo os.FileInfo, _ error) error {
@@ -49,7 +51,7 @@ func seekProfile(ext string, name string) bool {
 	nameFile = name + ext
 
 	fmt.Println("seeking profile ", nameFile, "...")
-	// fmt.Println("list of txt files: ", extList)
+	fmt.Println("list of txt files: ", extList)
 
 	// looks for our file
 	for i, file := range extList {
@@ -235,7 +237,7 @@ func main() {
 		// open or edit
 		if *open {
 			// access file, open them
-			data := readFile(*profile + ext)
+			data := readFile("profiles/" + *profile + ext)
 			// fmt.Printf(data)
 
 			// scanner reads file line by line
