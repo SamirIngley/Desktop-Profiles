@@ -1,0 +1,7 @@
+{
+    "profiles":{
+        "name":"test",
+        "files":"https://www.google.com"
+    }
+}
+
