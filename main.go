@@ -15,13 +15,6 @@ import (
 	"github.com/skratchdot/open-golang/open"
 )
 
-// type Config struct {
-// 	Profile struct {
-// 		name  string `json: name`
-// 		files string `json: files`
-// 	}
-// }
-
 func testingOpen() {
 	// WORKS !!!
 	err := open.Run("/Volumes/Macintosh HD/Applications/Atom.app")
@@ -36,7 +29,7 @@ func seekProfile(ext string, name string) bool {
 
 	extList := []string{}
 	path = path + "/profiles"
-	fmt.Print(path)
+	// fmt.Print(path)
 
 	// finds all txt files in current directory
 	filepath.Walk(path, func(path string, fileInfo os.FileInfo, _ error) error {
@@ -50,14 +43,13 @@ func seekProfile(ext string, name string) bool {
 	var nameFile string
 	nameFile = name + ext
 
-	fmt.Println("seeking profile ", nameFile, "...")
-	fmt.Println("list of txt files: ", extList)
+	// fmt.Println("seeking profile ", nameFile, "...")
+	// fmt.Println("list of txt files: ", extList)
 
 	// looks for our file
 	for i, file := range extList {
 		if file == nameFile {
-			fmt.Printf("Exists: ")
-			fmt.Printf(extList[i] + "\n")
+			fmt.Printf("Found " + extList[i] + "\n")
 			return true
 		}
 	}
@@ -115,8 +107,6 @@ func checkIfAppListing() bool {
 
 func createAppListing() {
 
-	fmt.Print("CREATING APP DIRECTORY")
-
 	rootToApps := "/Volumes/Macintosh HD/Applications"
 	var appList string
 	ext := ".app"
@@ -126,7 +116,7 @@ func createAppListing() {
 		if filepath.Ext(getRoot) == ext {
 			app := fileInfo.Name()
 			name := app[0 : len(app)-len(ext)]
-			appList += name + ","
+			appList += name + "\n"
 			// fmt.Printf(appnames)
 			// fmt.Print(name)
 
@@ -179,26 +169,34 @@ func getApplications(appnames string) {
 	// fmt.Printf("root to apps: ", string(rootToApps)+"\n")
 	ext := ".app"
 
-	appDir, err := ioutil.ReadFile("appDir.txt")
-	if err != nil {
-		fmt.Println(err)
-	}
+	// appDir, err := ioutil.ReadFile("appDir.txt")
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
 
 	// Split on comma.
 	result := strings.Split(appnames, ",")
-	result2 := strings.Split(string(appDir), ",")
 
-	// fmt.Print("APPNAMES: ", appnames)
+	apps := readFile("appDir.txt")
+	scanner := bufio.NewScanner(strings.NewReader(apps))
+
+	// result2 := strings.Split(string(appDir), ",")
+
+	// fmt.Print("APPNAMES: ", appnames, "\n")
 
 	// NEED TO OPTIMIZE FOR EFFICIENT SEARCHING
-	for _, item := range result {
-		// fmt.Print(item, "\n")
-		for _, item2 := range result2 {
-			// fmt.Print(item2, "\n")
+	for scanner.Scan() {
+		// LOOP - does anything in app dir = any of the app names in profile ??
+		for _, item := range result {
+			// fmt.Print(item, "\n")
 
-			if string(item) == string(item2) {
-				// fmt.Print(" WE HAVE A WINNER !!!!!!! ")
+			// fmt.Print(item2, "\n")
+			// fmt.Print(item, scanner.Text()+"\n")
+
+			if string(item) == string(scanner.Text()) {
+				// fmt.Print(" WE HAVE A WINNER !!!!!!! \n")
 				fmt.Print("Opening " + string(item) + "\n")
+
 				rootToApp := rootToApps + item + ext
 				// fmt.Printf(rootToApp)
 				err := open.Run(string(rootToApp))
@@ -217,24 +215,29 @@ func getApplications(appnames string) {
 func main() {
 
 	// figure out if adding to a profile or opening a profile
+	// if profile exists, will be added to profile
+	// if profile dne, will be created and added to
 	profile := flag.String("profile", "profile-name", "profile name")
 	open := flag.Bool("open", true, "open this profile")
-	edit := flag.Bool("edit", false, "do you want to modify a file")
+	add := flag.String("add", "no", "create or add to existing profile")
+	delete := flag.Bool("delete", false, "do you want to delete from a profile")
 	flag.Parse()
 
 	fmt.Println("Desktop Profiles: " + *profile)
 	fmt.Println("open: ", *open)
-	fmt.Println("edit: ", *edit)
+	fmt.Println("add: ", *add)
+	fmt.Println("delete: ", *delete)
 
 	ext := ".txt"
 
 	// seekProfile(ext, *profile)
 	// openBrowser("https://www.google.com")
 
+	// IF PROFILE EXISTS
 	if seekProfile(ext, *profile) {
 
 		fmt.Println("Accessing file...")
-		// open or edit
+		// OPEN IT
 		if *open {
 			// access file, open them
 			data := readFile("profiles/" + *profile + ext)
@@ -244,45 +247,52 @@ func main() {
 			scanner := bufio.NewScanner(strings.NewReader(data))
 			var applications string
 
-			// CREATE APP DIRECTORY
-			if checkIfAppListing() {
-				fmt.Print("appDir exists \n")
-			} else {
+			// CREATE APP DIRECTORY if needed
+			if !(checkIfAppListing()) {
+				fmt.Print("CREATING APP DIRECTORY (this may take a minute)...")
 				createAppListing()
-				fmt.Print("making appDir... \n")
 			}
 
-			// loop through lines, determine if it's a website or an application
+			// GO THROUGH PROFILE, separate urls and apps
 			for scanner.Scan() {
 				// fmt.Println(scanner.Text())
 				line := scanner.Text()
-				lineID := line[:3]
-				site := "htt"
-				app := "app"
+				lineID := line[:4]
+				site := "url:"
+				app := "app:"
 				// print(line, "\n")
 				if lineID == site {
-					// FOR BROWSER WEBSITE
-					// fmt.Print("Opening browser: ", line)
-					openBrowser(line)
+					// OPEN BROWSER WEBSITE
+					fmt.Print("Opening browser ", line)
+					openBrowser(line[4:])
 				} else if lineID == app {
-					// FOR DESKTOP APPLICATIONS
+					// GET DESKTOP APPLICATIONS
 					// fmt.Printf(lineID)
 					// getting all the existing apps and sorting through at one time easier than pulling the app names every time
-					lineComma := line[3:] + ","
+					lineComma := line[4:] + ","
 					applications += lineComma
 				}
 
 			}
-
-			// openApplications()
-			// fmt.Sprint(applications)
+			// OPEN APPLICATIONS
 			getApplications(strings.TrimSuffix(applications, ","))
 
 		}
+
+		if !(*add == "no") {
+			// profile exists
+			// ADD URL OR APP to profile
+			file := *profile + ext
+			addMe := *add + "\n"
+			// fmt.Print("ADDING file: ", file, addMe)
+
+			err := file.WriteString(addMe)
+			if err != nil {
+				log.Fatal("Whoops ", err)
+			}
+		}
+
 	}
-	// 	if *edit {
-	// 		// read contents, write to it
-	// 	}
 
 	// } else {
 	// 	// create
@@ -292,7 +302,7 @@ func main() {
 
 	// 	if create == "y" {
 	// 		// createFile()
-	// 		// editFile()
+	// 		// addFile()
 	// 	}
 	// }
 

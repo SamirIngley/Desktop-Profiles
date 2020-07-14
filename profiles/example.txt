@@ -1,8 +1,8 @@
-https://www.google.com
-https://www.yahoo.com
-appThisWontOpen
-appHumongous
-appThisIsNotAnApp
-appAtom
-appNothing
-appSlack
+url:https://www.google.com
+url:https://www.yahoo.com
+app:ThisWontOpen
+app:Humongous
+app:ThisIsNotAnApp
+app:Atom
+app:Nothing
+app:Slack
