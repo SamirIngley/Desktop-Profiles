@@ -218,9 +218,9 @@ func main() {
 	// if profile exists, will be added to profile
 	// if profile dne, will be created and added to
 	profile := flag.String("profile", "profile-name", "profile name")
-	open := flag.Bool("open", true, "open this profile")
-	add := flag.String("add", "no", "create or add to existing profile")
-	delete := flag.Bool("delete", false, "do you want to delete from a profile")
+	open := flag.String("open", "yes", "open this profile")
+	add := flag.String("add", "no", "create and/or add to profile <app:app-name> or <url:url-address>")
+	delete := flag.String("delete", "no", "do you want to delete from a profile")
 	flag.Parse()
 
 	fmt.Println("Desktop Profiles: " + *profile)
@@ -235,11 +235,13 @@ func main() {
 
 	// IF PROFILE EXISTS
 	if seekProfile(ext, *profile) {
-
 		fmt.Println("Accessing file...")
+
 		// OPEN IT
-		if *open {
+		if *open == "yes" {
+
 			// access file, open them
+			fmt.Print("OPEN VALUE: ", *open)
 			data := readFile("profiles/" + *profile + ext)
 			// fmt.Printf(data)
 
@@ -253,57 +255,51 @@ func main() {
 				createAppListing()
 			}
 
-			// GO THROUGH PROFILE, separate urls and apps
+			// GO THROUGH PROFILE, separate urls and apps, THEN OPEN THEM
 			for scanner.Scan() {
 				// fmt.Println(scanner.Text())
 				line := scanner.Text()
-				lineID := line[:4]
 				site := "url:"
 				app := "app:"
 				// print(line, "\n")
-				if lineID == site {
-					// OPEN BROWSER WEBSITE
-					fmt.Print("Opening browser ", line)
-					openBrowser(line[4:])
-				} else if lineID == app {
-					// GET DESKTOP APPLICATIONS
-					// fmt.Printf(lineID)
-					// getting all the existing apps and sorting through at one time easier than pulling the app names every time
-					lineComma := line[4:] + ","
-					applications += lineComma
+				if line != "" {
+					lineID := line[:4]
+					if lineID == site {
+						// OPEN BROWSER WEBSITE
+						fmt.Print("Opening browser ", line, "\n")
+						openBrowser(line[4:])
+					} else if lineID == app {
+						// GET DESKTOP APPLICATIONS
+						// fmt.Printf(lineID)
+						// getting all the existing apps and sorting through at one time easier than pulling the app names every time
+						lineComma := line[4:] + ","
+						applications += lineComma
+					}
 				}
-
 			}
 			// OPEN APPLICATIONS
 			getApplications(strings.TrimSuffix(applications, ","))
 
 		}
 
-		if !(*add == "no") {
-			// profile exists
-			// ADD URL OR APP to profile
-			file := *profile + ext
-			addMe := *add + "\n"
-			// fmt.Print("ADDING file: ", file, addMe)
-
-			err := file.WriteString(addMe)
-			if err != nil {
-				log.Fatal("Whoops ", err)
-			}
-		}
-
 	}
 
-	// } else {
-	// 	// create
-	// 	var create string
-	// 	fmt.Println("This profile DNE, would you like to make one? (y/n)")
-	// 	fmt.Scan(&create)
+	// ADDS TO PROFILE, CREATES PROFILE IF NEEDED
+	if !(*add == "no") {
+		// ADD URL OR APP to profile
+		file := "profiles/" + *profile + ext
+		addMe := "\n" + *add + "\n"
+		// fmt.Print("ADDING file: ", file, addMe)
 
-	// 	if create == "y" {
-	// 		// createFile()
-	// 		// addFile()
-	// 	}
-	// }
+		currentFile, err := os.OpenFile(file, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+		if err != nil {
+			log.Println(err)
+		}
+		if _, err := currentFile.WriteString(addMe); err != nil {
+			log.Println(err)
+		}
+		defer currentFile.Close()
+
+	}
 
 }
