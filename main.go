@@ -39,7 +39,7 @@ func seekProfile(ext string, name string) bool {
 		return nil
 	})
 
-	// make the name a .txt for matching
+	// makes the name a .txt for matching
 	var nameFile string
 	nameFile = name + ext
 
@@ -86,7 +86,7 @@ func openBrowser(url string) {
 
 }
 
-func checkIfAppListing() bool {
+func checkIfAppDir() bool {
 	path, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
@@ -105,7 +105,7 @@ func checkIfAppListing() bool {
 	return exists
 }
 
-func createAppListing() {
+func createAppDir() {
 
 	rootToApps := "/Volumes/Macintosh HD/Applications"
 	var appList string
@@ -212,21 +212,39 @@ func getApplications(appnames string) {
 	return
 }
 
+func writeToFile(file string, content string, ext string) {
+	fileLoc := "profiles/" + file + ext
+	// data := readFile("profiles/" + *profile + ext)
+	addMe := "\n" + content + "\n"
+	// fmt.Print("ADDING file: ", file, addMe)
+
+	// OPEN AND ADD TO FILE
+	currentFile, err := os.OpenFile(fileLoc, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		log.Println(err)
+	}
+	if _, err := currentFile.WriteString(addMe); err != nil {
+		log.Println(err)
+	}
+	defer currentFile.Close()
+	fmt.Println("Added ", content, " to ", file)
+}
+
 func main() {
 
 	// figure out if adding to a profile or opening a profile
 	// if profile exists, will be added to profile
 	// if profile dne, will be created and added to
-	profile := flag.String("profile", "profile-name", "profile name")
-	open := flag.String("open", "yes", "open this profile")
-	add := flag.String("add", "no", "create and/or add to profile <app:app-name> or <url:url-address>")
-	delete := flag.String("delete", "no", "do you want to delete from a profile")
+	pf := flag.String("pf", "profile-name", "profile name")
+	o := flag.String("o", "yes", "open this profile")
+	add := flag.String("add", "no", "creates or adds <app:app-name> or <url:url-address> to profile")
+	del := flag.String("del", "no", "deletes <app:app-name> or <url:url-address> from profile")
 	flag.Parse()
 
-	fmt.Println("Desktop Profiles: " + *profile)
-	fmt.Println("open: ", *open)
+	fmt.Println("Desktop Profiles: " + *pf)
+	fmt.Println("open: ", *o)
 	fmt.Println("add: ", *add)
-	fmt.Println("delete: ", *delete)
+	fmt.Println("del: ", *del)
 
 	ext := ".txt"
 
@@ -234,15 +252,14 @@ func main() {
 	// openBrowser("https://www.google.com")
 
 	// IF PROFILE EXISTS
-	if seekProfile(ext, *profile) {
+	if seekProfile(ext, *pf) {
 		fmt.Println("Accessing file...")
 
 		// OPEN IT
-		if *open == "yes" {
+		if *o == "yes" {
 
 			// access file, open them
-			fmt.Print("OPEN VALUE: ", *open)
-			data := readFile("profiles/" + *profile + ext)
+			data := readFile("profiles/" + *pf + ext)
 			// fmt.Printf(data)
 
 			// scanner reads file line by line
@@ -250,9 +267,9 @@ func main() {
 			var applications string
 
 			// CREATE APP DIRECTORY if needed
-			if !(checkIfAppListing()) {
+			if !(checkIfAppDir()) {
 				fmt.Print("CREATING APP DIRECTORY (this may take a minute)...")
-				createAppListing()
+				createAppDir()
 			}
 
 			// GO THROUGH PROFILE, separate urls and apps, THEN OPEN THEM
@@ -286,12 +303,13 @@ func main() {
 
 	// ADDS TO PROFILE, CREATES PROFILE IF NEEDED
 	if !(*add == "no") {
-		// ADD URL OR APP to profile
-		file := "profiles/" + *profile + ext
+		fileLoc := "profiles/" + *pf + ext
+		// data := readFile("profiles/" + *profile + ext)
 		addMe := "\n" + *add + "\n"
 		// fmt.Print("ADDING file: ", file, addMe)
 
-		currentFile, err := os.OpenFile(file, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+		// OPEN AND ADD TO FILE
+		currentFile, err := os.OpenFile(fileLoc, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 		if err != nil {
 			log.Println(err)
 		}
@@ -299,7 +317,37 @@ func main() {
 			log.Println(err)
 		}
 		defer currentFile.Close()
+		fmt.Println("Added ", *add, " to ", *pf)
 
+	}
+
+	if !(*del == "no" || *del == "profile") {
+		fmt.Print("not working yet")
+		// fileLoc := "profiles/" + *profile + ext
+
+		// fileData, err := ioutil.ReadFile(fileLoc)
+		// if err != nil {
+		// 	log.Fatal(err)
+		// }
+
+	}
+
+	if *del == "profile" {
+		fileLoc := "profiles/" + *pf + ext
+
+		var yn string
+		fmt.Print("Are you sure you want to delete ", *pf, " profile? [y/n]..")
+		fmt.Scanln(&yn)
+		if yn == "y" || yn == "yes" {
+			var err = os.Remove(fileLoc)
+			if err != nil {
+				fmt.Println("Error deleting file.")
+				log.Fatal(err)
+			}
+
+			fmt.Println("Profile Deleted")
+
+		}
 	}
 
 }

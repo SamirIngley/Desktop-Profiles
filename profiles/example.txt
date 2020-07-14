@@ -3,5 +3,3 @@ url:https://www.yahoo.com
 app:ThisWontOpenBcItsNotAnAppInSpecifiedDirectory
 app:Atom
 app:Slack
-
-app:Tyme
