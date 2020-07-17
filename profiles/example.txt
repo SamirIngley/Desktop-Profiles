@@ -1,8 +1,6 @@
 
-app:Slack
-
 url:makeschool.com/portal
 
 app:Visual Studio Code
 
-url:reddit.com
+app:Slack

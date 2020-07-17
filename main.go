@@ -374,6 +374,8 @@ func main() {
 
 		}
 
+	} else {
+		fmt.Println("typo? that profile does not exist")
 	}
 
 	// CREATES PROFILE IF NEEDED or ADDS TO PROFILE ------------------------------------------------------
