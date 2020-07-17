@@ -1,20 +1,29 @@
-go doc
-https://make-school-courses.github.io/BEW-2.5-Strongly-Typed-Languages/#/Lessons/DocsDeploy
+# Desktop Profiles
+
+Create profiles to open any combination of your frequently used apps and websites from the cli at once! 
+
+Follow the instructions below to get started
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
 
+************************************************************************************************
 
-
-# :floppy_disk: Install:
+## :floppy_disk: Install:
 
 1. Download / clone this repo
 
-2. Run `go run main.go` -> this will create your app directory file
+2. In the main.go file, there are *two* places where routes to your Applications folders are specified. You will need to change the `{USER-NAME}` part in both places to whatever your the name of your User is on your pc. The locations are specified below. If you don't know or want a list of users, in the cli type in `ls /users`. 
 
-3. You're ready to roll! Checkout the commands and the example below
+    * Location 1: In main.go, line 112, at the end of rootToAppsUser, replace {USER-NAME} with your user    ( inside func createAppDir() )
+    * Location 2: In main.go, line 186, at the end of rootToAppsUSER, replace {USER-NAME} with your user    ( inside func getApplications() )
 
 
-# :mega: Commands:
+3. Run `go run main.go` -> this will create your app directory file
+
+4. You're ready to roll! Checkout the commands and the example below
+
+
+## :mega: Commands:
 
 * list profiles: `go run main.go` 
 
@@ -27,7 +36,7 @@ https://make-school-courses.github.io/BEW-2.5-Strongly-Typed-Languages/#/Lessons
 * to delete profile:  `go run main.go -pf -del profile-name`
 
 
-# :goal_net: Example:
+## :goal_net: Example:
 
 An example profile has been provided in the profiles/ folder
 all your profiles will be in this folder as well. 
@@ -74,3 +83,5 @@ You should get a confirmation message after making changes to any profile.
 Open functionality help from:
 https://github.com/skratchdot/open-golang
 
+go doc
+https://make-school-courses.github.io/BEW-2.5-Strongly-Typed-Languages/#/Lessons/DocsDeploy
