@@ -314,7 +314,7 @@ func main() {
 		fmt.Println("No spaces in the profile, empty lines are fine")
 		fmt.Println("For urls do not include https://www.")
 		fmt.Println("anything for yes flag, no for no flag")
-		fmt.Println("Currently case sensitive - apps must be exactly as shown")
+		fmt.Println("Currently case sensitive - apps must be typed exactly as shown in appDir / on your pc")
 		fmt.Println("If you're having trouble specifying an app, Find it in the appDir.txt file and ignore the number in front of it")
 		fmt.Println("If you added more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.")
 		fmt.Println(" ")
