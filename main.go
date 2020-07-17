@@ -172,7 +172,7 @@ func createAppDir() {
 		log.Fatal("whoops", err)
 	}
 
-	fmt.Println("App Directory created >>>>>>>")
+	fmt.Println("App Directory created >>>>>≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥>>")
 	fmt.Println("bytes written: ", n)
 	fmt.Println("----------------------------------")
 
@@ -301,6 +301,26 @@ func main() {
 	// seekProfile(ext, *profile)
 	// openBrowser("https://www.google.com")
 
+	// CREATE APP DIRECTORY --------------------------------------------------------- appDir text File
+	if !(checkIfAppDir()) {
+		fmt.Println("CREATING APP DIRECTORY -------------------------------------------------")
+		fmt.Println("This may take a minute. Please hold, til then please read...")
+		fmt.Println("NOTE: ")
+		fmt.Println("** This only happens the first time you run the program")
+		fmt.Println("** If you encounter an error with this step, or apps won't load, you'll need to specify the path to your Applications folder")
+		fmt.Println("** Instructions can be found at README https://www.github.com/SamirIngley/DesktopProfiles")
+		fmt.Println(" ")
+		fmt.Println("IMPORTANT: ")
+		fmt.Println("No spaces in the profile, empty lines are fine")
+		fmt.Println("Urls must include https://www. for now")
+		fmt.Println("anything for yes flag, no for no flag")
+		fmt.Println("Currently case sensitive - apps must be exactly as shown")
+		fmt.Println("If you're having trouble specifying an app, Find it in the appDir.txt file and ignore the number in front of it")
+		fmt.Println(" ")
+		fmt.Println("Please wait while we load your apps...")
+		createAppDir()
+	}
+
 	// CHECKS IF THE PROFILE EXISTS AND OPENS IT---------------------------------- if no other flags are called
 	if seekProfile(ext, *pf) {
 		// fmt.Println("Accessing file...")
@@ -325,25 +345,6 @@ func main() {
 			scanner := bufio.NewScanner(strings.NewReader(data))
 			var applications string
 
-			// CREATE APP DIRECTORY --------------------------------------------------------- appDir text File
-			if !(checkIfAppDir()) {
-				fmt.Println("CREATING APP DIRECTORY -------------------------------------------------")
-				fmt.Println("This may take a minute. Please hold, til then please read...")
-				fmt.Println("NOTE: ")
-				fmt.Println("** This only happens the first time you run the program")
-				fmt.Println("** If you encounter an error with this step, or apps won't load, you'll need to specify the path to your Applications folder")
-				fmt.Println("** Instructions can be found at README https://www.github.com/SamirIngley/DesktopProfiles")
-				fmt.Println(" ")
-				fmt.Println("IMPORTANT: ")
-				fmt.Println("No spaces in the profile, empty lines are fine")
-				fmt.Println("Urls must include https://www. for now")
-				fmt.Println("anything for yes flag, no for no flag")
-				fmt.Println("Currently case sensitive - apps must be exactly as shown")
-				fmt.Println(" ")
-				fmt.Println("Please wait while we load your apps...")
-				createAppDir()
-			}
-
 			//GO THROUGH PROFILE --------------------------------------- SEPARATE APPS AND URLS then OPEN EACH
 			for scanner.Scan() {
 				// fmt.Println(scanner.Text())
@@ -357,7 +358,7 @@ func main() {
 					if lineID == site {
 						// OPEN WEBSITES ------------------------------------------------------------------
 						// fmt.Print("Opening browser ", line[4:], "\n")
-						openBrowser(line[4:])
+						openBrowser("https://www." + line[4:])
 					} else if lineID == app {
 						// GET DESKTOP APPLICATIONS
 						// getting all the existing apps and sorting through at one time easier than pulling the app names every time

@@ -1,8 +1,8 @@
 
 app:Slack
 
-url:https://www.makeschool.com/portal
+url:makeschool.com/portal
 
+app:Visual Studio Code
 
-
-app:VSCode
+url:reddit.com
