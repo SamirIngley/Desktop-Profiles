@@ -109,7 +109,7 @@ func createAppDir() {
 
 	var rootToAppsSYSTEM = ("/Volumes/Macintosh HD/System/Applications")
 	var rootToAppsMACHD = ("/Volumes/Macintosh HD/Applications")
-	var rootToAppsUSER = ("/Volumes/Macintosh HD/Users/samiringle/Applications")
+	var rootToAppsUSER = ("/Volumes/Macintosh HD/Users/{USER-NAME}/Applications")
 
 	var appList string
 	ext := ".app"
@@ -183,7 +183,7 @@ func getApplications(appnames string) {
 	// THIS IS THE LOCATION FOR MY APPLICATIONS - THIS ACTUAL PATH IS NEEDED TO OPEN THE FILE
 	rootToAppsSYSTEM := "/Volumes/Macintosh HD/System/Applications/"
 	rootToAppsMACHD := "/Volumes/Macintosh HD/Applications/"
-	rootToAppsUSER := "/Volumes/Macintosh HD/Users/samiringle/Applications/"
+	rootToAppsUSER := "/Volumes/Macintosh HD/Users/{USER-NAME}/Applications/"
 
 	// paths := [rootToAppsSYSTEM, rootToAppsMACHD, rootToAppsUSER]
 	// fmt.Printf("root to apps: ", string(rootToApps)+"\n")
@@ -312,10 +312,11 @@ func main() {
 		fmt.Println(" ")
 		fmt.Println("IMPORTANT: ")
 		fmt.Println("No spaces in the profile, empty lines are fine")
-		fmt.Println("Urls must include https://www. for now")
+		fmt.Println("For urls do not include https://www.")
 		fmt.Println("anything for yes flag, no for no flag")
 		fmt.Println("Currently case sensitive - apps must be exactly as shown")
 		fmt.Println("If you're having trouble specifying an app, Find it in the appDir.txt file and ignore the number in front of it")
+		fmt.Println("If you added more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.")
 		fmt.Println(" ")
 		fmt.Println("Please wait while we load your apps...")
 		createAppDir()
