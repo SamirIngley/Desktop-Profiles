@@ -322,6 +322,30 @@ func main() {
 		createAppDir()
 	}
 
+	// SHOW ALL AVAILABLE PROFILES
+	if *pf == "profile-name" && *o == "yes" && *l == "no" && *add == "no" && *del == "no" {
+		path, err := os.Getwd()
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		extList := []string{}
+		path = path + "/profiles"
+		// fmt.Print(path)
+
+		// finds all txt files in current directory
+		filepath.Walk(path, func(path string, fileInfo os.FileInfo, _ error) error {
+			if filepath.Ext(path) == ext {
+				extList = append(extList, fileInfo.Name())
+			}
+			return nil
+		})
+
+		fmt.Println(extList)
+
+		return
+	}
+
 	// CHECKS IF THE PROFILE EXISTS AND OPENS IT---------------------------------- if no other flags are called
 	if seekProfile(ext, *pf) {
 		// fmt.Println("Accessing file...")
