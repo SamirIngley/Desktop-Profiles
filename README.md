@@ -4,9 +4,8 @@ https://make-school-courses.github.io/BEW-2.5-Strongly-Typed-Languages/#/Lessons
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
 
 
-:floppy_disk:
 
-# Install:
+# :floppy_disk: Install:
 
 1. Download / clone this repo
 
@@ -15,8 +14,7 @@ https://make-school-courses.github.io/BEW-2.5-Strongly-Typed-Languages/#/Lessons
 3. You're ready to roll! Checkout the commands and the example below
 
 
-:mega:
-# Commands:
+# :mega: Commands:
 
 * list profiles: `go run main.go` 
 
@@ -28,8 +26,8 @@ https://make-school-courses.github.io/BEW-2.5-Strongly-Typed-Languages/#/Lessons
 
 * to delete profile:  `go run main.go -pf -del profile-name`
 
-:goal_net:
-# Example:
+
+# :goal_net: Example:
 
 An example profile has been provided in the profiles/ folder
 all your profiles will be in this folder as well. 
