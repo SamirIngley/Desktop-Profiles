@@ -45,16 +45,19 @@ You should get a confirmation message after making changes to any profile.
 ## IMPORTANT:
 
 ### PROFILES: 
-> Profiles are .txt files. No spaces in the profile, empty lines are fine
-> For urls do not include https://www.
+Profiles are .txt files. No spaces in the profile, empty lines are fine
+
+For urls do not include https://www.
 
 ### INPUT:
-> Type anything for yes, "no" for no flag, more details can be found about the input by typing the "-help" flag: go run main.go -help
-> Currently case sensitive - apps must be typed exactly as shown in appDir / on your pc
->If you're having trouble specifying an app, Find it in the appDir.txt file and ignore the number in front of it")
+Type anything for yes, "no" for no flag, more details can be found about the input by typing the "-help" flag: go run main.go -help
+
+Currently case sensitive - apps must be typed exactly as shown in appDir / on your pc
+
+If you're having trouble specifying an app, Find it in the appDir.txt file and ignore the number in front of it")
 
 ### APP DIRECTORY:
->If you added more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.
+If you added more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.
 
 
 
