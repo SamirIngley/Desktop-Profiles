@@ -109,7 +109,7 @@ func createAppDir() {
 
 	var rootToAppsSYSTEM = ("/Volumes/Macintosh HD/System/Applications")
 	var rootToAppsMACHD = ("/Volumes/Macintosh HD/Applications")
-	var rootToAppsUSER = ("/Volumes/Macintosh HD/Users/samiringle/Applications")
+	var rootToAppsUSER = ("/Volumes/Macintosh HD/Users/{user-name}/Applications")
 
 	var appList string
 	ext := ".app"
@@ -141,7 +141,7 @@ func createAppDir() {
 			appList += string("1" + name + "\n")
 
 			// fmt.Printf(appnames)
-			fmt.Print(name)
+			// fmt.Print(name)
 
 		}
 		return nil
@@ -153,7 +153,7 @@ func createAppDir() {
 			appList += string("2" + name + "\n")
 
 			// fmt.Printf(appnames)
-			fmt.Print(name)
+			// fmt.Print(name)
 
 		}
 		return nil
@@ -197,11 +197,11 @@ func getApplications(appnames string) {
 
 	apps := readFile("appDir.txt")
 	scanner := bufio.NewScanner(strings.NewReader(apps))
-	fmt.Println("OPENING APPS")
+	// fmt.Println("OPENING APPS")
 
 	// result2 := strings.Split(string(appDir), ",")
 
-	fmt.Print("APPNAMES: ", appnames, "\n")
+	// fmt.Print("APPNAMES: ", appnames, "\n")
 
 	// NEED TO OPTIMIZE FOR EFFICIENT SEARCHING
 	for scanner.Scan() {
@@ -210,18 +210,18 @@ func getApplications(appnames string) {
 			// fmt.Print(item, "\n")
 
 			// fmt.Print(item2, "\n")
-			fmt.Print(item, " ... ", string(scanner.Text()), "\n")
+			// fmt.Print(item, " ... ", string(scanner.Text()), "\n")
 
 			if string(item) == string(scanner.Text()[1:]) {
 				rootID := string(scanner.Text()[:1])
 				// rootID := app[0]
-				fmt.Println("ROOTID: ", rootID)
+				// fmt.Println("ROOTID: ", rootID)
 				// fmt.Print(" WE HAVE A WINNER !!!!!!! \n")
-				fmt.Print("Opening " + string(item) + "\n")
+				// fmt.Print("Opening " + string(item) + "\n")
 
 				if rootID == "0" {
 					rootToApp := rootToAppsSYSTEM + item + ext
-					fmt.Printf(rootToApp)
+					// fmt.Printf(rootToApp)
 					fmt.Print("Opening " + string(item) + "\n")
 					err := open.Run(string(rootToApp))
 					if err != nil {
@@ -230,7 +230,7 @@ func getApplications(appnames string) {
 				}
 				if rootID == "1" {
 					rootToApp := rootToAppsMACHD + item + ext
-					fmt.Printf(rootToApp)
+					// fmt.Printf(rootToApp)
 					fmt.Print("Opening " + string(item) + "\n")
 					err := open.Run(string(rootToApp))
 					if err != nil {
@@ -239,7 +239,7 @@ func getApplications(appnames string) {
 				}
 				if rootID == "2" {
 					rootToApp := rootToAppsUSER + item + ext
-					fmt.Printf(rootToApp)
+					// fmt.Printf(rootToApp)
 					fmt.Print("Opening " + string(item) + "\n")
 					err := open.Run(string(rootToApp))
 					if err != nil {

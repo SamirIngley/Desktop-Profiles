@@ -5,8 +5,7 @@ app:ThisWontOpenBcItDoesntExistInSpecifiedDirectory
 
 app:Atom
 app:Slack
+
 url:https://www.twitter.com
 
-app:Numi
-
-app:Messages
+app:Calculator
