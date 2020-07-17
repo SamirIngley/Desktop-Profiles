@@ -14,8 +14,8 @@ Follow the instructions below to get started
 
 2. In the main.go file, there are *two* places where routes to your Applications folders are specified. You will need to change the `{USER-NAME}` part in both places to whatever your the name of your User is on your pc. The locations are specified below. If you don't know or want a list of users, in the cli type in `ls /users`. 
 
-    * Location 1: In main.go, line 112, at the end of rootToAppsUser, replace {USER-NAME} with your user    ( inside func createAppDir() )
-    * Location 2: In main.go, line 186, at the end of rootToAppsUSER, replace {USER-NAME} with your user    ( inside func getApplications() )
+    * :exclamation: Location 1: In main.go > line 112 > at the end of rootToAppsUser > replace {USER-NAME} with your user    ( inside func createAppDir() )
+    * :bangbang: Location 2: In main.go > line 186 > at the end of rootToAppsUSER > replace {USER-NAME} with your user    ( inside func getApplications() )
 
 
 3. Run `go run main.go` -> this will create your app directory file
