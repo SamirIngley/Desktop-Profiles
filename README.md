@@ -4,6 +4,8 @@ Create profiles to open any combination of your frequently used apps and website
 
 Follow the instructions below to get started
 
+Note: This was built in Go on a Mac (for a Mac)
+
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
 
 ************************************************************************************************
