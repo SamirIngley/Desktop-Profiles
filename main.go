@@ -107,12 +107,32 @@ func createAppDir() {
 	// If you know the path you can change rootToApps to the path here, and in the
 	// getApplications function
 
+	fmt.Println(" ---------------------------------------------------------------------------------------")
+	fmt.Println("Paths to locations of app directories (3)")
+	fmt.Println("Default mac system apps: /Volumes/Macintosh HD/System/Applications")
+	fmt.Println("Default mac hard disk apps: /Volumes/Macintosh HD/Applications")
+	fmt.Println("Default mac user apps (change username): /Volumes/Macintosh HD/Users/{USER-NAME}/Applications")
+	// fmt.Println("")
+	// fmt.Print("System: ")
+	// var rootToAppsSYSTEM string
+	// fmt.Scanln(&rootToAppsSYSTEM)
+	// fmt.Print("Hard Disk: ")
+	// var rootToAppsMACHD string
+	// fmt.Scanln(&rootToAppsMACHD)
+	// fmt.Print("User: ")
+	// var rootToAppsUSER string
+	// fmt.Scanln(&rootToAppsUSER)
+
 	var rootToAppsSYSTEM = ("/Volumes/Macintosh HD/System/Applications")
 	var rootToAppsMACHD = ("/Volumes/Macintosh HD/Applications")
-	var rootToAppsUSER = ("/Volumes/Macintosh HD/Users/{USER-NAME}/Applications")
+	var rootToAppsUSER = ("/Volumes/Macintosh HD/Users/{USER_NAME}/Applications")
 
 	var appList string
 	ext := ".app"
+
+	appList += rootToAppsSYSTEM + "\n"
+	appList += rootToAppsMACHD + "\n"
+	appList += rootToAppsUSER + "\n"
 
 	// GET ALL APPS
 
@@ -183,8 +203,11 @@ func getApplications(appnames string) {
 	// THIS IS THE LOCATION FOR MY APPLICATIONS - THIS ACTUAL PATH IS NEEDED TO OPEN THE FILE
 	rootToAppsSYSTEM := "/Volumes/Macintosh HD/System/Applications/"
 	rootToAppsMACHD := "/Volumes/Macintosh HD/Applications/"
-	rootToAppsUSER := "/Volumes/Macintosh HD/Users/{USER-NAME}/Applications/"
+	rootToAppsUSER := "/Volumes/Macintosh HD/Users/{USER_NAME}/Applications/"
 
+	// var rootToAppsSYSTEM string
+	// var rootToAppsMACHD string
+	// var rootToAppsUSER string
 	// paths := [rootToAppsSYSTEM, rootToAppsMACHD, rootToAppsUSER]
 	// fmt.Printf("root to apps: ", string(rootToApps)+"\n")
 	ext := ".app"
@@ -206,8 +229,21 @@ func getApplications(appnames string) {
 	// fmt.Print("APPNAMES: ", appnames, "\n")
 
 	// NEED TO OPTIMIZE FOR EFFICIENT SEARCHING
+	// i := 0
 	for scanner.Scan() {
 		// LOOP - does anything in app dir = any of the app names in profile ??
+		// if i == 0 {
+		// 	rootToAppsSYSTEM = scanner.Text()
+		// }
+		// if i == 1 {
+		// 	rootToAppsMACHD = scanner.Text()
+		// }
+		// if i == 2 {
+		// 	rootToAppsUSER = scanner.Text()
+		// }
+
+		// i++
+
 		for _, item := range result {
 			// fmt.Print(item, "\n")
 
@@ -306,6 +342,8 @@ func main() {
 		fmt.Println("CREATING APP DIRECTORY -------------------------------------------------")
 		fmt.Println("This may take a minute. Please hold, til then please read...")
 		fmt.Println(" ")
+		fmt.Println("NEXT STEPS: ")
+		fmt.Println("")
 		fmt.Println("NOTE: ")
 		fmt.Println("** This only happens the first time you run the program")
 		fmt.Println("** If you encounter an error with this step, or apps won't load, you'll need to specify the path to your Applications folder")
@@ -314,7 +352,7 @@ func main() {
 		fmt.Println("IMPORTANT: ")
 		fmt.Println("No spaces in the profile, empty lines are fine")
 		fmt.Println("For urls do not include 'https://www.' ")
-		fmt.Println("Type anything for a yes flag, no for no flag")
+		fmt.Println("Type anything for a yes flag, 'no' for no flag")
 		fmt.Println("Currently case sensitive - apps must be typed exactly as shown on your pc")
 		fmt.Println("If you're having trouble specifying an app, find it in the appDir.txt file (which is being created now) and ignore the number in front of it when typing it into the flag")
 		fmt.Println("If you added more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.")
@@ -342,6 +380,7 @@ func main() {
 			return nil
 		})
 
+		fmt.Println("Profiles: ")
 		fmt.Println(extList)
 
 		return
@@ -401,7 +440,7 @@ func main() {
 		}
 
 	} else {
-		fmt.Println("typo? that profile does not exist")
+		fmt.Println("New profile created")
 	}
 
 	// CREATES PROFILE IF NEEDED or ADDS TO PROFILE ------------------------------------------------------

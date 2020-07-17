@@ -64,7 +64,8 @@ You should get a confirmation message after making changes to any profile.
 ## :warning: IMPORTANT:
 
 ### PROFILES: 
-* Profiles are .txt files. No spaces in the profile, empty lines are fine
+* No spaces in the profile ".txt" file, if an app has spaces in the name, add it to the file manually "app:Visual Studio Code"
+(empty lines are fine)
 
 * For urls do not include "https://www."
 
