@@ -109,7 +109,7 @@ func createAppDir() {
 
 	var rootToAppsSYSTEM = ("/Volumes/Macintosh HD/System/Applications")
 	var rootToAppsMACHD = ("/Volumes/Macintosh HD/Applications")
-	var rootToAppsUSER = ("/Volumes/Macintosh HD/Users/{user-name}/Applications")
+	var rootToAppsUSER = ("/Volumes/Macintosh HD/Users/samiringle/Applications")
 
 	var appList string
 	ext := ".app"
@@ -172,7 +172,9 @@ func createAppDir() {
 		log.Fatal("whoops", err)
 	}
 
+	fmt.Println("App Directory created >>>>>>>")
 	fmt.Println("bytes written: ", n)
+	fmt.Println("----------------------------------")
 
 }
 
@@ -181,7 +183,7 @@ func getApplications(appnames string) {
 	// THIS IS THE LOCATION FOR MY APPLICATIONS - THIS ACTUAL PATH IS NEEDED TO OPEN THE FILE
 	rootToAppsSYSTEM := "/Volumes/Macintosh HD/System/Applications/"
 	rootToAppsMACHD := "/Volumes/Macintosh HD/Applications/"
-	rootToAppsUSER := "/Volumes/Macintosh HD/Users/{user-name}/Applications/"
+	rootToAppsUSER := "/Volumes/Macintosh HD/Users/samiringle/Applications/"
 
 	// paths := [rootToAppsSYSTEM, rootToAppsMACHD, rootToAppsUSER]
 	// fmt.Printf("root to apps: ", string(rootToApps)+"\n")
@@ -222,7 +224,7 @@ func getApplications(appnames string) {
 				if rootID == "0" {
 					rootToApp := rootToAppsSYSTEM + item + ext
 					// fmt.Printf(rootToApp)
-					fmt.Print("Opening " + string(item) + "\n")
+					// fmt.Print("Opening " + string(item) + "\n")
 					err := open.Run(string(rootToApp))
 					if err != nil {
 						fmt.Print(err)
@@ -231,7 +233,7 @@ func getApplications(appnames string) {
 				if rootID == "1" {
 					rootToApp := rootToAppsMACHD + item + ext
 					// fmt.Printf(rootToApp)
-					fmt.Print("Opening " + string(item) + "\n")
+					// fmt.Print("Opening " + string(item) + "\n")
 					err := open.Run(string(rootToApp))
 					if err != nil {
 						fmt.Print(err)
@@ -240,7 +242,7 @@ func getApplications(appnames string) {
 				if rootID == "2" {
 					rootToApp := rootToAppsUSER + item + ext
 					// fmt.Printf(rootToApp)
-					fmt.Print("Opening " + string(item) + "\n")
+					// fmt.Print("Opening " + string(item) + "\n")
 					err := open.Run(string(rootToApp))
 					if err != nil {
 						fmt.Print(err)
@@ -282,12 +284,14 @@ func main() {
 	// if profile exists, will be added to profile
 	// if profile dne, will be created and added to
 	pf := flag.String("pf", "profile-name", "profile name")
+	l := flag.String("l", "no", "list the contents of the profile")
 	o := flag.String("o", "yes", "open this profile")
 	add := flag.String("add", "no", "creates new profile or adds <app:app-name> or <url:url-address> to existing profile")
 	del := flag.String("del", "no", "deletes profile if 'profile' is typed, otherwise deletes app or url entered")
 	flag.Parse()
 
 	// FLAG STATUSES
+	// fmt.Println("list: ", *l)
 	// fmt.Println("open: ", *o)
 	// fmt.Println("add: ", *add)
 	// fmt.Println("del: ", *del)
@@ -297,11 +301,19 @@ func main() {
 	// seekProfile(ext, *profile)
 	// openBrowser("https://www.google.com")
 
-	// IF PROFILE EXISTS
+	// CHECKS IF THE PROFILE EXISTS AND OPENS IT---------------------------------- if no other flags are called
 	if seekProfile(ext, *pf) {
-		fmt.Println("Accessing file...")
+		// fmt.Println("Accessing file...")
 
-		// OPEN IT
+		// LISTS CURRENT PROFILE CONTENTS----------------------------------------------------------
+		if *l != "no" {
+			// access file, open them
+			path := "profiles/" + *pf + ext
+			data := readFile(path)
+			fmt.Println(data)
+		}
+
+		// OPENS PROFILE -------------------------------------------------------------------------------------
 		if *o == "yes" && *add == "no" && *del == "no" {
 			fmt.Println("Opening " + *pf)
 
@@ -313,18 +325,26 @@ func main() {
 			scanner := bufio.NewScanner(strings.NewReader(data))
 			var applications string
 
-			// CREATE APP DIRECTORY
+			// CREATE APP DIRECTORY --------------------------------------------------------- appDir text File
 			if !(checkIfAppDir()) {
-				fmt.Println("CREATING APP DIRECTORY")
-				fmt.Println("This only happens the first time you run the program")
-				fmt.Println("This may take a minute...")
-				fmt.Println("Note: ")
-				fmt.Println("** If you encounter an error with this step, or your apps won't load, you'll need to specify the path to your Applications folder")
-				fmt.Println("** It's easy - instructions can be found in the README at https://www.github.com/SamirIngley/DesktopProfiles")
+				fmt.Println("CREATING APP DIRECTORY -------------------------------------------------")
+				fmt.Println("This may take a minute. Please hold, til then please read...")
+				fmt.Println("NOTE: ")
+				fmt.Println("** This only happens the first time you run the program")
+				fmt.Println("** If you encounter an error with this step, or apps won't load, you'll need to specify the path to your Applications folder")
+				fmt.Println("** Instructions can be found at README https://www.github.com/SamirIngley/DesktopProfiles")
+				fmt.Println(" ")
+				fmt.Println("IMPORTANT: ")
+				fmt.Println("No spaces in the profile, empty lines are fine")
+				fmt.Println("Urls must include https://www. for now")
+				fmt.Println("anything for yes flag, no for no flag")
+				fmt.Println("Currently case sensitive - apps must be exactly as shown")
+				fmt.Println(" ")
+				fmt.Println("Please wait while we load your apps...")
 				createAppDir()
 			}
 
-			// GO THROUGH PROFILE, separate urls and apps, THEN OPEN THEM
+			//GO THROUGH PROFILE --------------------------------------- SEPARATE APPS AND URLS then OPEN EACH
 			for scanner.Scan() {
 				// fmt.Println(scanner.Text())
 				line := scanner.Text()
@@ -332,28 +352,30 @@ func main() {
 				app := "app:"
 				// print(line, "\n")
 				if line != "" {
+					// we need the line ID, so - nothing less than 5 characters allowed in the file
 					lineID := line[:4]
 					if lineID == site {
-						// OPEN BROWSER WEBSITE
-						fmt.Print("Opening browser ", line[4:], "\n")
+						// OPEN WEBSITES ------------------------------------------------------------------
+						// fmt.Print("Opening browser ", line[4:], "\n")
 						openBrowser(line[4:])
 					} else if lineID == app {
 						// GET DESKTOP APPLICATIONS
-						// fmt.Printf(lineID)
 						// getting all the existing apps and sorting through at one time easier than pulling the app names every time
+
+						// fmt.Printf(lineID)
 						lineComma := line[4:] + ","
 						applications += lineComma
 					}
 				}
 			}
-			// OPEN APPLICATIONS
+			// OPEN APPLICATIONS--------------------------------------------------------------------------
 			getApplications(strings.TrimSuffix(applications, ","))
 
 		}
 
 	}
 
-	// ADDS TO PROFILE, CREATES PROFILE IF NEEDED
+	// CREATES PROFILE IF NEEDED or ADDS TO PROFILE ------------------------------------------------------
 	if !(*add == "no") {
 		fileLoc := "profiles/" + *pf + ext
 		// data := readFile("profiles/" + *profile + ext)
@@ -373,18 +395,41 @@ func main() {
 
 	}
 
-	if !(*del == "no" || *del == "profile") {
-		fmt.Print("not working yet")
-		// fileLoc := "profiles/" + *profile + ext
+	// DELETES SPECIFIC LINES (APP OR URL) FROM PROFILE --------------------------------------------------
+	if *del != "no" && *del != "profile" && *del != *pf {
+		// fmt.Print("not working yet\n")
+		if seekProfile(ext, *pf) {
+			// access file, open it
+			path := "profiles/" + *pf + ext
+			data := readFile(path)
 
-		// fileData, err := ioutil.ReadFile(fileLoc)
-		// if err != nil {
-		// 	log.Fatal(err)
-		// }
+			// fmt.Printf(data)
+			scanner := bufio.NewScanner(strings.NewReader(data))
+			for scanner.Scan() {
+				// fmt.Println(scanner.Text())
+				line := scanner.Text()
+				if line == *del {
+					// DELETE THE DATA aka REPLACE IT WITH NOTHING ------------------------------
+					newContents := strings.Replace(data, string(*del), "", -1)
+					// fmt.Println("NEW: \n", newContents)
+
+					err := ioutil.WriteFile(path, []byte(newContents), 0)
+					if err != nil {
+						panic(err)
+					} else {
+						fmt.Println("Deleted ", *del, " from ", *pf)
+						return
+					}
+				}
+			}
+			fmt.Println("Does not exist in profile")
+
+		}
 
 	}
 
-	if *del == "profile" {
+	// DELETES THE WHOLE PROFILE --------------------------------------------------------------------------
+	if *del == "profile" || *del == *pf {
 		fileLoc := "profiles/" + *pf + ext
 
 		var yn string
