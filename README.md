@@ -8,6 +8,7 @@ Note: This was built in Go on a Mac (for a Mac)
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
 
+![Image1](gopherize2.png)
 ************************************************************************************************
 
 ## :floppy_disk: Install:
