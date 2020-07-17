@@ -1,5 +1,12 @@
 url:https://www.google.com
 url:https://www.yahoo.com
-app:ThisWontOpenBcItsNotAnAppInSpecifiedDirectory
+
+app:ThisWontOpenBcItDoesntExistInSpecifiedDirectory
+
 app:Atom
 app:Slack
+url:https://www.twitter.com
+
+app:Numi
+
+app:Messages

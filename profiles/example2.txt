@@ -1,0 +1,6 @@
+
+url:https://www.gmail.com
+
+app:Numi
+
+app:Notion

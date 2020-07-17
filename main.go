@@ -15,12 +15,6 @@ import (
 	"github.com/skratchdot/open-golang/open"
 )
 
-func testingOpen() {
-	// WORKS !!!
-	err := open.Run("/Volumes/Macintosh HD/Applications/Atom.app")
-	fmt.Print(err)
-}
-
 func seekProfile(ext string, name string) bool {
 	path, err := os.Getwd()
 	if err != nil {
@@ -47,9 +41,9 @@ func seekProfile(ext string, name string) bool {
 	// fmt.Println("list of txt files: ", extList)
 
 	// looks for our file
-	for i, file := range extList {
+	for _, file := range extList {
 		if file == nameFile {
-			fmt.Printf("Found " + extList[i] + "\n")
+			// fmt.Printf("Found " + extList[i] + "\n")
 			return true
 		}
 	}
@@ -107,18 +101,59 @@ func checkIfAppDir() bool {
 
 func createAppDir() {
 
-	rootToApps := "/Volumes/Macintosh HD/Applications"
+	// THIS FUNCTION CREATES YOUR APP DIRECTORY FILE WHICH IS NEEDED FOR THIS PROGRAM TO RUN
+	// **** YOUR rootToApps SHOULD BE THE PATH TO YOUR APPLICATIONS FOLDER *****
+	// The commented out portion below can help you get the path to your applications folder.
+	// If you know the path you can change rootToApps to the path here, and in the
+	// getApplications function
+
+	var rootToAppsSYSTEM = ("/Volumes/Macintosh HD/System/Applications")
+	var rootToAppsMACHD = ("/Volumes/Macintosh HD/Applications")
+	var rootToAppsUSER = ("/Volumes/Macintosh HD/Users/samiringle/Applications")
+
 	var appList string
 	ext := ".app"
 
 	// GET ALL APPS
-	filepath.Walk(rootToApps, func(getRoot string, fileInfo os.FileInfo, _ error) error {
+
+	// loop through array doesn't work so manual
+	// paths := [rootToAppsSYSTEM, rootToAppsMACHD, rootToAppsUSER]
+	// fmt.Println("PATH LEN: ", paths.length)
+	// for (i = 0; i < paths.length; i++) {
+
+	filepath.Walk(rootToAppsSYSTEM, func(getRoot string, fileInfo os.FileInfo, _ error) error {
 		if filepath.Ext(getRoot) == ext {
 			app := fileInfo.Name()
 			name := app[0 : len(app)-len(ext)]
-			appList += name + "\n"
+			appList += string("0" + name + "\n")
+
 			// fmt.Printf(appnames)
 			// fmt.Print(name)
+
+		}
+		return nil
+	})
+
+	filepath.Walk(rootToAppsMACHD, func(getRoot string, fileInfo os.FileInfo, _ error) error {
+		if filepath.Ext(getRoot) == ext {
+			app := fileInfo.Name()
+			name := app[0 : len(app)-len(ext)]
+			appList += string("1" + name + "\n")
+
+			// fmt.Printf(appnames)
+			fmt.Print(name)
+
+		}
+		return nil
+	})
+	filepath.Walk(rootToAppsUSER, func(getRoot string, fileInfo os.FileInfo, _ error) error {
+		if filepath.Ext(getRoot) == ext {
+			app := fileInfo.Name()
+			name := app[0 : len(app)-len(ext)]
+			appList += string("2" + name + "\n")
+
+			// fmt.Printf(appnames)
+			fmt.Print(name)
 
 		}
 		return nil
@@ -143,29 +178,12 @@ func createAppDir() {
 
 func getApplications(appnames string) {
 
-	// GETTING THE USER OR ANY PART OF FILEPATH
-	// get current filepath
-	// _, b, _, _ := runtime.Caller(0)
-	// d := path.Join(path.Dir(b))
-	// fp := filepath.Dir(d)
-	// // fmt.Printf(fp, "\n")
+	// THIS IS THE LOCATION FOR MY APPLICATIONS - THIS ACTUAL PATH IS NEEDED TO OPEN THE FILE
+	rootToAppsSYSTEM := "/Volumes/Macintosh HD/System/Applications/"
+	rootToAppsMACHD := "/Volumes/Macintosh HD/Applications/"
+	rootToAppsUSER := "/Volumes/Macintosh HD/Users/{user-name}/Applications/"
 
-	// var slashes string
-	// var getRoot string
-	// slash := "/"
-
-	// // get the root directory
-	// for _, item := range fp {
-	// 	if len(slashes) < 3 {
-	// 		// find root by counting between first two slashes
-	// 		if string(item) == slash {
-	// 			slashes += slash
-	// 		}
-	// 		getRoot += string(item)
-	// 	}
-	// }
-
-	rootToApps := "/Volumes/Macintosh HD/Applications/"
+	// paths := [rootToAppsSYSTEM, rootToAppsMACHD, rootToAppsUSER]
 	// fmt.Printf("root to apps: ", string(rootToApps)+"\n")
 	ext := ".app"
 
@@ -174,15 +192,16 @@ func getApplications(appnames string) {
 	// 	fmt.Println(err)
 	// }
 
-	// Split on comma.
+	// Split input appnames on comma.
 	result := strings.Split(appnames, ",")
 
 	apps := readFile("appDir.txt")
 	scanner := bufio.NewScanner(strings.NewReader(apps))
+	fmt.Println("OPENING APPS")
 
 	// result2 := strings.Split(string(appDir), ",")
 
-	// fmt.Print("APPNAMES: ", appnames, "\n")
+	fmt.Print("APPNAMES: ", appnames, "\n")
 
 	// NEED TO OPTIMIZE FOR EFFICIENT SEARCHING
 	for scanner.Scan() {
@@ -191,17 +210,41 @@ func getApplications(appnames string) {
 			// fmt.Print(item, "\n")
 
 			// fmt.Print(item2, "\n")
-			// fmt.Print(item, scanner.Text()+"\n")
+			fmt.Print(item, " ... ", string(scanner.Text()), "\n")
 
-			if string(item) == string(scanner.Text()) {
+			if string(item) == string(scanner.Text()[1:]) {
+				rootID := string(scanner.Text()[:1])
+				// rootID := app[0]
+				fmt.Println("ROOTID: ", rootID)
 				// fmt.Print(" WE HAVE A WINNER !!!!!!! \n")
 				fmt.Print("Opening " + string(item) + "\n")
 
-				rootToApp := rootToApps + item + ext
-				// fmt.Printf(rootToApp)
-				err := open.Run(string(rootToApp))
-				if err != nil {
-					fmt.Print(err)
+				if rootID == "0" {
+					rootToApp := rootToAppsSYSTEM + item + ext
+					fmt.Printf(rootToApp)
+					fmt.Print("Opening " + string(item) + "\n")
+					err := open.Run(string(rootToApp))
+					if err != nil {
+						fmt.Print(err)
+					}
+				}
+				if rootID == "1" {
+					rootToApp := rootToAppsMACHD + item + ext
+					fmt.Printf(rootToApp)
+					fmt.Print("Opening " + string(item) + "\n")
+					err := open.Run(string(rootToApp))
+					if err != nil {
+						fmt.Print(err)
+					}
+				}
+				if rootID == "2" {
+					rootToApp := rootToAppsUSER + item + ext
+					fmt.Printf(rootToApp)
+					fmt.Print("Opening " + string(item) + "\n")
+					err := open.Run(string(rootToApp))
+					if err != nil {
+						fmt.Print(err)
+					}
 				}
 
 			}
@@ -213,6 +256,9 @@ func getApplications(appnames string) {
 }
 
 func writeToFile(file string, content string, ext string) {
+	// CREATING A NEW PROFILE or ADDING TO EXISTING PROFILE
+	// NOT USED IN MAIN,
+
 	fileLoc := "profiles/" + file + ext
 	// data := readFile("profiles/" + *profile + ext)
 	addMe := "\n" + content + "\n"
@@ -237,14 +283,14 @@ func main() {
 	// if profile dne, will be created and added to
 	pf := flag.String("pf", "profile-name", "profile name")
 	o := flag.String("o", "yes", "open this profile")
-	add := flag.String("add", "no", "creates or adds <app:app-name> or <url:url-address> to profile")
-	del := flag.String("del", "no", "deletes <app:app-name> or <url:url-address> from profile")
+	add := flag.String("add", "no", "creates new profile or adds <app:app-name> or <url:url-address> to existing profile")
+	del := flag.String("del", "no", "deletes profile if 'profile' is typed, otherwise deletes app or url entered")
 	flag.Parse()
 
-	fmt.Println("Desktop Profiles: " + *pf)
-	fmt.Println("open: ", *o)
-	fmt.Println("add: ", *add)
-	fmt.Println("del: ", *del)
+	// FLAG STATUSES
+	// fmt.Println("open: ", *o)
+	// fmt.Println("add: ", *add)
+	// fmt.Println("del: ", *del)
 
 	ext := ".txt"
 
@@ -256,7 +302,8 @@ func main() {
 		fmt.Println("Accessing file...")
 
 		// OPEN IT
-		if *o == "yes" {
+		if *o == "yes" && *add == "no" && *del == "no" {
+			fmt.Println("Opening " + *pf)
 
 			// access file, open them
 			data := readFile("profiles/" + *pf + ext)
@@ -266,9 +313,14 @@ func main() {
 			scanner := bufio.NewScanner(strings.NewReader(data))
 			var applications string
 
-			// CREATE APP DIRECTORY if needed
+			// CREATE APP DIRECTORY
 			if !(checkIfAppDir()) {
-				fmt.Print("CREATING APP DIRECTORY (this may take a minute)...")
+				fmt.Println("CREATING APP DIRECTORY")
+				fmt.Println("This only happens the first time you run the program")
+				fmt.Println("This may take a minute...")
+				fmt.Println("Note: ")
+				fmt.Println("** If you encounter an error with this step, or your apps won't load, you'll need to specify the path to your Applications folder")
+				fmt.Println("** It's easy - instructions can be found in the README at https://www.github.com/SamirIngley/DesktopProfiles")
 				createAppDir()
 			}
 
@@ -283,7 +335,7 @@ func main() {
 					lineID := line[:4]
 					if lineID == site {
 						// OPEN BROWSER WEBSITE
-						fmt.Print("Opening browser ", line, "\n")
+						fmt.Print("Opening browser ", line[4:], "\n")
 						openBrowser(line[4:])
 					} else if lineID == app {
 						// GET DESKTOP APPLICATIONS
