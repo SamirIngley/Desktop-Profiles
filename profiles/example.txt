@@ -1,5 +1,2 @@
 
 url:makeschool.com/portal
-
-app:Visual Studio Code
-app:Slack

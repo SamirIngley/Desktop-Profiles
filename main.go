@@ -112,7 +112,7 @@ func createAppDir() {
 	fmt.Println("   - if you have different locations, modify the paths here")
 	fmt.Println("   - if you find out you have different locations later, just delete the appDir file and run the program again.")
 	fmt.Println("1.  Change the paths to fit the locations of your apps on your computer as needed")
-	fmt.Println("2.  Copy / Paste & press Enter for each path one at a time")
+	fmt.Println("2.  Copy / Paste the paths below")
 	fmt.Println("  --> don't forget to change {USER-NAME} to your computer User name")
 	fmt.Println("3.  type 'done' when you've finished")
 	fmt.Println("These paths are locations on your: Mac system apps, Mac Hard disk apps, Mac User apps")
@@ -365,8 +365,8 @@ func main() {
 	pf := flag.String("pf", "profile-name", "profile name")
 	l := flag.String("l", "no", "list the contents of the profile")
 	o := flag.String("o", "yes", "open this profile")
-	add := flag.String("add", "no", "spcify 'app' or 'url' to create new profile or add to an existing profile")
-	del := flag.String("del", "no", "deletes profile if 'profile' is typed, otherwise deletes app or url entered")
+	add := flag.String("add", "no", "specify 'app' or 'url' to create new profile or add to an existing profile")
+	del := flag.String("del", "no", "deletes profile if 'profile' or name of profile is typed, otherwise deletes app or url entered")
 	flag.Parse()
 
 	// FLAG STATUSES
@@ -384,6 +384,8 @@ func main() {
 	if !(checkIfAppDir()) {
 		fmt.Println("SOME HELPFUL TIPS -------------------------------------------------")
 		fmt.Println("")
+		fmt.Println("*** DETAILED INSTRUCTIONS: https://www.github.com/SamirIngley/DesktopProfiles")
+		fmt.Println("")
 		fmt.Println("NOTE: ")
 		fmt.Println("** This only happens the first time you run the program")
 		fmt.Println("** If you encounter an error with this step, or apps won't load, you'll need to specify the path to your Applications folder")
@@ -392,7 +394,8 @@ func main() {
 		fmt.Println("IMPORTANT: ")
 		fmt.Println("- No spaces in the profile, empty lines are fine")
 		fmt.Println("- For urls do not include 'https://www.' ")
-		fmt.Println("- Add an app or url using the -app flag followed by 'app' or 'url', then enter the app name")
+		fmt.Println("- Create or add to a profile using -add followed by 'app' or 'url', then enter the app name")
+		fmt.Println("- Delete the same say as you create, use -del")
 		fmt.Println("- Type anything for a yes flag, 'no' for no flag")
 		fmt.Println("- Currently case sensitive - apps must be typed exactly as shown on your pc")
 		fmt.Println("If you're having trouble specifying an app, find it in the appDir.txt file (which is being created now) and ignore the number in front of it when typing it into the flag")
@@ -480,14 +483,13 @@ func main() {
 
 		}
 
-	} else {
-		// fmt.Println("New profile")
 	}
 
 	// CREATES PROFILE IF NEEDED or ADDS TO PROFILE ------------------------------------------------------
 
 	if *add == "app" {
 		fileLoc := "profiles/" + *pf + ext
+
 		// data := readFile("profiles/" + *profile + ext)
 		// addMe := "\n" + *add + "\n"
 		// fmt.Print("ADDING file: ", file, addMe)
@@ -495,13 +497,23 @@ func main() {
 			fmt.Println("Creating new profile", *pf)
 		}
 
-		fmt.Println("Enter app name: ")
+		fmt.Println("Enter apps one by one, type 'done' when finished: ")
+
+		var appsToCreate []string
 
 		// OPEN AND ADD TO FILE
 		scanner := bufio.NewScanner(os.Stdin)
 		for scanner.Scan() {
 			line := scanner.Text()
-			addMe := "\n" + "app:" + line + "\n"
+			if line == "done" {
+				break
+			} else {
+				appsToCreate = append(appsToCreate, line)
+			}
+		}
+		// fmt.Println("Apps to create: ", appsToCreate)
+		for _, item := range appsToCreate {
+			addMe := "\n" + "app:" + item
 			// fmt.Printf("Input was: %q\n", line)
 
 			// Here we APPEND to file or CREATE a new file
@@ -513,10 +525,12 @@ func main() {
 			if _, err := currentFile.WriteString(addMe); err != nil {
 				log.Println(err)
 			}
+
 			defer currentFile.Close()
-			fmt.Println("Added ", line, " to ", *pf)
-			break
+			// fmt.Println(item)
 		}
+		fmt.Println("Added to ", *pf)
+
 	} else if *add == "url" {
 		fileLoc := "profiles/" + *pf + ext
 		// data := readFile("profiles/" + *profile + ext)
@@ -526,16 +540,27 @@ func main() {
 			fmt.Println("Creating new profile ", *pf)
 		}
 
-		fmt.Println("Enter url: ")
+		fmt.Println("Enter urls one by one, type 'done' when finished: ")
+
+		var urlsToCreate []string
 
 		// OPEN AND ADD TO FILE
-
 		scanner := bufio.NewScanner(os.Stdin)
 		for scanner.Scan() {
 			line := scanner.Text()
-			addMe := "\n" + "url:" + line + "\n"
+			if line == "done" {
+				break
+			} else {
+				urlsToCreate = append(urlsToCreate, line)
+			}
+		}
+		// fmt.Println("Urls to create: ", urlsToCreate)
+		fmt.Println("Added ")
+		for _, item := range urlsToCreate {
+			addMe := "\n" + "url:" + item
 			// fmt.Printf("Input was: %q\n", line)
 
+			// Here we APPEND to file or CREATE a new file
 			currentFile, err := os.OpenFile(fileLoc, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 
 			if err != nil {
@@ -544,10 +569,11 @@ func main() {
 			if _, err := currentFile.WriteString(addMe); err != nil {
 				log.Println(err)
 			}
+
 			defer currentFile.Close()
-			fmt.Println("Added ", line, " to ", *pf)
-			break
+			// fmt.Println(item)
 		}
+		fmt.Println("Added to ", *pf)
 
 	} else if *add != "no" {
 		fmt.Println("Try again - specify what you want to add '-add app' or '-add url'")
@@ -556,6 +582,7 @@ func main() {
 	// DELETES SPECIFIC LINES (APP OR URL) FROM PROFILE --------------------------------------------------
 	if *del == "app" {
 		// fmt.Print("not working yet\n")
+
 		fmt.Println("Enter app: ")
 
 		// OPEN AND ADD TO FILE
@@ -564,88 +591,116 @@ func main() {
 		var line2 string
 		scanner2 := bufio.NewScanner(os.Stdin)
 		// i := 0
+		var appsToDel []string
 		for scanner2.Scan() {
 
 			line2 = scanner2.Text()
-			break
-
+			if line2 == "done" {
+				break
+			} else {
+				appsToDel = append(appsToDel, line2)
+			}
 		}
-		delMe := "app:" + line2
+
+		fmt.Println(appsToDel)
 
 		if seekProfile(ext, *pf) {
 			// access file, open it
-			path := "profiles/" + *pf + ext
-			data := readFile(path)
 
 			// fmt.Printf(data)
-			scanner := bufio.NewScanner(strings.NewReader(data))
-			for scanner.Scan() {
-				// fmt.Println(scanner.Text())
-				line := scanner.Text()
-				if line == delMe {
-					// DELETE THE DATA aka REPLACE IT WITH NOTHING ------------------------------
-					newContents := strings.Replace(data, string(delMe), "", -1)
-					// fmt.Println("NEW: \n", newContents)
-
-					err := ioutil.WriteFile(path, []byte(newContents), 0)
-					if err != nil {
-						panic(err)
-					} else {
-						fmt.Println("Deleted ", line2, " from ", *pf)
-						return
+			// FOR EACH APP IN APPS TO DELETE, DO A SCANNER ON THE FILE AND COMPARE EACH LINE to the app
+			for _, item := range appsToDel {
+				found := false
+				path := "profiles/" + *pf + ext
+				data := readFile(path)
+				scanner := bufio.NewScanner(strings.NewReader(data))
+				for scanner.Scan() {
+					// fmt.Println(scanner.Text())
+					line := scanner.Text()
+					delMe := "app:" + item
+					if line == delMe {
+						// DELETE THE DATA aka REPLACE IT WITH NOTHING ------------------------------
+						newContents := strings.Replace(data, string(delMe), "", -1)
+						// fmt.Println("NEW: \n", newContents)
+						err := ioutil.WriteFile(path, []byte(newContents), 0)
+						if err != nil {
+							panic(err)
+						} else {
+							found = true
+							fmt.Println("Deleted ", item, " from ", *pf)
+						}
 					}
 				}
+				// loop through all the lines and if found still false, let us know
+				if found == false {
+					fmt.Println("Could not find ", item, " in ", *pf)
+				}
 			}
-			fmt.Println("Does not exist in profile")
 
 		} else {
 			fmt.Println("Typo? We couldn't find that profile")
 		}
 
-	}
-
-	if *del == "url" {
+	} else if *del == "url" {
 		// fmt.Print("not working yet\n")
-		fmt.Println("Enter url: ")
+		fmt.Println("Enter urls one by one, type 'done' when finished: ")
 
 		// OPEN AND ADD TO FILE
 		var line2 string
 		scanner2 := bufio.NewScanner(os.Stdin)
+		// i := 0
+		var urlsToDel []string
 		for scanner2.Scan() {
+
 			line2 = scanner2.Text()
-			break
+			if line2 == "done" {
+				break
+			} else {
+				urlsToDel = append(urlsToDel, line2)
+			}
 		}
 
-		delMe := "url:" + line2
+		fmt.Println(urlsToDel)
 
 		if seekProfile(ext, *pf) {
 			// access file, open it
-			path := "profiles/" + *pf + ext
-			data := readFile(path)
 
 			// fmt.Printf(data)
-			scanner := bufio.NewScanner(strings.NewReader(data))
-			for scanner.Scan() {
-				// fmt.Println(scanner.Text())
-				line := scanner.Text()
-				if line == delMe {
-					// DELETE THE DATA aka REPLACE IT WITH NOTHING ------------------------------
-					newContents := strings.Replace(data, string(delMe), "", -1)
-					// fmt.Println("NEW: \n", newContents)
-
-					err := ioutil.WriteFile(path, []byte(newContents), 0)
-					if err != nil {
-						panic(err)
-					} else {
-						fmt.Println("Deleted ", line2, " from ", *pf)
-						return
+			// FOR EACH APP IN APPS TO DELETE, DO A SCANNER ON THE FILE AND COMPARE EACH LINE to the app
+			for _, item := range urlsToDel {
+				found := false
+				path := "profiles/" + *pf + ext
+				data := readFile(path)
+				scanner := bufio.NewScanner(strings.NewReader(data))
+				for scanner.Scan() {
+					// fmt.Println(scanner.Text())
+					line := scanner.Text()
+					delMe := "url:" + item
+					if line == delMe {
+						// DELETE THE DATA aka REPLACE IT WITH NOTHING ------------------------------
+						newContents := strings.Replace(data, string(delMe), "", -1)
+						// fmt.Println("NEW: \n", newContents)
+						err := ioutil.WriteFile(path, []byte(newContents), 0)
+						if err != nil {
+							panic(err)
+						} else {
+							found = true
+							fmt.Println("Deleted ", item, " from ", *pf)
+						}
 					}
 				}
+				// loop through all the lines and if found still false, let us know
+				if found == false {
+					fmt.Println("Could not find ", item, " in ", *pf)
+				}
 			}
-			fmt.Println("Does not exist in profile")
 
+		} else {
+			fmt.Println("Typo? We couldn't find that profile")
 		}
 
+	} else if *del != "no" {
+		fmt.Println("Try again - specify what you want to delete '-del app' or '-del url'")
 	}
 
 	// DELETES THE WHOLE PROFILE --------------------------------------------------------------------------
