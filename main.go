@@ -232,7 +232,7 @@ func createAppDir() {
 	fmt.Println("App Directory created >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 	fmt.Println("bytes written: ", n)
 	fmt.Println("-----------------------------------------------------------")
-	fmt.Println("type 'go run main.go -help' for a list of actions")
+	fmt.Println("SUCCESS: type 'go run main.go -help' for a list of actions")
 
 }
 
@@ -365,7 +365,7 @@ func main() {
 	pf := flag.String("pf", "profile-name", "profile name")
 	l := flag.String("l", "no", "list the contents of the profile")
 	o := flag.String("o", "yes", "open this profile")
-	add := flag.String("add", "no", "creates new profile or adds <app:app-name> or <url:url-address> to existing profile")
+	add := flag.String("add", "no", "spcify 'app' or 'url' to create new profile or add to an existing profile")
 	del := flag.String("del", "no", "deletes profile if 'profile' is typed, otherwise deletes app or url entered")
 	flag.Parse()
 
@@ -392,7 +392,7 @@ func main() {
 		fmt.Println("IMPORTANT: ")
 		fmt.Println("- No spaces in the profile, empty lines are fine")
 		fmt.Println("- For urls do not include 'https://www.' ")
-		fmt.Println("- Add an app using the -app flag by prefacing the app with 'app:' or a website with 'url:'")
+		fmt.Println("- Add an app or url using the -app flag followed by 'app' or 'url', then enter the app name")
 		fmt.Println("- Type anything for a yes flag, 'no' for no flag")
 		fmt.Println("- Currently case sensitive - apps must be typed exactly as shown on your pc")
 		fmt.Println("If you're having trouble specifying an app, find it in the appDir.txt file (which is being created now) and ignore the number in front of it when typing it into the flag")
@@ -481,32 +481,97 @@ func main() {
 		}
 
 	} else {
-		fmt.Println("New profile created")
+		// fmt.Println("New profile")
 	}
 
 	// CREATES PROFILE IF NEEDED or ADDS TO PROFILE ------------------------------------------------------
-	if !(*add == "no") {
+
+	if *add == "app" {
 		fileLoc := "profiles/" + *pf + ext
 		// data := readFile("profiles/" + *profile + ext)
-		addMe := "\n" + *add + "\n"
+		// addMe := "\n" + *add + "\n"
 		// fmt.Print("ADDING file: ", file, addMe)
+		if seekProfile(ext, *pf) == false {
+			fmt.Println("Creating new profile", *pf)
+		}
+
+		fmt.Println("Enter app name: ")
 
 		// OPEN AND ADD TO FILE
-		currentFile, err := os.OpenFile(fileLoc, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-		if err != nil {
-			log.Println(err)
-		}
-		if _, err := currentFile.WriteString(addMe); err != nil {
-			log.Println(err)
-		}
-		defer currentFile.Close()
-		fmt.Println("Added ", *add, " to ", *pf)
+		scanner := bufio.NewScanner(os.Stdin)
+		for scanner.Scan() {
+			line := scanner.Text()
+			addMe := "\n" + "app:" + line + "\n"
+			// fmt.Printf("Input was: %q\n", line)
 
+			// Here we APPEND to file or CREATE a new file
+			currentFile, err := os.OpenFile(fileLoc, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+
+			if err != nil {
+				log.Println(err)
+			}
+			if _, err := currentFile.WriteString(addMe); err != nil {
+				log.Println(err)
+			}
+			defer currentFile.Close()
+			fmt.Println("Added ", line, " to ", *pf)
+			break
+		}
+	} else if *add == "url" {
+		fileLoc := "profiles/" + *pf + ext
+		// data := readFile("profiles/" + *profile + ext)
+		// addMe := "\n" + *add + "\n"
+		// fmt.Print("ADDING file: ", file, addMe)
+		if seekProfile(ext, *pf) == false {
+			fmt.Println("Creating new profile ", *pf)
+		}
+
+		fmt.Println("Enter url: ")
+
+		// OPEN AND ADD TO FILE
+
+		scanner := bufio.NewScanner(os.Stdin)
+		for scanner.Scan() {
+			line := scanner.Text()
+			addMe := "\n" + "url:" + line + "\n"
+			// fmt.Printf("Input was: %q\n", line)
+
+			currentFile, err := os.OpenFile(fileLoc, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+
+			if err != nil {
+				log.Println(err)
+			}
+			if _, err := currentFile.WriteString(addMe); err != nil {
+				log.Println(err)
+			}
+			defer currentFile.Close()
+			fmt.Println("Added ", line, " to ", *pf)
+			break
+		}
+
+	} else if *add != "no" {
+		fmt.Println("Try again - specify what you want to add '-add app' or '-add url'")
 	}
 
 	// DELETES SPECIFIC LINES (APP OR URL) FROM PROFILE --------------------------------------------------
-	if *del != "no" && *del != "profile" && *del != *pf {
+	if *del == "app" {
 		// fmt.Print("not working yet\n")
+		fmt.Println("Enter app: ")
+
+		// OPEN AND ADD TO FILE
+
+		// read name of app/url to be deleted
+		var line2 string
+		scanner2 := bufio.NewScanner(os.Stdin)
+		// i := 0
+		for scanner2.Scan() {
+
+			line2 = scanner2.Text()
+			break
+
+		}
+		delMe := "app:" + line2
+
 		if seekProfile(ext, *pf) {
 			// access file, open it
 			path := "profiles/" + *pf + ext
@@ -517,16 +582,62 @@ func main() {
 			for scanner.Scan() {
 				// fmt.Println(scanner.Text())
 				line := scanner.Text()
-				if line == *del {
+				if line == delMe {
 					// DELETE THE DATA aka REPLACE IT WITH NOTHING ------------------------------
-					newContents := strings.Replace(data, string(*del), "", -1)
+					newContents := strings.Replace(data, string(delMe), "", -1)
 					// fmt.Println("NEW: \n", newContents)
 
 					err := ioutil.WriteFile(path, []byte(newContents), 0)
 					if err != nil {
 						panic(err)
 					} else {
-						fmt.Println("Deleted ", *del, " from ", *pf)
+						fmt.Println("Deleted ", line2, " from ", *pf)
+						return
+					}
+				}
+			}
+			fmt.Println("Does not exist in profile")
+
+		} else {
+			fmt.Println("Typo? We couldn't find that profile")
+		}
+
+	}
+
+	if *del == "url" {
+		// fmt.Print("not working yet\n")
+		fmt.Println("Enter url: ")
+
+		// OPEN AND ADD TO FILE
+		var line2 string
+		scanner2 := bufio.NewScanner(os.Stdin)
+		for scanner2.Scan() {
+			line2 = scanner2.Text()
+			break
+		}
+
+		delMe := "url:" + line2
+
+		if seekProfile(ext, *pf) {
+			// access file, open it
+			path := "profiles/" + *pf + ext
+			data := readFile(path)
+
+			// fmt.Printf(data)
+			scanner := bufio.NewScanner(strings.NewReader(data))
+			for scanner.Scan() {
+				// fmt.Println(scanner.Text())
+				line := scanner.Text()
+				if line == delMe {
+					// DELETE THE DATA aka REPLACE IT WITH NOTHING ------------------------------
+					newContents := strings.Replace(data, string(delMe), "", -1)
+					// fmt.Println("NEW: \n", newContents)
+
+					err := ioutil.WriteFile(path, []byte(newContents), 0)
+					if err != nil {
+						panic(err)
+					} else {
+						fmt.Println("Deleted ", line2, " from ", *pf)
 						return
 					}
 				}

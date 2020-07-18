@@ -1,0 +1,497 @@
+/Volumes/Macintosh HD/System/Applications
+/Volumes/Macintosh HD/Applications
+/Volumes/Macintosh HD/Users/samiringle/Applications
+0App Store
+0Automator
+0Application Stub
+0Books
+0Calculator
+0Calendar
+0Chess
+0Contacts
+0Dictionary
+0FaceTime
+0FindMy
+0Font Book
+0Home
+0Image Capture
+0Launchpad
+0Mail
+0Maps
+0Messages
+0Mission Control
+0Music
+0News
+0Notes
+0Photo Booth
+0Photos
+0Podcasts
+0Preview
+0QuickTime Player
+0Reminders
+0Siri
+0Stickies
+0Stocks
+0System Preferences
+0TV
+0TextEdit
+0Time Machine
+0Activity Monitor
+0AirPort Utility
+0Audio MIDI Setup
+0Bluetooth File Exchange
+0Boot Camp Assistant
+0ColorSync Utility
+0Console
+0Digital Color Meter
+0Disk Utility
+0Grapher
+0Keychain Access
+0Migration Assistant
+0Screenshot
+0Script Editor
+0System Information
+0Terminal
+0VoiceOver Utility
+0VoiceOverUtilityCacheBuilder
+0VoiceMemos
+11Password 7
+11Password Extension Helper
+11Password Launcher
+11Password Updater
+1Adobe XD
+1LogTransport2
+1HLCrashProcessor
+1Alfred 4
+1Alfred Preferences
+1Alfred
+1App Cleaner
+1Autoupdate
+1App Cleaner Helper
+1Atom
+1Atom Helper
+1Backup and Sync
+1Battle.net
+1Blizzard Error
+1BlueJeans
+1Autoupdate
+1BlueJeansHelper
+1BlueJeansMenu
+1CheatSheet
+1finish_installation
+1CleanMyMac X
+1CleanMyMac X Menu
+1Autoupdate
+1Problem Reporter Sandboxed
+1Problem Reporter
+1CleanMyMac X HealthMonitor
+1CleanMyMac X Updater
+1DaisyDisk
+1Disk Doctor
+1DuckDuckGo Privacy Essentials
+1EaseUS Data Recovery Wizard
+1EaseUS Data Protection
+1EaseUS Data Recovery Wizard Bootable Media
+1EaseUS Data Recovery Wizard Tray
+1EaseUS Data Recovery Wizard
+1EUDataDaemon
+1EaseUS PDF
+1EaseUS Preview
+1VideoThum
+1MobiSaver
+1Evernote
+1ENAttachmentToPDFHelper
+1Evernote Autoupdate
+1EvernoteHelper
+1EvernoteLauncher
+1EvernotePDFHelper
+1FileZilla Pro
+1Firefox
+1crashreporter
+1plugin-container
+1updater
+1Gestimer
+1Gestimer Helper
+1Google Chrome
+1Google Chrome Helper (GPU)
+1Google Chrome Helper (Plugin)
+1Google Chrome Helper (Renderer)
+1Google Chrome Helper
+1Google Chrome Helper (GPU)
+1Google Chrome Helper (Plugin)
+1Google Chrome Helper (Renderer)
+1Google Chrome Helper
+1HazeOver
+1HazeOverLauncher
+1Kindle
+1Logi Options
+1Malwarebytes
+1Memo
+1MemoHelper
+1Microsoft Word
+1Microsoft Error Reporting
+1Open XML for Excel
+1Notion
+1Notion Helper (GPU)
+1Notion Helper (Plugin)
+1Notion Helper (Renderer)
+1Notion Helper
+1OpenVPN Connect
+1Uninstall OpenVPN Connect
+1Outline Manager
+1Outline Manager Helper (GPU)
+1Outline Manager Helper (Plugin)
+1Outline Manager Helper (Renderer)
+1Outline Manager Helper
+1Pages
+1Pocket
+1Postgres
+1Autoupdate
+1PostgresLoginHelper
+1PostgresMenuHelper
+1Postico
+1Postman
+1Postman Helper EH
+1Postman Helper NP
+1Postman Helper
+1ProtonVPN
+1Autoupdate
+1ProtonVPNStarter
+1PyCharm CE
+1IDLE
+1Python Launcher
+1Raspberry Pi Imager
+1Uninstall VNC Server
+1VNC Server
+1RescueTime
+1Autoupdate
+1Autoupdate
+1Autoupdate
+1RescueTime Helper
+1SD Card Formatter
+1Safari
+1Shazam
+1ShazamHelper
+1Slack
+1Slack Helper (GPU)
+1Slack Helper (Plugin)
+1Slack Helper (Renderer)
+1Slack Helper
+1Slack Login Helper
+1Speedtest
+1SpeedTestHelper
+1Spotify
+1Spotify Helper (GPU)
+1Spotify Helper (Plugin)
+1Spotify Helper (Renderer)
+1Spotify Helper
+1StartUpHelper
+1Steam
+1crash_report_sender
+1Sublime Text
+1TickTick
+1Tiles
+1Autoupdate
+1TilesHelper
+1Tor Browser
+1plugin-container
+1updater
+1Tunnelblick
+1TunnelblickUpdater
+1Twitter
+1Tyme
+1HR22V4547K.com.tyme-app.Tyme3LoginItem
+1LogiMgr Uninstaller
+1VNC Viewer
+1VirtualBox
+1VirtualBoxVM
+1vmstarter
+1Visual Studio Code
+1Code Helper (GPU)
+1Code Helper (Plugin)
+1Code Helper (Renderer)
+1Code Helper
+1WireGuard
+1WireGuardLoginItemHelper
+1Xcode
+1Accessibility Inspector
+1Create ML
+1FileMerge
+1Instruments
+1backgroundinstruments
+1RealityComposer
+1Simulator
+1Xcode Server Builder
+1Python
+1XCTRunner
+1SketchBoard
+1AirPodcasts
+1AppStore
+1Arcade
+1AuthKitUIService_tvOS
+1HeadBoard
+1PBLinkHandler
+1PineBoard
+1Podcasts
+1PreBoard
+1SharingViewServiceTV
+1Siri
+1SoundScapes
+1StoreDemoViewServiceTv
+1TVAccessViewService
+1TVAirPlay
+1TVCRDService
+1TVConferenceRoomDisplay
+1TVDiagnostics
+1TVDisplayAssistant
+1TVGameCenterUIService
+1TVHomeSharing
+1TVMovies
+1TVMusic
+1TVNowPlayingService
+1TVPeripheralAgent
+1TVPhotos
+1TVProfileMappingService
+1TVRestrictionPINService
+1TVScreenSaver
+1TVSearch
+1TVSettings
+1TVShows
+1TVSystemBulletinService
+1TVSystemMenuService
+1TVWhatsNew
+1VideoSubscriberAccountViewService
+1iCloud
+1MobileReplayer
+1XCPreviewAgent
+1AssistiveTouch
+1VoiceOverTouch
+1identityservicesd
+1IDSCredentialsAgent
+1IDSRemoteURLConnectionAgent
+1IMTransferAgent
+1XCTRunner
+1DesktopReplayer
+1GPUToolsAgent
+1IBCocoaSimulator
+1XCTRunner
+1Xcode Helper
+1Xcode Previews
+1WebKitPluginHost
+1Xcode Previews
+1SketchBoard
+1AppStore
+1AppStoreTrampoline
+1ClockFace
+1DataMigrationMonitor
+1DeepBreathing
+1DiagnosticsService
+1NanoAlarm
+1NanoBooks
+1NanoCalculator
+1NanoCalendar
+1NanoCamera
+1NanoDemo
+1NanoDiagnostics
+1NanoHome
+1NanoMailBulletinService
+1NanoMaps
+1NanoMenstrualCycles
+1NanoMusic
+1NanoNews
+1NanoNowPlaying
+1NanoNowPlayingViewService
+1NanoPassbook
+1NanoPhone
+1NanoReminders
+1NanoRemote
+1NanoSettings
+1NanoStopwatch
+1NanoTimer WatchKit
+1NanoWeather
+1Podcasts
+1PreBoard
+1QuickboardViewService
+1ReBoard
+1SafariViewService
+1TinCan
+1XCPreviewAgent
+1Carousel
+1VoiceOverTouch
+1identityservicesd
+1IDSCredentialsAgent
+1IDSRemoteURLConnectionAgent
+1IMAutomaticHistoryDeletionAgent
+1IMTransferAgent
+1XCTRunner
+1SketchBoard
+1AXUIViewService
+1AccountAuthenticationDialog
+1ActivityMessagesApp
+1AirPodcasts
+1AnimojiStickers
+1AppSSOUIService
+1AppStore
+1Apple TV Remote
+1AppleTV
+1AskPermissionUI
+1AuthKitUIService
+1BarcodeScanner
+1Books
+1Bridge
+1BusinessChatViewService
+1BusinessExtensionsWrapper
+1CTCarrierSpaceAuth
+1CTNotifyUIService
+1Calculator
+1CarPlaySettings
+1CarPlaySplashScreen
+1CheckerBoard
+1Contacts
+1CoreAuthUI
+1DDActionsService
+1DNDBuddy
+1DataActivation
+1Diagnostics
+1DiagnosticsService
+1DisplayCal
+1FaceTime
+1Family
+1Files
+1Fitness
+1FontInstallViewService
+1FunCameraEmojiStickers
+1FunCameraShapes
+1FunCameraText
+1GameCenterUIService
+1HashtagImages
+1Health
+1HealthPrivacyService
+1HomeUIService
+1Jellyfish
+1LoginUI
+1Magnifier
+1Maps
+1Measure
+1MessagesViewService
+1MobileCal
+1MobileMail
+1MobileNotes
+1MobileSMS
+1MobileSafari
+1MobileSlideShow
+1Music
+1MusicUIService
+1News
+1Passbook
+1PassbookUIService
+1Photo Booth
+1PhotosViewService
+1Podcasts
+1PreBoard
+1Preferences
+1Print Center
+1Reminders
+1RemoteiCloudQuotaUI
+1SIMSetupUIService
+1SLGoogleAuth
+1SLYahooAuth
+1SafariViewService
+1ScreenSharingViewService
+1ScreenTimeUnlock
+1ScreenshotServicesService
+1SharedWebCredentialViewService
+1SharingViewService
+1Shortcuts
+1Sidecar
+1Siri
+1SoftwareUpdateUIService
+1Spotlight
+1StoreDemoViewService
+1StoreKitUIService
+1SubcredentialUIService
+1TVAccessViewService
+1VideoSubscriberAccountViewService
+1Web
+1WebContentAnalysisUI
+1WebSheet
+1Xcode Previews
+1iAdOptOut
+1iCloud
+1iMessageAppsViewService
+1MobileReplayer
+1XCPreviewAgent
+1AssistiveTouch
+1CarPlay
+1CarPlayTemplateUIHost
+1ClimateProxy
+1DeviceOMatic
+1EscrowSecurityAlert
+1FullKeyboardAccess
+1ScreenSharingServer
+1SpringBoard
+1VoiceOverTouch
+1identityservicesd
+1IDSCredentialsAgent
+1IDSRemoteURLConnectionAgent
+1IMAutomaticHistoryDeletionAgent
+1IMTransferAgent
+1XCTRunner
+1couch
+1couch_mrview
+1couch_plugins
+1couch_replicator
+1ejson
+1oauth
+1ibrowse
+1mochiweb
+1snappy
+1asn1
+1compiler
+1crypto
+1eldap
+1inets
+1kernel
+1os_mon
+1public_key
+1sasl
+1ssl
+1stdlib
+1syntax_tools
+1xmerl
+1Zenmap
+1balenaEtcher
+1balenaEtcher Helper (GPU)
+1balenaEtcher Helper (Plugin)
+1balenaEtcher Helper (Renderer)
+1balenaEtcher Helper
+1duet
+1Autoupdate
+1iDocs
+1LoginHelper
+1iMovie
+1iTerm
+1Autoupdate
+1zoom.us
+1CptHost
+1Transcode
+1ZMScreenshot
+1ZoomPhone
+1ZoomUninstaller
+1airhost
+1aomhost
+1mphost
+2Autodesk Fusion 360
+2Borderlands 2
+2Default hmjkmjkepdijhoojdojkdfohbdgmmhki
+2Zoom
+2Counter-Strike Global Offensive
+2Dota 2
+2Numi
+2Autoupdate
+2Problem Reporter Sandboxed
+2Problem Reporter
+2NumiHelper
+2Remove Autodesk Fusion 360
+2SelfControl
+2Autoupdate
