@@ -2,20 +2,20 @@
 
 Create profiles to open any combination of your frequently used apps and websites from the cli at once! 
 
-Follow the instructions below to get started
+** Follow the instructions below to get started ** 
 
 Note: This was built in Go on a Mac (for a Mac)
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
 
-![Image1](gopherize2.png)
+![Image1](gopherIMG.png)
 ************************************************************************************************
 
 ## :floppy_disk: Install:
 
 1. Download / clone this repo
 
-2. In the main.go file, there are *two* places where routes to your Applications folders are specified. You will need to change the `{USER-NAME}` part in both places to whatever your the name of your User is on your pc. The locations are specified below. If you don't know or want a list of users, in the cli type in `ls /users`. 
+2. In the main.go file, there are *two places* where routes to your Applications folders are specified. You will need to change the `{USER-NAME}` part in both places to whatever your the name of your User is on your pc. The locations are specified below. If you don't know or want a list of users, in the cli type in `ls /users`. 
 
     * :exclamation: Location 1: In main.go > line 112 > at the end of rootToAppsUser > replace {USER-NAME} with your user    ( inside func createAppDir() )
     * :bangbang: Location 2: In main.go > line 186 > at the end of rootToAppsUSER > replace {USER-NAME} with your user    ( inside func getApplications() )
