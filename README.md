@@ -66,8 +66,6 @@ You should get a confirmation message after making changes to any profile.
 
 ### Input: 
 
-* For urls do not include "https://www."
-
 * Type anything for yes, type "no" for no, more details can be found about the input by typing the "-help" flag: go run main.go -help (Exception: for -del flag when deleting a profile -> must be the profile name or "profile")
 
 * Currently case sensitive - apps must be typed exactly as shown on your pc

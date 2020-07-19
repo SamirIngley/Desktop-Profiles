@@ -1,4 +1,0 @@
-02dbe735928bfda5ac9b1eff23a573319f3747b26e804c6bc98d7398ea21d566  Desktop-Profiles_v0.0.0-next_Linux_x86_64.tar.gz
-05ab5689006be0bacec636152b47bff6fede24c6a8173457fb6852f069c9d585  Desktop-Profiles_v0.0.0-next_Linux_i386.tar.gz
-1cb3b2801f303d2c10af4d575a2f9659c133a3a7fab8a5162eae969fe53e5b5a  Desktop-Profiles_v0.0.0-next_Darwin_i386.tar.gz
-753e4ac79eeb85a7fc400505d91959affc4d6cfa716843aa0064730007dea9b4  Desktop-Profiles_v0.0.0-next_Darwin_x86_64.tar.gz

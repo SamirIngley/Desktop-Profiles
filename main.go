@@ -388,7 +388,12 @@ func main() {
 					if lineID == site {
 						// OPEN WEBSITES ------------------------------------------------------------------
 						// fmt.Print("Opening browser ", line[4:], "\n")
-						openBrowser("https://www." + line[4:])
+						lineNoURLTag := line[4:]
+						if lineNoURLTag[:4] == "http" {
+							openBrowser(lineNoURLTag)
+						} else {
+							openBrowser("https://www." + lineNoURLTag)
+						}
 					} else if lineID == app {
 						// GET DESKTOP APPLICATIONS
 						// getting all the existing apps and sorting through at one time easier than pulling the app names every time
@@ -476,7 +481,6 @@ func main() {
 			}
 		}
 		// fmt.Println("Urls to create: ", urlsToCreate)
-		fmt.Println("Added ")
 		for _, item := range urlsToCreate {
 			addMe := "\n" + "url:" + item
 			// fmt.Printf("Input was: %q\n", line)
