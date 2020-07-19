@@ -114,8 +114,7 @@ func createAppDir() {
 	fmt.Println("   - if you have different locations, modify the paths here")
 	fmt.Println("   - if you find out you have different locations later, just delete the appDir file and run the program again.")
 	fmt.Println("1.  Change the paths to fit the locations of your apps on your computer as needed")
-	fmt.Println("2.  Copy / Paste the paths below")
-	fmt.Println("  --> don't forget to change {USER-NAME} to your computer User name")
+	fmt.Println("2.  Copy / Paste the paths below, don't forget to change {USER-NAME} to your computer User name")
 	fmt.Println("3.  type 'done' when you've finished")
 	fmt.Println("These paths are locations to your: Mac system apps, Mac Hard Disk apps, Mac User apps")
 	fmt.Println("-------")
@@ -133,7 +132,7 @@ func createAppDir() {
 	for scanner.Scan() {
 		line := scanner.Text()
 		if line == "done" {
-			fmt.Println("Creating your App Directory... this may take a minute")
+			fmt.Println("Creating your App Directory... this may take a minute, please wait")
 			break
 		} else {
 			dirsArray = append(dirsArray, line)
@@ -307,12 +306,12 @@ func main() {
 	if !(checkIfAppDir()) {
 		fmt.Println("SOME HELPFUL TIPS -------------------------------------------------")
 		fmt.Println("")
-		fmt.Println("*** DETAILED INSTRUCTIONS: https://www.github.com/SamirIngley/DesktopProfiles")
+		fmt.Println("*** DETAILED INSTRUCTIONS: https://github.com/SamirIngley/Desk-Profile")
 		fmt.Println("")
 		fmt.Println("NOTE: ")
 		fmt.Println("** This only happens the first time you run the program")
 		fmt.Println("** If you encounter an error with this step, or apps won't load, you'll need to specify the path to your Applications folder")
-		fmt.Println("** Instructions can be found at README https://www.github.com/SamirIngley/DesktopProfiles")
+		fmt.Println("** Instructions can be found at README https://www.github.com/SamirIngley/Desk-Profile")
 		fmt.Println(" ")
 		fmt.Println("IMPORTANT: ")
 		fmt.Println("- For urls do not include 'https://www.' ")
