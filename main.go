@@ -123,44 +123,6 @@ func createAppDir() {
 	fmt.Println("/Volumes/Macintosh HD/Applications")
 	fmt.Println("/Volumes/Macintosh HD/Users/{USER-NAME}/Applications")
 	fmt.Println("-------")
-	// fmt.Print("System: ")
-	// var rootToAppsSYSTEM string
-	// fmt.Scanln(&rootToAppsSYSTEM)
-	// fmt.Print("Hard Disk: ")
-	// var rootToAppsMACHD string
-	// fmt.Scanln(&rootToAppsMACHD)
-	// fmt.Print("User: ")
-	// var rootToAppsUSER string
-	// fmt.Scanln(&rootToAppsUSER)
-
-	// i := 0
-	// scanner := bufio.NewScanner(os.Stdin)
-	// for scanner.Scan() {
-	// 	line := scanner.Text()
-	// 	// fmt.Printf("Input was: %q\n", line)
-	// 	if line == "done" {
-	// 		fmt.Println("-------------------------------------------------------------")
-	// 		fmt.Println("Creating your App Directory, this may take a minute. Please hold...")
-	// 		break
-	// 	}
-	// 	if i == 0 {
-	// 		rootToAppsSYSTEM = line
-	// 		// fmt.Println("SYS ", rootToAppsSYSTEM)
-	// 	}
-	// 	if i == 1 {
-	// 		rootToAppsMACHD = line
-	// 		// fmt.Println("MAC ", rootToAppsMACHD)
-	// 	}
-	// 	if i == 2 {
-	// 		rootToAppsUSER = line
-	// 		// fmt.Println("USER ", rootToAppsUSER)
-	// 	}
-	// 	// fmt.Println(i)
-	// 	i++
-	// }
-	// if err := scanner.Err(); err != nil {
-	// 	fmt.Println("Error encountered:", err)
-	// }
 
 	var dirsArray []string
 	var appList string
@@ -222,78 +184,11 @@ func createAppDir() {
 	fmt.Println("-----------------------------------------------------------")
 	fmt.Println("SUCCESS: type 'go run main.go -help' for a list of actions")
 
-	// var rootToAppsSYSTEM = ("/Volumes/Macintosh HD/System/Applications")
-	// var rootToAppsMACHD = ("/Volumes/Macintosh HD/Applications")
-	// var rootToAppsUSER = ("/Volumes/Macintosh HD/Users/{USER_NAME}/Applications")
-
-	// appList += rootToAppsSYSTEM + "\n"
-	// appList += rootToAppsMACHD + "\n"
-	// appList += rootToAppsUSER + "\n"
-
-	// GET ALL APPS
-
-	// loop through array doesn't work so manual
-	// paths := [rootToAppsSYSTEM, rootToAppsMACHD, rootToAppsUSER]
-	// fmt.Println("PATH LEN: ", paths.length)
-	// for (i = 0; i < paths.length; i++) {
-
-	// filepath.Walk(rootToAppsSYSTEM, func(getRoot string, fileInfo os.FileInfo, _ error) error {
-	// 	if filepath.Ext(getRoot) == ext {
-	// 		app := fileInfo.Name()
-	// 		name := app[0 : len(app)-len(ext)]
-	// 		appList += string("0" + name + "\n")
-
-	// 		// fmt.Printf(appnames)
-	// 		// fmt.Print(name)
-
-	// 	}
-	// 	return nil
-	// })
-
-	// filepath.Walk(rootToAppsMACHD, func(getRoot string, fileInfo os.FileInfo, _ error) error {
-	// 	if filepath.Ext(getRoot) == ext {
-	// 		app := fileInfo.Name()
-	// 		name := app[0 : len(app)-len(ext)]
-	// 		appList += string("1" + name + "\n")
-
-	// 		// fmt.Printf(appnames)
-	// 		// fmt.Print(name)
-
-	// 	}
-	// 	return nil
-	// })
-	// filepath.Walk(rootToAppsUSER, func(getRoot string, fileInfo os.FileInfo, _ error) error {
-	// 	if filepath.Ext(getRoot) == ext {
-	// 		app := fileInfo.Name()
-	// 		name := app[0 : len(app)-len(ext)]
-	// 		appList += string("2" + name + "\n")
-
-	// fmt.Printf(appnames)
-	// fmt.Print(name)
-
-	// }
-	// return nil
-	// })
-
 }
 
 func getApplications(appnames string) {
 
-	// THIS IS THE LOCATION FOR MY APPLICATIONS - THIS ACTUAL PATH IS NEEDED TO OPEN THE FILE
-	// rootToAppsSYSTEM := "/Volumes/Macintosh HD/System/Applications/"
-	// rootToAppsMACHD := "/Volumes/Macintosh HD/Applications/"
-	// rootToAppsUSER := "/Volumes/Macintosh HD/Users/{USER_NAME}/Applications/"
-
-	// var rootToAppsSYSTEM string
-	// var rootToAppsMACHD string
-	// var rootToAppsUSER string
-	// paths := [rootToAppsSYSTEM, rootToAppsMACHD, rootToAppsUSER]
-	// fmt.Printf("root to apps: ", string(rootToApps)+"\n")
-
-	// appDir, err := ioutil.ReadFile("appDir.txt")
-	// if err != nil {
-	// 	fmt.Println(err)
-	// }
+	// THIS IS THE LOCATION FOR MY APPLICATIONS - THE ACTUAL PATH IS NEEDED TO OPEN THE FILE
 
 	// GO THROUGH THE APP LIST ONCE, COMPARE THE APPNAMES TO EACH ITEM IN THE APPLIST
 	// Once you find the app, grab the number in front of it, and go in order through the routes
@@ -364,82 +259,6 @@ func getApplications(appnames string) {
 	}
 }
 
-// fmt.Println("OPENING APPS")
-
-// result2 := strings.Split(string(appDir), ",")
-
-// fmt.Print("APPNAMES: ", appnames, "\n")
-
-// NEED TO OPTIMIZE FOR EFFICIENT SEARCHING
-// 	i := 0
-// 	for scanner.Scan() {
-// 		// LOOP - does anything in app dir = any of the app names in profile ??
-// 		if i == 0 {
-// 			rootToAppsSYSTEM = scanner.Text()
-// 			// fmt.Println("SYSTEM ", rootToAppsSYSTEM)
-// 		}
-// 		if i == 1 {
-// 			rootToAppsMACHD = scanner.Text()
-// 			// fmt.Println("MACHD ", rootToAppsMACHD)
-
-// 		}
-// 		if i == 2 {
-// 			rootToAppsUSER = scanner.Text()
-// 			// fmt.Println("USER PATH ", rootToAppsUSER)
-
-// 		}
-// 		// fmt.Println(i)
-// 		i++
-
-// 		for _, item := range result {
-// 			// fmt.Print(item, "\n")
-
-// 			// fmt.Print(item2, "\n")
-// 			// fmt.Print(item, " ... ", string(scanner.Text()), "\n")
-
-// 			if string(item) == string(scanner.Text()[1:]) {
-// 				rootID := string(scanner.Text()[:1])
-// 				// rootID := app[0]
-// 				// fmt.Println("ROOTID: ", rootID)
-// 				// fmt.Print(" WE HAVE A WINNER !!!!!!! \n")
-// 				// fmt.Print("\n" + "Opening " + string(item) + "\n")
-
-// 				if rootID == "0" {
-// 					rootToApp := rootToAppsSYSTEM + "/" + item + ext
-// 					// fmt.Printf(rootToApp)
-// 					// fmt.Print("Opening " + string(item) + "\n")
-// 					err := open.Run(string(rootToApp))
-// 					if err != nil {
-// 						fmt.Print(err)
-// 					}
-// 				}
-// 				if rootID == "1" {
-// 					rootToApp := rootToAppsMACHD + "/" + item + ext
-// 					// fmt.Printf(rootToApp)
-// 					// fmt.Print("Opening " + string(item) + "\n")
-// 					err := open.Run(string(rootToApp))
-// 					if err != nil {
-// 						fmt.Print(err)
-// 					}
-// 				}
-// 				if rootID == "2" {
-// 					rootToApp := rootToAppsUSER + "/" + item + ext
-// 					// fmt.Printf(rootToApp)
-// 					// fmt.Print("Opening " + string(item) + "\n")
-// 					err := open.Run(string(rootToApp))
-// 					if err != nil {
-// 						fmt.Print(err)
-// 					}
-// 				}
-
-// 			}
-// 		}
-// 	}
-
-// 	// fmt.Printf("appList: ", appList)
-// 	return
-// }
-
 func writeToFile(file string, content string, ext string) {
 	// CREATING A NEW PROFILE or ADDING TO EXISTING PROFILE
 	// NOT USED IN MAIN,
@@ -500,7 +319,7 @@ func main() {
 		fmt.Println("- Create or add to a profile using -add followed by 'app' or 'url', then enter the app names")
 		fmt.Println("- Delete the same way with -del")
 		fmt.Println("- Type anything for a yes flag, type 'no' for no flag (check the defaults with -help)")
-		fmt.Println("- Currently case sensitive, apps must be typed exactly as shown on your pc or in the app directory")
+		fmt.Println("- Currently case sensitive, apps must be typed EXACTLY as shown on your pc or in the app directory")
 		fmt.Println("If you're having trouble specifying an app, find it in the appDir.txt file (which is being created now) and ignore the number in front of it when typing it in")
 		fmt.Println("If you added more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.")
 		fmt.Println(" ")

@@ -16,20 +16,16 @@ Note: This was built in Go on a Mac (for a Mac)
 
 1. Download / clone this repo
 
-2. In the main.go file, there are *two places* where routes to your Applications folders are specified. You will need to change the `{USER-NAME}` part in both places to whatever your the name of your User is on your pc. The locations are specified below. If you don't know or want a list of users, in the cli type in `ls /users`. 
+2. Run `go run main.go` -> this will walk you through creating your app directory file
 
-    * :exclamation: Location 1: In main.go > line 112 > at the end of rootToAppsUser > replace {USER-NAME} with your user    ( inside func createAppDir() )
-    * :bangbang: Location 2: In main.go > line 186 > at the end of rootToAppsUSER > replace {USER-NAME} with your user    ( inside func getApplications() )
-
-
-3. Run `go run main.go` -> this will create your app directory file
-
-4. You're ready to roll! Checkout the commands and the example below
+3. You're ready to roll! Checkout the commands and the example below
 
 
 ## :mega: Commands:
 
-* list profiles: `go run main.go` 
+* When you first download the package, run `go run main.go`, this will give you instructions on providing your Applications folders
+
+* list available profiles: `go run main.go` 
 
 * open a profile:  `go run main.go -pf profile-name` 
 * list profile contents: `go run main.go -pf profile-name`
@@ -67,21 +63,19 @@ You should get a confirmation message after making changes to any profile.
 
 ## :warning: IMPORTANT:
 
-### PROFILES: 
-* No spaces in the profile ".txt" file, if an app has spaces in the name, add it to the file manually "app:Visual Studio Code"
-(empty lines are fine)
+### Input: 
 
 * For urls do not include "https://www."
 
-### INPUT:
 * Type anything for yes, type "no" for no, more details can be found about the input by typing the "-help" flag: go run main.go -help (Exception: for -del flag when deleting a profile -> must be the profile name or "profile")
 
 * Currently case sensitive - apps must be typed exactly as shown on your pc
 
-* If you're having trouble specifying an app, find it in the appDir.txt file (which is being created now) and ignore the number in front of it")
+* If you're having trouble specifying an app, find it in the appDir.txt file (which is created when you first run `go run main.go`) and ignore the number in front of it")
 
 ### APP DIRECTORY:
-* If you added more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.
+
+* If you added more new apps to your pc, just delete the appDir file and a new one will be created for you next time you run the program.
 
 
 
