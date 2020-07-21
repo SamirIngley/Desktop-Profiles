@@ -181,7 +181,7 @@ func createAppDir() {
 	fmt.Println("App Directory created >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 	fmt.Println("bytes written: ", n)
 	fmt.Println("-----------------------------------------------------------")
-	fmt.Println("SUCCESS: type 'go run main.go -help' for a list of actions")
+	fmt.Println("SUCCESS: type 'go run desk.go -help' for a list of actions")
 
 }
 
@@ -527,7 +527,7 @@ func main() {
 			}
 		}
 
-		fmt.Println(appsToDel)
+		// fmt.Println(appsToDel)
 
 		if seekProfile(ext, *pf) {
 			// access file, open it
@@ -585,7 +585,7 @@ func main() {
 			}
 		}
 
-		fmt.Println(urlsToDel)
+		// fmt.Println(urlsToDel)
 
 		if seekProfile(ext, *pf) {
 			// access file, open it
@@ -616,7 +616,7 @@ func main() {
 				}
 				// loop through all the lines and if found still false, let us know
 				if found == false {
-					fmt.Println("Could not find ", item, " in ", *pf)
+					fmt.Println("Could not find ", item, " in ", *pf, "make sure it's spelled correctly and has no trailing spaces")
 				}
 			}
 

@@ -1,9 +1,0 @@
-
-url:https://github.com/SamirIngley/Desk-Profile
-url:https://make-school-courses.github.io/BEW-2.5-Strongly-Typed-Languages/#/Lessons/DocsDeploy
-url:https://medium.com/@ben.lafferty/deploying-go-cli-applications-316e9cca16a4
-url:https://goreleaser.com/
-url:https://medium.com/@adron/learning-go-episode-1-environment-go-workspace-gopath-goroot-types-and-more-introduction-f04284d84c86
-url:https://www.youtube.com/watch?v=lqIG0EBbRbQ&feature=emb_logo
-
-url:zillow.com
