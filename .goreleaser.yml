@@ -8,7 +8,7 @@ before:
 builds:
     - binary: dp
       env:
-          - CGO_ENABLED=1
+          - CGO_ENABLED=0
           - GO111MODULE=on
           - CC=o64-clang
           - CXX=o64-clang++
@@ -39,7 +39,7 @@ archives:
           freebsd: FreeBSD
           dragonfly: DragonFlyBSD
       files:
-          - Readme.md
+          - Readme.MD
           - LICENSE
 checksum:
     name_template: 'checksums.txt'
