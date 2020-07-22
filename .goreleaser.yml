@@ -1,6 +1,6 @@
 env:
     - GO111MODULE=on
-    - CGO_ENABLED=1
+    - CGO_ENABLED=0
 before:
     hooks:
         - go mod tidy
@@ -39,7 +39,7 @@ archives:
           freebsd: FreeBSD
           dragonfly: DragonFlyBSD
       files:
-          - Readme.MD
+          - Readme.md
           - LICENSE
 checksum:
     name_template: 'checksums.txt'
