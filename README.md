@@ -1,4 +1,4 @@
-# Desk Profile
+# Desktop Profiles
 
 App & website launcher
 Create any number of profiles to open any combination of your frequently used apps and websites from the cli at once! 
