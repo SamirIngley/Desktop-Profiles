@@ -20,7 +20,6 @@ builds:
       ignore:
           - goos: darwin
             goarch: 386
-
 archives:
     - format: tar.gz
       format_overrides:
