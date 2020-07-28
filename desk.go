@@ -181,7 +181,8 @@ func createAppDir() {
 	fmt.Println("App Directory created >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 	fmt.Println("bytes written: ", n)
 	fmt.Println("-----------------------------------------------------------")
-	fmt.Println("SUCCESS: type 'go run desk.go -help' for a list of actions")
+	fmt.Println("SUCCESS: type 'go run desk.go -help' for a list of options")
+	fmt.Println("For a more detailed guide, visit: https://github.com/SamirIngley/Desktop-Profiles")
 
 }
 
