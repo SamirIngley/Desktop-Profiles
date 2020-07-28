@@ -40,7 +40,7 @@ Note: This was built in Go on a Mac (for a Mac)
 
 * to create a profile, type the name of the profile and the app or url you'd like to add:  `go run desk.go -pf profile-name -add app`. Type `done` when you've finished adding. If you want to add a url, change `app` to `url`. 
 
-* to add to an existing profile: `go run desk.go -pf profile-name -add app:app-name`
+* to add to an existing profile: `go run desk.go -pf profile-name -add app`
 
 * delete app or url:  `go run desk.go -pf profile-name -del url` and type the names one by one hitting Enter after each. Type `done` when finished
 
