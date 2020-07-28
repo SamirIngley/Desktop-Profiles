@@ -14,49 +14,77 @@ Note: This was built in Go on a Mac (for a Mac)
 
 ## :floppy_disk: Install:
 
-1. Download / clone this repo
+0. Install go - here are some great [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
+
+1. Download / clone this repo. Then 'cd' into it.
 
 2. Run `go run desk.go` -> this will walk you through creating your app directory file
 
-3. You're ready to roll! Checkout the commands and the example below
+3. You're ready to roll! Checkout the commands and walk through the example below
 
+4. For a list of the available flags, type `go run desk.go -help`
 
 ## :mega: Commands:
 
-* When you first download the package, run `go run desk.go`, this will give you instructions on providing your Applications folders
+* When you download the package, run `go run desk.go`, this will give you instructions on providing the routes to the Applications folders you want to be able to access using this app
+    - 3 of the most common routes for locations of Applications on Mac are shown at the bottom, just copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
+    - Don't worry, if you find out you want to add more paths to Applications folders later - just delete the appDir file and run `go run desk.go`, now re-add all the paths you'd like to include
+
+* list of input options: `go run desk.go -help`
 
 * list available profiles: `go run desk.go` 
 
-* open a profile:  `go run desk.go -pf profile-name` 
-* list profile contents: `go run desk.go -pf profile-name`
+* list profile contents: `go run desk.go -pf profile-name -l y -o n`
 
-* create or add:  `go run desk.go -pf profile-name -add app:app-name`
-* delete app or ul:  `go run desk.go -pf profile-name -del url:website.com`
+* open a profile:  `go run desk.go -pf profile-name` 
+
+* to create a profile, type the name of the profile and the app or url you'd like to add:  `go run desk.go -pf profile-name -add app`. Type `done` when you've finished adding. If you want to add a url, change `app` to `url`. 
+
+* to add to an existing profile: `go run desk.go -pf profile-name -add app:app-name`
+
+* delete app or url:  `go run desk.go -pf profile-name -del url` and type the names one by one hitting Enter after each. Type `done` when finished
 
 * to delete profile:  `go run desk.go -pf -del profile-name`
 
 
 ## :goal_net: Example:
 
-An example profile has been provided in the profiles/ folder
-all your profiles will be in this folder as well. 
+An example profile has been provided in the profiles/ folder.
+All your profiles can be found in this folder as well. 
 
 To run the example, type:
 `go run desk.go -pf example`
 
-To add an app (Slack) to the example, type:
-`go run desk.go -pf example -add app:Slack`
+### To add an app (Slack) to the example, type:
+`go run desk.go -pf example -add app`
+Then type:
+`Slack`
+And hit Enter.
 
-To add a website (Google) to the example, type:
-`go run desk.go -pf example -add url:google.com`
+You've now added Slack to your profile, type the name of any other apps you'd like in this profile and hit enter after each one. 
 
-Same for deleting, except use the `-del` flag
+Then type:
+`done`
+and hit Enter when you've finished. 
 
-To CREATE YOUR OWN PROFILE called "work" with gmail, type:
-`go run desk.go -pf work -add url:gmail.com`
+### To add a website (Google) to the example, type:
+`go run desk.go -pf example -add url`
+and hit Enter.
 
-To Delete a profile:
-`go run desk.go -pf work -del work`
+Now, type:
+`google.com`
+And hit Enter.
+
+You've now added google.com, type the name of any other websites you'd like and hit enter after each one. 
+
+And finally:
+`done`
+when you're finished. 
+
+### To delete an app or url, do the same as above for adding, except use the `-del` flag instead of `-add`
+
+### To delete a profile:
+`go run desk.go -pf profile-name -del work`
 
 You should get a confirmation message after making changes to any profile. 
 

@@ -108,20 +108,19 @@ func createAppDir() {
 	// If you know the path you can change rootToApps to the path here, and in the
 	// getApplications function
 
-	fmt.Println(" --------------------------------------------------------------------------")
-	fmt.Println("**** These are the default paths to locations of app directories (3) *****")
-	fmt.Println("   - Add as many or all of the paths to Applications as you like")
-	fmt.Println("   - if you have different locations, modify the paths here")
-	fmt.Println("   - if you find out you have different locations later, just delete the appDir file and run the program again.")
+	fmt.Println(" INSTRUCTIONS ~:..;:~~:>~>~:>~<>:~<<>?~>~:>~?~><:~>?<~>?><~?<>>~>:~?~:>~:?>~<>:>")
+	fmt.Println("**** These are the 3 default paths to locations of app directories on Mac *****")
 	fmt.Println("1.  Change the paths to fit the locations of your apps on your computer as needed")
-	fmt.Println("2.  Copy / Paste the paths below, don't forget to change {USER-NAME} to your computer User name")
-	fmt.Println("3.  type 'done' when you've finished")
+	fmt.Println("2.  Copy & Paste the paths below, change {USER-NAME} to your computer User name, then hit Enter")
+	fmt.Println("3.  type 'done' and Enter when you've finished")
+	fmt.Println("   - Add as many or modify the paths to Applications as you see fit")
+	fmt.Println("   - if you find out you have different locations later, just delete the appDir file and run the program again.")
 	fmt.Println("These paths are locations to your: Mac system apps, Mac Hard Disk apps, Mac User apps")
-	fmt.Println("-------")
+	fmt.Println("----------------------------")
 	fmt.Println("/Volumes/Macintosh HD/System/Applications")
 	fmt.Println("/Volumes/Macintosh HD/Applications")
 	fmt.Println("/Volumes/Macintosh HD/Users/{USER-NAME}/Applications")
-	fmt.Println("-------")
+	fmt.Println("----------------------------")
 
 	var dirsArray []string
 	var appList string
@@ -284,8 +283,8 @@ func main() {
 	// figure out if adding to a profile or opening a profile
 	// if profile exists, will be added to profile
 	// if profile dne, will be created and added to
-	pf := flag.String("pf", "profile-name", "profile name")
-	l := flag.String("l", "no", "list the contents of the profile")
+	pf := flag.String("pf", "profile-name", "name of the profile")
+	l := flag.String("l", "no", "list contents of the profile")
 	o := flag.String("o", "yes", "open this profile")
 	add := flag.String("add", "no", "specify 'app' or 'url' to create new profile or add to an existing profile")
 	del := flag.String("del", "no", "deletes profile if 'profile' or name of profile is typed, otherwise deletes app or url entered")
@@ -306,21 +305,17 @@ func main() {
 	if !(checkIfAppDir()) {
 		fmt.Println("SOME HELPFUL TIPS -------------------------------------------------")
 		fmt.Println("")
-		fmt.Println("*** DETAILED INSTRUCTIONS: https://github.com/SamirIngley/Desk-Profile")
+		fmt.Println("*** DETAILED INSTRUCTIONS: https://github.com/SamirIngley/Desk-Profiles")
 		fmt.Println("")
 		fmt.Println("NOTE: ")
-		fmt.Println("** This only happens the first time you run the program")
-		fmt.Println("** If you encounter an error with this step, or apps won't load, you'll need to specify the path to your Applications folder")
-		fmt.Println("** Instructions can be found at README https://www.github.com/SamirIngley/Desk-Profile")
+		fmt.Println("** This only happens the first time you run the program, or if you delete your app directory")
+		fmt.Println("** If you encounter an error with this step, or apps won't load, you'll need to specify correct paths to those Applications folders")
+		fmt.Println("** Instructions can be found at README https://www.github.com/SamirIngley/Desk-Profiles")
 		fmt.Println(" ")
 		fmt.Println("IMPORTANT: ")
-		fmt.Println("- For urls do not include 'https://www.' ")
-		fmt.Println("- Create or add to a profile using -add followed by 'app' or 'url', then enter the app names")
-		fmt.Println("- Delete the same way with -del")
-		fmt.Println("- Type anything for a yes flag, type 'no' for no flag (check the defaults with -help)")
-		fmt.Println("- Currently case sensitive, apps must be typed EXACTLY as shown on your pc or in the app directory")
-		fmt.Println("If you're having trouble specifying an app, find it in the appDir.txt file (which is being created now) and ignore the number in front of it when typing it in")
-		fmt.Println("If you added more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.")
+		fmt.Println("- Apps are case sensitive, apps must be typed EXACTLY as shown on your pc / in the app directory")
+		fmt.Println("- If you're having trouble specifying an app, find it in the appDir.txt file (which will be created after this step) and ignore the number in front of it when typing it in")
+		fmt.Println("- If you added more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.")
 		fmt.Println(" ")
 		fmt.Println(" *** Read the above, then add paths below, and you're all set ! *** ")
 		createAppDir()
