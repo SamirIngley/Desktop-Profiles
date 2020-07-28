@@ -108,10 +108,17 @@ func createAppDir() {
 	// If you know the path you can change rootToApps to the path here, and in the
 	// getApplications function
 
-	fmt.Println(">>>>>>>>>> INSTRUCTIONS ~~ ~~ ")
-
-	fmt.Println("**** Below are the 3 default paths to locations of app directories on Mac *****")
+	fmt.Println("We have to find all the apps on your computer and store their locations in order to access them quickly, to do this we do a one time sweep \nof your Applications folders with the paths you provide. We store the names of all the apps we find along with a code \nto their respective path in the format of the code number followed by the app name (ei: 2Postman) in the appDir.txt file. ")
 	fmt.Println(" ")
+
+	fmt.Println("Below are the instructions to provide the program with the routes to your Applications folders. Feel free to add your own other routes in one at a time.")
+	fmt.Println(" ")
+	fmt.Println(" ")
+
+	fmt.Println(">>>>>>>>>> INSTRUCTIONS ~~ ~~ ")
+	fmt.Println(" ")
+
+	fmt.Println("**** Below are the 3 default paths to locations of app directories on a Mac *****")
 	fmt.Println(" ")
 
 	fmt.Println("1.  Copy & Paste the paths below (/Volumes...)")
@@ -123,7 +130,7 @@ func createAppDir() {
 	fmt.Println("3.  These should work for most Macs. If you have other locations for Applications, feel free to add those paths as well")
 	fmt.Println(" ")
 
-	fmt.Println("4.  When you've finished adding paths, type 'done' and hit Enter")
+	fmt.Println("4.  When you've finished adding paths, type 'done' on a new line and hit Enter")
 	fmt.Println(" ")
 	fmt.Println(" ")
 
@@ -322,6 +329,7 @@ func main() {
 
 	// CREATE APP DIRECTORY --------------------------------------------------------- appDir text File
 	if !(checkIfAppDir()) {
+		fmt.Println(" ")
 		fmt.Println(">>>>> WELCOME TO DESKTOP PROFILES")
 		fmt.Println(" ")
 		createAppDir()
