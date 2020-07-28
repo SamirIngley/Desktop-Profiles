@@ -14,7 +14,7 @@ Note: This was built in Go on a Mac (for a Mac)
 
 ## :floppy_disk: Install:
 
-0. Install go - here are some great [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
+0. Install go and configure your GOPATH - here are some great [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
 
 1. Download / clone this repo. Then 'cd' into it.
 

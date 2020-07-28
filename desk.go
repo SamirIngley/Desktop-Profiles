@@ -108,13 +108,13 @@ func createAppDir() {
 	// If you know the path you can change rootToApps to the path here, and in the
 	// getApplications function
 
-	fmt.Println(" INSTRUCTIONS ~~ ~~ ")
+	fmt.Println(">>>>>>>>>> INSTRUCTIONS ~~ ~~ ")
 	fmt.Println("************ Read the above, follow directions to add paths below, and you're all set! *************")
 	fmt.Println("**** Below are the 3 default paths to locations of app directories on Mac *****")
 	fmt.Println("1.  Copy & Paste the paths below (/Volumes...)")
 	fmt.Println("2.  Change {USER-NAME} to your computer User name and hit Enter")
 	fmt.Println("3.  These should work for most Macs. If you have other locations for Applications, feel free to add those paths as well")
-	fmt.Println("4.  On the next empty line, type 'done' and hit Enter when you've finished")
+	fmt.Println("4.  When you've finished adding paths, type 'done' and hit Enter")
 	fmt.Println("*  If you encounter an error with this step: either your apps won't load, or find out you have more/different locations later, just delete the appDir.txt file, re run this program `go run desk.go`, and specify all the correct paths to your Applications folders - these provided default paths may not be enough for the apps you're calling")
 	fmt.Println("*  These paths are locations to your: Mac system apps, Mac Hard Disk apps, Mac User apps")
 	fmt.Println("----------------------------")
@@ -304,7 +304,9 @@ func main() {
 
 	// CREATE APP DIRECTORY --------------------------------------------------------- appDir text File
 	if !(checkIfAppDir()) {
-		fmt.Println("SOME HELPFUL TIPS -------------------------------------------------")
+		fmt.Println(">>>>> WELCOME TO DESKTOP PROFILES")
+		fmt.Println(" ")
+		fmt.Println(">>>>>> SOME HELPFUL TIPS -------------------------------------------------")
 		fmt.Println("")
 		fmt.Println("NOTE: ")
 		fmt.Println("** This only happens the first time you run the program, or if you delete your app directory")
