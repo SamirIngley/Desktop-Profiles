@@ -109,12 +109,24 @@ func createAppDir() {
 	// getApplications function
 
 	fmt.Println(">>>>>>>>>> INSTRUCTIONS ~~ ~~ ")
-	fmt.Println("************ Read the above, follow directions to add paths below, and you're all set! *************")
+
 	fmt.Println("**** Below are the 3 default paths to locations of app directories on Mac *****")
+	fmt.Println(" ")
+	fmt.Println(" ")
+
 	fmt.Println("1.  Copy & Paste the paths below (/Volumes...)")
+	fmt.Println(" ")
+
 	fmt.Println("2.  Change {USER-NAME} to your computer User name and hit Enter")
+	fmt.Println(" ")
+
 	fmt.Println("3.  These should work for most Macs. If you have other locations for Applications, feel free to add those paths as well")
+	fmt.Println(" ")
+
 	fmt.Println("4.  When you've finished adding paths, type 'done' and hit Enter")
+	fmt.Println(" ")
+	fmt.Println(" ")
+
 	fmt.Println("*  If you encounter an error with this step and your apps won't load, find the correct paths to your Applications folders, delete the appDir.txt file, re-run this program, and specify those App directories as well as or instead of the default ones supplied")
 	fmt.Println("*  If later you find out you have more/different locations, just delete the appDir.txt file, re-run this program, and specify all the correct paths")
 	fmt.Println("*  These paths are locations to your: Mac system apps, Mac Hard Disk apps, Mac User apps")
@@ -184,7 +196,11 @@ func createAppDir() {
 	fmt.Println("-----------------------------------------------------------")
 	fmt.Println("SUCCESS: type 'go run desk.go -help' for a list of options")
 	fmt.Println("For a more detailed guide, visit: https://github.com/SamirIngley/Desktop-Profiles")
-
+	fmt.Println("Important Info about using the app: ")
+	fmt.Println("- Apps are case sensitive, apps must be typed EXACTLY as shown on your pc / in the app directory")
+	fmt.Println("- If you're having trouble specifying an app, find it in the appDir.txt file (which will be created after this step) and ignore the number in front of it when typing it in")
+	fmt.Println("- If you add more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.")
+	fmt.Println(" ")
 }
 
 func getApplications(appnames string) {
@@ -307,17 +323,6 @@ func main() {
 	// CREATE APP DIRECTORY --------------------------------------------------------- appDir text File
 	if !(checkIfAppDir()) {
 		fmt.Println(">>>>> WELCOME TO DESKTOP PROFILES")
-		fmt.Println(" ")
-		fmt.Println(">>>>>> SOME HELPFUL TIPS -------------------------------------------------")
-		fmt.Println("")
-		fmt.Println("NOTE: ")
-		fmt.Println("** This only happens the first time you run the program, or if you delete your app directory")
-		fmt.Println("** Instructions for using this app can be found at README https://www.github.com/SamirIngley/Desk-Profiles")
-		fmt.Println(" ")
-		fmt.Println("Important Info about using the app: ")
-		fmt.Println("- Apps are case sensitive, apps must be typed EXACTLY as shown on your pc / in the app directory")
-		fmt.Println("- If you're having trouble specifying an app, find it in the appDir.txt file (which will be created after this step) and ignore the number in front of it when typing it in")
-		fmt.Println("- If you added more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.")
 		fmt.Println(" ")
 		createAppDir()
 	}
