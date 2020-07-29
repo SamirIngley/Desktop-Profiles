@@ -30,6 +30,8 @@ Note: This was built in Go on a Mac (for a Mac)
 ## :earth_africa: Install as an Executable: 
 Do this to access the app from anywhere and have an easier command
 
+0. If you don't have go installed and a GOPATH, here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go) 
+
 1. Once you download this repo, cd into it and type `go build`. This will create a binary file called desk. 
 
 2. Go to these [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go), and in that link go through step 5 to make sure your GOPATH in the ~/.bash_profile is created properly. 
