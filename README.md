@@ -32,7 +32,7 @@ Do this to access the app from anywhere and have an easier command
 
 1. Once you download this repo, cd into it and type `go build`. This will create a binary file called desk. 
 
-2. Go to the detailed instructions link in step 0, and in that link go through step 5 to make sure your GOPATH in the ~/.bash_profile is created properly. 
+2. Go to these [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go), and in that link go through step 5 to make sure your GOPATH in the ~/.bash_profile is created properly. 
 
 3. Make sure you're directly inside this DesktopProfiles directory you downloaded. Now we add the executable to your bin file with the command `go install`
 
