@@ -84,7 +84,7 @@ when you're finished.
 ### To delete an app or url, do the same as above for adding, except use the `-del` flag instead of `-add`
 
 ### To delete a profile:
-`go run desk.go -pf profile-name -del work`
+`go run desk.go -pf profile-name -del profile-name`
 
 You should get a confirmation message after making changes to any profile. 
 
