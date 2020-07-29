@@ -27,7 +27,16 @@ Note: This was built in Go on a Mac (for a Mac)
 
 4. For a list of the available flags, type `go run desk.go -help`
 
-** Cherry on top: If you'd like to allow this tool to work globally and without having to type `go run desk.go` every time, let's make it an executable and add it to your path, it's easy: once you download this repo, cd into it and type `go build`. This will create a binary file called desk. Go to the detailed instructions link in step 0, and in that link go through step 5 to make sure your GOPATH in the ~/.bash_profile is created properly. Now we add the executable to your bin file with the command `go install`. Now you should have access to this executable globally and instead of typing `go run main.go` before all your commands, just type `desk` instead! Woohoo! Let the convenience begin. 
+## :earth_africa: Install as an Executable: (better option)
+Do this to access the app from anywhere and have an easier command
+
+1. Once you download this repo, cd into it and type `go build`. This will create a binary file called desk. 
+
+2. Go to the detailed instructions link in step 0, and in that link go through step 5 to make sure your GOPATH in the ~/.bash_profile is created properly. 
+
+3. Make sure you're directly inside this DesktopProfiles directory you downloaded. Now we add the executable to your bin file with the command `go install`
+
+4. You should have access to this executable globally - instead of typing `go run main.go` before all your commands, just type `desk` instead! 
 
 ## :mega: Commands:
 
