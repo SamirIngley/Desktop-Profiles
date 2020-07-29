@@ -8,6 +8,9 @@ Create any number of profiles to open any combination of your frequently used ap
 Note: This was built in Go on a Mac (for a Mac)
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 
 ![Image1](gopherIMG.png)
 ************************************************************************************************
@@ -28,23 +31,23 @@ Note: This was built in Go on a Mac (for a Mac)
 
 * When you download the package, run `go run desk.go`, this will give you instructions on providing the routes to the Applications folders you want to be able to access using this app
     - 3 of the most common routes for locations of Applications on Mac are shown at the bottom, just copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
-    - Don't worry, if you find out you want to add more paths to Applications folders later - just delete the appDir file and run `go run desk.go`, now re-add all the paths you'd like to include
+    - Don't worry, if you download new apps or find out you want to add more paths to Applications folders later - just delete the appDir file and run `go run desk.go`, now re-add all the paths you'd like to include
 
-* list of input options: `go run desk.go -help`
+* List of input options: `go run desk.go -help`
 
-* list available profiles: `go run desk.go` 
+* List available profiles: `go run desk.go` 
 
-* list profile contents: `go run desk.go -pf profile-name -l y -o n`
+* List contents of a profile: `go run desk.go -pf profile-name -l y -o n` (this means the list flag is set to yes, and open flag set to no)
 
-* open a profile:  `go run desk.go -pf profile-name` 
+* Open a profile:  `go run desk.go -pf profile-name` 
 
-* to create a profile, type the name of the profile and the app or url you'd like to add:  `go run desk.go -pf profile-name -add app`. Type `done` when you've finished adding. If you want to add a url, change `app` to `url`. 
+* Create a profile, type the name of the profile and the app or url you'd like to add:  `go run desk.go -pf profile-name -add app`. Replace `app` with `url` if you want to add urls. Then type done and hit enter when you're finished.
 
-* to add to an existing profile: `go run desk.go -pf profile-name -add app`
+* Add to an existing profile: `go run desk.go -pf profile-name -add app`. Replace `app` with `url` if you want to add urls. Then type done and hit enter when you're finished.
 
-* delete app or url:  `go run desk.go -pf profile-name -del url` and type the names one by one hitting Enter after each. Type `done` when finished
+* Delete from profile:  `go run desk.go -pf profile-name -del url`. Replace `app` with `url` if you want to add urls. Then type done and hit enter when you're finished.
 
-* to delete profile:  `go run desk.go -pf -del profile-name`
+* Delete profile:  `go run desk.go -pf profile-name -del profile-name`
 
 
 ## :goal_net: Example:
@@ -84,7 +87,7 @@ when you're finished.
 ### To delete an app or url, do the same as above for adding, except use the `-del` flag instead of `-add`
 
 ### To delete a profile:
-`go run desk.go -pf profile-name -del work`
+`go run desk.go -pf profile-name -del profile-name`
 
 You should get a confirmation message after making changes to any profile. 
 
