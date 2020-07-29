@@ -108,10 +108,9 @@ func createAppDir() {
 	// If you know the path you can change rootToApps to the path here, and in the
 	// getApplications function
 
-	fmt.Println("We have to find all the apps on your computer and store their locations in order to access them quickly, to do this we do a one time sweep \nof your Applications folders with the paths you provide. We store the names of all the apps we find along with a code \nto their respective path in the format of the code number followed by the app name (ei: 2Postman) in the appDir.txt file. ")
-	fmt.Println(" ")
-
-	fmt.Println("Below are the instructions to provide the program with the routes to your Applications folders. Feel free to add your own other routes in one at a time.")
+	fmt.Println("Before we start creating profiles, we have to find all the apps on your computer and store their locations in order to access them quickly,")
+	fmt.Println("to do this we do a one time sweep of your Applications folders. Below are instructions to provide the paths to your Applications folders. ")
+	fmt.Println("Feel free to add your own paths as well. Once you've completed these steps, creation of your App Directory (appDir.txt) will commmence.")
 	fmt.Println(" ")
 	fmt.Println(" ")
 
@@ -127,14 +126,14 @@ func createAppDir() {
 	fmt.Println("2.  Change {USER-NAME} to your computer User name and hit Enter")
 	fmt.Println(" ")
 
-	fmt.Println("3.  These should work for most Macs. If you have other locations for Applications, feel free to add those paths as well")
+	fmt.Println("3.  These should be enough locations for most Macs. If you have other locations, feel free to add other paths as well")
 	fmt.Println(" ")
 
 	fmt.Println("4.  When you've finished adding paths, type 'done' on a new line and hit Enter")
 	fmt.Println(" ")
 	fmt.Println(" ")
 
-	fmt.Println("*  If later you find out you have more/different locations, just delete the appDir.txt file, re-run this program, and specify all the correct paths")
+	fmt.Println("*  If later you find out you have more/different locations, just delete the appDir.txt file and re-run this program - you will get this same setup guide again.")
 	fmt.Println("*  These paths are locations to your: Mac system apps, Mac Hard Disk apps, Mac User apps")
 	fmt.Println("----------------------------")
 	fmt.Println("/Volumes/Macintosh HD/System/Applications")
@@ -200,8 +199,10 @@ func createAppDir() {
 	fmt.Println("App Directory created >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 	fmt.Println("bytes written: ", n)
 	fmt.Println("-----------------------------------------------------------")
-	fmt.Println("SUCCESS: type 'go run desk.go -help' for a list of options")
-	fmt.Println("For a more detailed guide, visit: https://github.com/SamirIngley/Desktop-Profiles")
+	fmt.Println("SUCCESS: You're ready to begin creating profiles! It's easy!")
+	fmt.Println("For a detailed guide, visit: https://github.com/SamirIngley/Desktop-Profiles")
+	fmt.Println("type 'go run desk.go -help' for a list of options")
+	fmt.Println(" ")
 	fmt.Println("Important Info about using the app: ")
 	fmt.Println("- If you encounter an error with this step and your apps won't load, find the correct paths to your Applications folders, delete the appDir.txt file, re-run this program, and specify those App directories as well as or instead of the default ones supplied")
 	fmt.Println("- Apps are case sensitive, apps must be typed EXACTLY as shown on your pc / in the app directory")
