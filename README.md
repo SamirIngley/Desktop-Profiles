@@ -27,7 +27,7 @@ Note: This was built in Go on a Mac (for a Mac)
 
 4. For a list of the available flags, type `go run desk.go -help`
 
-## :earth_africa: Install as an Executable: (better option)
+## :earth_africa: Install as an Executable: 
 Do this to access the app from anywhere and have an easier command
 
 1. Once you download this repo, cd into it and type `go build`. This will create a binary file called desk. 
