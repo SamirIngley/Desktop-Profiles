@@ -1,4 +1,4 @@
-module DesktopProfiles
+module desk
 
 go 1.14
 
