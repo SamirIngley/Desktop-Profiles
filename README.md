@@ -17,7 +17,7 @@ Note: This was built in Go on a Mac (for a Mac)
 
 ## :floppy_disk: Install:
 
-0. Install go and configure your GOPATH - here are some great [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
+0. Install go and configure your GOPATH - here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
 1. Download / clone this repo. Then 'cd' into it.
 
@@ -26,6 +26,8 @@ Note: This was built in Go on a Mac (for a Mac)
 3. You're ready to roll! Checkout the commands and walk through the example below
 
 4. For a list of the available flags, type `go run desk.go -help`
+
+** Cherry on top: If you'd like to allow this tool to work globally and without having to type `go run desk.go` every time, let's make it an executable and add it to your path, it's easy: once you download this repo, cd into it and type `go build`. This will create a binary file called desk. Go to the detailed instructions link in step 0, and in that link go through step 5 to make sure your GOPATH in the ~/.bash_profile is created properly. Now we add the executable to your bin file with the command `go install`. Now you should have access to this executable globally and instead of typing `go run main.go` before all your commands, just type `desk` instead! Woohoo! Let the convenience begin. 
 
 ## :mega: Commands:
 
