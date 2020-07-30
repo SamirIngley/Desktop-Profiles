@@ -157,15 +157,18 @@ func createAppDir() {
 
 	ext := ".app"
 
-	// ADDING PROFILE PATH AT LINE 0
+	// ADDING PROFILE PATH AT LINE 0 and APP DIR PATH AT LINE 1
 	// get permanent path to profiles (append -> first line of appList, next few lines will the the paths)
-	profpath, err := os.Getwd()
+	path, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	profpath = profpath + "/profiles"
+	profpath := path + "/profiles"
+	appDirPath := "\n" + path + "/appDir.txt"
+
 	appList += profpath
+	appList += appDirPath
 	// fmt.Print("PROF PATH", profpath)
 
 	// ADDS DIRS FROM os.STDIN to DIRS ARRAY and APPLIST
@@ -184,9 +187,9 @@ func createAppDir() {
 	// fmt.Println("Dirs Array: ", dirsArray)
 
 	// STORE LOCATIONS IN FIRST FEW LINES OF APPDIR
-	// INDEX OF THESE LOCATIONS - THAT NUMBER IS PLACED IN FRONT OF THE APP SO WE KNOW WHERE TO FIND IT
-	// THE 0 LOCATION IS RESERVED FOR THE PATH TO THE PROFILES
-	i := 1
+	// INDEX OF THESE LOCATIONS - THAT NUMBER IS SELECTED PLACED IN FRONT OF THE APP SO WE KNOW WHERE TO FIND IT
+	// THE 0 LOCATION IS RESERVED FOR THE PATH TO THE PROFILES, 1 LOCATION IS RESERVED FOR APP DIRECTORY
+	i := 2
 	for _, item := range dirsArray {
 		// for each directory, walk the path and grab all the apps there, assign them your number
 		path := item
@@ -761,7 +764,7 @@ func main() {
 			fmt.Println("Typo? We couldn't find that profile")
 		}
 
-	} else if *del != "no" && *del != *pf {
+	} else if *del != "no" && *del != *pf && *del != "profile" {
 		fmt.Println("Try again - specify what you want to delete '-del app' or '-del url'")
 	}
 
