@@ -48,7 +48,7 @@ Do this to access the app from anywhere and have an easier command
 
 * List available profiles: `go run desk.go` 
 
-* List contents of a profile: `go run desk.go -pf profile-name -l y -o n` (this means the list flag is set to yes, and open flag set to no)
+* List contents of a profile: `go run desk.go -pf profile-name -l y` (set the -l flag to anything but "no")
 
 * Open a profile:  `go run desk.go -pf profile-name` 
 
@@ -123,6 +123,8 @@ You should get a confirmation message after making changes to any profile.
 Future updates:
 - needs to handle trailing space when deleting apps
 - need to be able to close apps and urls too
+- DRY for reading profile
+- instead of appending to profile, look for blank line!
 
 
 

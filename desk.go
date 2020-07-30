@@ -17,18 +17,29 @@ import (
 )
 
 func seekProfile(ext string, name string) bool {
-	path, err := os.Getwd()
-	if err != nil {
-		log.Fatal(err)
-	}
 
 	extList := []string{}
-	path = path + "/profiles"
-	// fmt.Print(path)
+	apps := readFile("appDir.txt")
+
+	// scan through appDir
+	scanner := bufio.NewScanner(strings.NewReader(apps))
+
+	var profpath string
+	i := 0
+	for scanner.Scan() {
+		if i == 0 {
+			profpath = scanner.Text()
+			// fmt.Println("profpath ", profpath)
+			i++
+		} else {
+			break
+		}
+	}
 
 	// finds all txt files in current directory
-	filepath.Walk(path, func(path string, fileInfo os.FileInfo, _ error) error {
-		if filepath.Ext(path) == ext {
+	filepath.Walk(profpath, func(profpath string, fileInfo os.FileInfo, _ error) error {
+		// fmt.Println(fileInfo.Name(), filepath.Ext(profpath))
+		if filepath.Ext(profpath) == ext {
 			extList = append(extList, fileInfo.Name())
 		}
 		return nil
@@ -146,6 +157,18 @@ func createAppDir() {
 
 	ext := ".app"
 
+	// ADDING PROFILE PATH AT LINE 0
+	// get permanent path to profiles (append -> first line of appList, next few lines will the the paths)
+	profpath, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	profpath = profpath + "/profiles"
+	appList += profpath
+	// fmt.Print("PROF PATH", profpath)
+
+	// ADDS DIRS FROM os.STDIN to DIRS ARRAY and APPLIST
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -160,8 +183,12 @@ func createAppDir() {
 
 	// fmt.Println("Dirs Array: ", dirsArray)
 
-	i := 0
+	// STORE LOCATIONS IN FIRST FEW LINES OF APPDIR
+	// INDEX OF THESE LOCATIONS - THAT NUMBER IS PLACED IN FRONT OF THE APP SO WE KNOW WHERE TO FIND IT
+	// THE 0 LOCATION IS RESERVED FOR THE PATH TO THE PROFILES
+	i := 1
 	for _, item := range dirsArray {
+		// for each directory, walk the path and grab all the apps there, assign them your number
 		path := item
 		// fmt.Println("ITEM ITEM ITEM: ", item, i)
 		filepath.Walk(path, func(getRoot string, fileInfo os.FileInfo, _ error) error {
@@ -226,7 +253,7 @@ func getApplications(appnames string) {
 	// scan through appDir
 	scanner := bufio.NewScanner(strings.NewReader(apps))
 
-	// FINDS ALL THE APPS IN THE DIRECTORY ->  ADDS THEIR IDS TO APPSWITHID
+	// FINDS THE APPS TO OPEN IN THE APPDIR ->  ADDS THEIR IDS TO APPSWITHID
 	for scanner.Scan() {
 
 		for _, item := range appSplit {
@@ -240,14 +267,16 @@ func getApplications(appnames string) {
 					// fmt.Println("ROOTID: ", rootID)
 					// fmt.Print(" WE HAVE A WINNER !!!!!!! \n")
 					// fmt.Print("\n" + "Opening " + string(item) + "\n")
-					appsWithID = append(appsWithID, scanner.Text())
+					appsWithID = append(appsWithID, scanner.Text()) // FINDS THE APP WITH ITS ID
 				}
 			}
 		}
 	}
 
 	// TAKES ALL APPSWITHIDS, LOADS THEM FROM THEIR ID
+	// WE COMPARE THE APP ID WITH THE CORRESPONDING PATH NUMBERS
 	for _, item := range appsWithID {
+		// WE START WITH 0 (but there will never be a 0 id app bc that's reserved for profiles path)
 		i := 0
 		rootint := item[:1]
 		rootID, _ := strconv.Atoi(rootint)
@@ -259,6 +288,9 @@ func getApplications(appnames string) {
 			// fmt.Println(line)
 			// if the line number matches the rootID of the app
 			if line != "" {
+				// either we have a match, or the counter goes up by 1 and we move to the next line in the appDir
+				// we check our counter with the app id root id. 1 is the first path, 2 is the second.
+				// We intentionally skip 0 - that's reserved for profiles
 				if i == rootID { // COUNTER == APP ID
 					// we're at the right line so open the app with this line
 					rootToApp := line + "/" + itemAsStr + ext
@@ -327,6 +359,7 @@ func main() {
 	// openBrowser("https://www.google.com")
 
 	// CREATE APP DIRECTORY --------------------------------------------------------- appDir text File
+	fmt.Println("Checking if appdir")
 	if !(checkIfAppDir()) {
 		fmt.Println(" ")
 		fmt.Println(">>>>> WELCOME TO DESKTOP PROFILES")
@@ -336,18 +369,35 @@ func main() {
 
 	// SHOW ALL AVAILABLE PROFILES
 	if *pf == "profile-name" && *o == "yes" && *l == "no" && *add == "no" && *del == "no" {
-		path, err := os.Getwd()
-		if err != nil {
-			log.Fatal(err)
-		}
+		// path, err := os.Getwd()
+		// if err != nil {
+		// log.Fatal(err)
+		// }
 
 		extList := []string{}
-		path = path + "/profiles"
-		// fmt.Print(path)
+		// path = path + "/profiles"
+		// fmt.Print("PATH ", path)
+
+		apps := readFile("appDir.txt")
+
+		// scan through appDir
+		scanner := bufio.NewScanner(strings.NewReader(apps))
+
+		var profpath string
+		i := 0
+		for scanner.Scan() {
+			if i == 0 {
+				profpath = scanner.Text()
+				i++
+			} else {
+				break
+			}
+		}
+		// fmt.Println("prof path in show available profiles", profpath)
 
 		// finds all txt files in current directory
-		filepath.Walk(path, func(path string, fileInfo os.FileInfo, _ error) error {
-			if filepath.Ext(path) == ext {
+		filepath.Walk(profpath, func(profpath string, fileInfo os.FileInfo, _ error) error {
+			if filepath.Ext(profpath) == ext {
 				extList = append(extList, fileInfo.Name())
 			}
 			return nil
@@ -366,21 +416,47 @@ func main() {
 		// LISTS CURRENT PROFILE CONTENTS----------------------------------------------------------
 		if *l != "no" {
 			// access file, open them
-			path := "profiles/" + *pf + ext
-			data := readFile(path)
+			apps := readFile("appDir.txt")
+			// scan through appDir
+			scanner := bufio.NewScanner(strings.NewReader(apps))
+			var profpathplus string
+			i := 0
+			for scanner.Scan() {
+				if i == 0 {
+					profpathplus = scanner.Text() + "/" + *pf + ext
+					i++
+				} else {
+					break
+				}
+			}
+			data := readFile(profpathplus)
 			fmt.Println(data)
 		}
 
 		// OPENS PROFILE -------------------------------------------------------------------------------------
-		if *o == "yes" && *add == "no" && *del == "no" {
+		if *o == "yes" && *l == "no" && *add == "no" && *del == "no" {
 			fmt.Println("Opening " + *pf)
 
 			// access file, open them
-			data := readFile("profiles/" + *pf + ext)
-			// fmt.Printf(data)
+			apps := readFile("appDir.txt")
+			// scan through appDir
+			scanner := bufio.NewScanner(strings.NewReader(apps))
+			var profpathplus string
+			i := 0
+			for scanner.Scan() {
+				if i == 0 {
+					profpathplus = scanner.Text() + "/" + *pf + ext
+					i++
+				} else {
+					break
+				}
+			}
 
-			// scanner reads file line by line
-			scanner := bufio.NewScanner(strings.NewReader(data))
+			// access file, open them
+			data := readFile(profpathplus)
+
+			// reassign scanner reads file line by line
+			scanner = bufio.NewScanner(strings.NewReader(data))
 			var applications string
 
 			//GO THROUGH PROFILE --------------------------------------- SEPARATE APPS AND URLS then OPEN EACH
@@ -422,7 +498,21 @@ func main() {
 	// CREATES PROFILE IF NEEDED or ADDS TO PROFILE ------------------------------------------------------
 
 	if *add == "app" {
-		fileLoc := "profiles/" + *pf + ext
+
+		// access file, open them
+		apps := readFile("appDir.txt")
+		// scan through appDir
+		scanner := bufio.NewScanner(strings.NewReader(apps))
+		var fileLoc string
+		i := 0
+		for scanner.Scan() {
+			if i == 0 {
+				fileLoc = scanner.Text() + "/" + *pf + ext
+				i++
+			} else {
+				break
+			}
+		}
 
 		// data := readFile("profiles/" + *profile + ext)
 		// addMe := "\n" + *add + "\n"
@@ -436,7 +526,7 @@ func main() {
 		var appsToCreate []string
 
 		// OPEN AND ADD TO FILE
-		scanner := bufio.NewScanner(os.Stdin)
+		scanner = bufio.NewScanner(os.Stdin)
 		for scanner.Scan() {
 			line := scanner.Text()
 			if line == "done" {
@@ -466,7 +556,20 @@ func main() {
 		fmt.Println("Added to ", *pf)
 
 	} else if *add == "url" {
-		fileLoc := "profiles/" + *pf + ext
+		// access file, open them
+		apps := readFile("appDir.txt")
+		// scan through appDir
+		scanner := bufio.NewScanner(strings.NewReader(apps))
+		var fileLoc string
+		i := 0
+		for scanner.Scan() {
+			if i == 0 {
+				fileLoc = scanner.Text() + "/" + *pf + ext
+				i++
+			} else {
+				break
+			}
+		}
 		// data := readFile("profiles/" + *profile + ext)
 		// addMe := "\n" + *add + "\n"
 		// fmt.Print("ADDING file: ", file, addMe)
@@ -479,7 +582,7 @@ func main() {
 		var urlsToCreate []string
 
 		// OPEN AND ADD TO FILE
-		scanner := bufio.NewScanner(os.Stdin)
+		scanner = bufio.NewScanner(os.Stdin)
 		for scanner.Scan() {
 			line := scanner.Text()
 			if line == "done" {
@@ -536,6 +639,20 @@ func main() {
 		}
 
 		// fmt.Println(appsToDel)
+		// access file, open them
+		apps := readFile("appDir.txt")
+		// scan through appDir
+		scanner := bufio.NewScanner(strings.NewReader(apps))
+		var profpathplus string
+		i := 0
+		for scanner.Scan() {
+			if i == 0 {
+				profpathplus = scanner.Text() + "/" + *pf + ext
+				i++
+			} else {
+				break
+			}
+		}
 
 		if seekProfile(ext, *pf) {
 			// access file, open it
@@ -544,8 +661,7 @@ func main() {
 			// FOR EACH APP IN APPS TO DELETE, DO A SCANNER ON THE FILE AND COMPARE EACH LINE to the app
 			for _, item := range appsToDel {
 				found := false
-				path := "profiles/" + *pf + ext
-				data := readFile(path)
+				data := readFile(profpathplus)
 				scanner := bufio.NewScanner(strings.NewReader(data))
 				for scanner.Scan() {
 					// fmt.Println(scanner.Text())
@@ -555,7 +671,7 @@ func main() {
 						// DELETE THE DATA aka REPLACE IT WITH NOTHING ------------------------------
 						newContents := strings.Replace(data, string(delMe), "", -1)
 						// fmt.Println("NEW: \n", newContents)
-						err := ioutil.WriteFile(path, []byte(newContents), 0)
+						err := ioutil.WriteFile(profpathplus, []byte(newContents), 0)
 						if err != nil {
 							panic(err)
 						} else {
@@ -600,10 +716,23 @@ func main() {
 
 			// fmt.Printf(data)
 			// FOR EACH APP IN APPS TO DELETE, DO A SCANNER ON THE FILE AND COMPARE EACH LINE to the app
+			// access file, open them
+			apps := readFile("appDir.txt")
+			// scan through appDir
+			scanner := bufio.NewScanner(strings.NewReader(apps))
+			var profpathplus string
+			i := 0
+			for scanner.Scan() {
+				if i == 0 {
+					profpathplus = scanner.Text() + "/" + *pf + ext
+					i++
+				} else {
+					break
+				}
+			}
 			for _, item := range urlsToDel {
 				found := false
-				path := "profiles/" + *pf + ext
-				data := readFile(path)
+				data := readFile(profpathplus)
 				scanner := bufio.NewScanner(strings.NewReader(data))
 				for scanner.Scan() {
 					// fmt.Println(scanner.Text())
@@ -613,7 +742,7 @@ func main() {
 						// DELETE THE DATA aka REPLACE IT WITH NOTHING ------------------------------
 						newContents := strings.Replace(data, string(delMe), "", -1)
 						// fmt.Println("NEW: \n", newContents)
-						err := ioutil.WriteFile(path, []byte(newContents), 0)
+						err := ioutil.WriteFile(profpathplus, []byte(newContents), 0)
 						if err != nil {
 							panic(err)
 						} else {
@@ -632,7 +761,7 @@ func main() {
 			fmt.Println("Typo? We couldn't find that profile")
 		}
 
-	} else if *del != "no" {
+	} else if *del != "no" && *del != *pf {
 		fmt.Println("Try again - specify what you want to delete '-del app' or '-del url'")
 	}
 
