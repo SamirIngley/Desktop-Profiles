@@ -28,11 +28,14 @@ Note: This was built in Go on a Mac (for a Mac)
 4. For a list of the available flags, type `go run desk.go -help`
 
 ## :earth_africa: Install as an Executable: 
-Do this to access the app from anywhere and have an easier command
+Do this to access the app from anywhere and have an easier command 
+WARNING - this currently does not give you global functionality bc I am working on making the profiles accessible from anywhere. However the command to access the app does get shortened :) but you can only use it like `go run main.go` when you're inside the directory.
+
+0. If you don't have go installed and a GOPATH, here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go) 
 
 1. Once you download this repo, cd into it and type `go build`. This will create a binary file called desk. 
 
-2. Go to the detailed instructions link in step 0, and in that link go through step 5 to make sure your GOPATH in the ~/.bash_profile is created properly. 
+2. Go to these [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go), and in that link go through step 5 to make sure your GOPATH in the ~/.bash_profile is created properly. Don't forget to update the file for changes to take place `. ~/.bash_profile` or if you're using zsh as well, create `nano ~/.zshrc` and do the same thing you did for the bash_profile, and update this one too. Verify your path contains the path by making sure `echo $HOME` followed by /go/bin is inside your `echo $PATH`
 
 3. Make sure you're directly inside this DesktopProfiles directory you downloaded. Now we add the executable to your bin file with the command `go install`
 
@@ -40,7 +43,7 @@ Do this to access the app from anywhere and have an easier command
 
 ## :mega: Commands:
 
-* When you download the package, run `go run desk.go`, this will give you instructions on providing the routes to the Applications folders you want to be able to access using this app
+* When you download the package, run `go run desk.go`, this will give you instructions on providing the routes to the Applications folders you want to be able to access using this app, if you've done the executable route just type `desk`
     - 3 of the most common routes for locations of Applications on Mac are shown at the bottom, just copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
     - Don't worry, if you download new apps or find out you want to add more paths to Applications folders later - just delete the appDir file and run `go run desk.go`, now re-add all the paths you'd like to include
 
@@ -60,6 +63,7 @@ Do this to access the app from anywhere and have an easier command
 
 * Delete profile:  `go run desk.go -pf profile-name -del profile-name`
 
+Note: if you have installed the executable in your path (instructions above) then you can replace `go run desk.go` with just `desk`
 
 ## :goal_net: Example:
 
