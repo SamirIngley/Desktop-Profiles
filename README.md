@@ -128,6 +128,7 @@ You should get a confirmation message after making changes to any profile.
 
 
 Future updates:
+- open with ... 
 - needs to handle trailing space when deleting apps
 - need to be able to close apps and urls too
 - DRY for reading profile
