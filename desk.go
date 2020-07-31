@@ -136,7 +136,7 @@ func createAppDir() {
 	fmt.Println("We know the default locations of the Apps on your Mac, this step gives you the chance to modify those defaults if you've changed them,")
 	fmt.Println("added more folders, or have moved them to different locations. Follow these instructions to create your App Directory (appDir.txt) ")
 	fmt.Println("If you haven't made any changes - follow the instructions and don't add anything else. If you're not sure, you can always delete the")
-	fmt.Println("appDir.txt file and another will be created fo ryou next time you run the pgrogram.")
+	fmt.Println("appDir.txt file and another will be created for you next time you run the program.")
 	fmt.Println(" ")
 	fmt.Println(" ")
 
