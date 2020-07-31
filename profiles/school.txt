@@ -1,0 +1,6 @@
+
+app:Slack
+app:Notion
+app:Calendar
+url:makeschool.com/portal
+url:gradescope.com

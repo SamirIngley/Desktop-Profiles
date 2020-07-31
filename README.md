@@ -17,6 +17,9 @@ Note: This was built in Go on a Mac (for a Mac)
 
 ## :floppy_disk: Install:
 
+![Image2](download.png)
+
+
 0. Install go and configure your GOPATH - here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
 1. Download / clone this repo. Then 'cd' into it. 
@@ -44,6 +47,9 @@ NOTE: you can do this before or after you've setup the app with `go run desk.go`
 2.  Instead of typing `go run main.go` before all your commands, just type `desk` instead! 
 
 ## :mega: Commands:
+
+![Image1](using.png)
+
 
 * When you download the package, run `go run desk.go`, this will give you instructions on providing the routes to the Applications folders you want to be able to access using this app, if you've done the executable route just type `desk`
     - 3 of the most common routes for locations of Applications on Mac are shown at the bottom, just copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
