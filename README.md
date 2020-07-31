@@ -126,8 +126,8 @@ You should get a confirmation message after making changes to any profile.
 * If you added more new apps to your pc, just delete the appDir file and a new one will be created for you next time you run the program.
 
 
-Future updates:
-- open with ... 
+## Future updates:
+- open "file" with "app" 
 - needs to handle trailing space when deleting apps
 - need to be able to close apps and urls too
 - DRY for reading profile
