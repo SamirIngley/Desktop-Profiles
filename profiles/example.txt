@@ -1,7 +1,3 @@
 
-url:makeschool.com/portal
 app:Postman
-
-
-
-
+url:makeschool.com/portal

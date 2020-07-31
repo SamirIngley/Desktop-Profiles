@@ -13,6 +13,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/joho/godotenv"
 	"github.com/skratchdot/open-golang/open"
 )
 
@@ -105,14 +106,18 @@ func checkIfAppDir() bool {
 	extList := []string{}
 
 	// if app dir exists, return true
-	filepath.Walk(dir, func(dir string, fileInfo os.FileInfo, _ error) error {
-		// fmt.Println(fileInfo.Name())
-		if fileInfo.Name() == "appDir.txt" {
-			extList = append(extList, fileInfo.Name())
-			exists = true
-		}
-		return nil
-	})
+	if len(dir) > 0 && dir != "reset" {
+		filepath.Walk(dir, func(dir string, fileInfo os.FileInfo, _ error) error {
+			// fmt.Println(fileInfo.Name())
+			if fileInfo.Name() == "appDir.txt" {
+				extList = append(extList, fileInfo.Name())
+				exists = true
+			}
+			return nil
+		})
+	} else {
+		createAppDir()
+	}
 
 	return exists
 }
@@ -128,9 +133,10 @@ func createAppDir() {
 	fmt.Println(">>>>> WELCOME TO DESKTOP PROFILES")
 	fmt.Println(" ")
 
-	fmt.Println("Before we start creating profiles, we have to find all the apps on your computer and store their locations in order to access them quickly,")
-	fmt.Println("to do this we do a one time sweep of your Applications folders. Below are instructions to provide the paths to your Applications folders. ")
-	fmt.Println("Feel free to add your own paths as well. Once you've completed these steps, creation of your App Directory (appDir.txt) will commmence.")
+	fmt.Println("We know the default locations of the Apps on your Mac, this step gives you the chance to modify those defaults if you've changed them,")
+	fmt.Println("added more folders, or have moved them to different locations. Follow these instructions to create your App Directory (appDir.txt) ")
+	fmt.Println("If you haven't made any changes - follow the instructions and don't add anything else. If you're not sure, you can always delete the")
+	fmt.Println("appDir.txt file and another will be created fo ryou next time you run the pgrogram.")
 	fmt.Println(" ")
 	fmt.Println(" ")
 
@@ -166,6 +172,32 @@ func createAppDir() {
 
 	ext := ".app"
 
+	// SET GLOBAL PATHS IN ENVIRONMENT !! ----------------------------------------------------------
+	// fmt.Println("setting env")
+
+	// GET DIR PATH
+	path, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// CREATE Hardoated PATHS
+	Hdir := path
+	Hprofpath := Hdir + "/profiles"
+	Happs := Hdir + "/appDir.txt"
+
+	// WRITING TO ENV FILE
+	stuff := "DIR=" + Hdir + "\n" + "PROFPATH=" + Hprofpath + "\n" + "APPS=" + Happs
+	env, err1 := godotenv.Unmarshal(stuff)
+	err1 = godotenv.Write(env, ".env")
+
+	if err1 != nil {
+		fmt.Println(err1)
+	}
+	// ASSIGN ENV VARS TO LOCAL VARS
+	dir = os.Getenv("DIR")
+	profpath = os.Getenv("PROFPATH")
+	apps = os.Getenv("APPS")
 	// ADDING PROFILE PATH AT LINE 0 and APP DIR PATH AT LINE 1
 	// get permanent path to profiles (append -> first line of appList, next few lines will the the paths)
 	// path, err := os.Getwd()
@@ -177,9 +209,9 @@ func createAppDir() {
 	// profpath = dir + "/profiles"
 	// apps = dir + "/appDir.txt"
 
-	fmt.Println("DIR ", dir)
-	fmt.Println("PROF ", profpath)
-	fmt.Println("APPS ", apps)
+	// fmt.Println("create app dir DIR ", dir)
+	// fmt.Println("PROF ", profpath)
+	// fmt.Println("APPS ", apps)
 
 	// appList += profpath
 	// appList += apps
@@ -248,10 +280,10 @@ func createAppDir() {
 	fmt.Println("type 'go run desk.go -help' for a list of options")
 	fmt.Println(" ")
 	fmt.Println("Important Info about using the app: ")
-	fmt.Println("- If you encounter an error with this step and your apps won't load, find the correct paths to your Applications folders, delete the appDir.txt file, re-run this program, and specify those App directories as well as or instead of the default ones supplied")
+	fmt.Println("- If you encounter an error with this step and your apps won't load, find the correct paths to your Applications folders, delete the appDir.txt & .env files, re-run this program, and specify those App directories as well as or instead of the default ones supplied")
 	fmt.Println("- Apps are case sensitive, apps must be typed EXACTLY as shown on your pc / in the app directory")
-	fmt.Println("- If you're having trouble specifying an app, find it in the appDir.txt file (which will be created after this step) and ignore the number in front of it when typing it in")
-	fmt.Println("- If you add more new apps to your pc, delete the appDir file and a new one will be created for you next time you run the program.")
+	fmt.Println("- If you're having trouble specifying an app, look for it in the appDir.txt file (which will be created after this step) and ignore the number in front of it when typing it in")
+	fmt.Println("- If you add more new apps to your pc, delete the appDir.txt and .env file and new ones will be created for you next time you run the program.")
 	fmt.Println(" ")
 }
 
@@ -380,56 +412,33 @@ func main() {
 		fmt.Println("Here's the github: https://github.com/SamirIngley/Desktop-Profiles")
 	}
 
-	// CREATE APP DIRECTORY --------------------------------------------------------- appDir text File
 	// fmt.Println("Checking if appdir")
-	fmt.Println("DIR ", os.Getenv("DIR"))
-	fmt.Println("PROF ", os.Getenv("PROFPATH"))
-	fmt.Println("APPS ", os.Getenv("APPS"))
+	// fmt.Println("primaryDIR ", os.Getenv("DIR"))
+	// fmt.Println("PROF ", os.Getenv("PROFPATH"))
+	// fmt.Println("APPS ", os.Getenv("APPS"))
 
-	path, exists := os.LookupEnv("DIR")
-	if exists {
-		fmt.Println("PATH ", path)
-	} else {
-		// SET GLOBAL PATHS IN ENVIRONMENT !!
-
-		// GET DIR PATH
-		path, err := os.Getwd()
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		// ASSIGN PATHS
-		dir = path
-		profpath = dir + "/profiles"
-		apps = dir + "/appDir.txt"
-
-		// SET ENV VARS
-		err = os.Setenv("DIR", dir)
-		if err != nil {
-			log.Fatal(err)
-		}
-		err = os.Setenv("PROFPATH", profpath)
-		if err != nil {
-			log.Fatal(err)
-		}
-		err = os.Setenv("APPS", apps)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		// ASSIGN ENV VARS
+	// CREATE APP DIRECTORY --------------------------------------------------------- appDir text File
+	e := godotenv.Load() // looks for .env file
+	if e != nil {        // if dne, create app dir -> creates .env
+		fmt.Print("creating env")
+		createAppDir()
+		// fmt.Println("1")
+	} else { // if it does exist, assign locals from env
 		dir = os.Getenv("DIR")
 		profpath = os.Getenv("PROFPATH")
 		apps = os.Getenv("APPS")
+		// fmt.Println("2")
+		if !(checkIfAppDir()) { // if dotenv exists, but app dir doesn't
+			createAppDir()
+		}
 	}
 
-	if !(checkIfAppDir()) {
-		createAppDir()
-	}
-
-	fmt.Println("yeetDIR ", dir)
-	fmt.Println("PROF ", profpath)
-	fmt.Println("APPS ", apps)
+	dir = os.Getenv("DIR")
+	profpath = os.Getenv("PROFPATH")
+	apps = os.Getenv("APPS")
+	// fmt.Println("yeetDIR ", dir)
+	// fmt.Println("PROF ", profpath)
+	// fmt.Println("APPS ", apps)
 
 	// SHOW ALL AVAILABLE PROFILES
 	if *pf == "profile-name" && *o == "yes" && *l == "no" && *add == "no" && *del == "no" {
@@ -464,7 +473,7 @@ func main() {
 
 		// finds all txt files in directory
 		filepath.Walk(profpath, func(profpath string, fileInfo os.FileInfo, _ error) error {
-			fmt.Println(profpath)
+			// fmt.Println(profpath)
 			if filepath.Ext(profpath) == ext {
 				extList = append(extList, fileInfo.Name())
 			}
@@ -520,10 +529,10 @@ func main() {
 			// 		break
 			// 	}
 			// }
-			fmt.Println("OPEN")
-			fmt.Println("DIR ", dir)
-			fmt.Println("PROF ", profpath)
-			fmt.Println("APPS ", apps)
+			// fmt.Println("OPENNING")
+			// fmt.Println("DIR ", dir)
+			// fmt.Println("PROF ", profpath)
+			// fmt.Println("APPS ", apps)
 
 			profpathplus := profpath + "/" + *pf + ext
 

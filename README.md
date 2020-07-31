@@ -25,11 +25,15 @@ Note: This was built in Go on a Mac (for a Mac)
 
 3. You're ready to roll! Checkout the commands and walk through the example below
 
-4. For a list of the available flags, type `go run desk.go -help`
+- For a list of the available flags, type `go run desk.go -help`
+- If you move the location of your folder for easier access, delete the .env file and run the program (you will be asked to re create the appDir as well)
+- If you download new apps, or want to modify, add, or delete the Application folder paths, delete the appDir and run the program
 
-## :earth_africa: Install as an Executable: 
+## :earth_africa: Install as an Executable for simplicity: 
 Do this to access the app from anywhere and have an easier command 
-WARNING - this currently does not give you global functionality bc I am working on making the profiles accessible from anywhere. However the command to access the app does get shortened :) but you can only use it like `go run main.go` when you're inside the directory.
+Unfortunately this currently does not give you global functionality - I am working on making the profiles accessible from anywhere. However the command to access the app does get shortened to just `desk` instead of `go run main.go` :) but you can only use it locally (inside the directory) so before you run this .
+
+NOTE: you can do this before or after you've setup the app with `go run desk.go`. If you plan on moving this folder to a more convenient spot, delete the .env file.
 
 0. If you don't have go installed and a GOPATH, here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go) 
 
