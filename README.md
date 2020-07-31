@@ -19,30 +19,30 @@ Note: This was built in Go on a Mac (for a Mac)
 
 0. Install go and configure your GOPATH - here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
-1. Download / clone this repo. Then 'cd' into it.
+1. Download / clone this repo. Then 'cd' into it. 
+
+Note: Make sure you place the folder where you want it to be for easy access. If you move it after the next step, delete the .env and appDir.txt files and re run the command so it can recalibrate.
 
 2. Run `go run desk.go` -> this will walk you through creating your app directory file
 
-3. You're ready to roll! Checkout the commands and walk through the example below
+3. You're ready to roll! 
+
+Do the "Install as an executable" for a *super* convenient command, try out all the commands below for modifying and creating profiles, and checkout the example too
 
 - For a list of the available flags, type `go run desk.go -help`
-- If you move the location of your folder for easier access, delete the .env file and run the program (you will be asked to re create the appDir as well)
-- If you download new apps, or want to modify, add, or delete the Application folder paths, delete the appDir and run the program
+- If you move the location of your folder for easier access, delete the .env and appDir.txt files and re run the program `go run desk.go`. You will still have access your profiles.
+- If you download new apps, or want to modify, add, or delete the Application folder paths, also delete the .env and appDir.txt and re run the program `go run desk.go`. You will still have your profiles.
 
-## :earth_africa: Install as an Executable for simplicity: 
-Unfortunately this currently does not give you global functionality - I am working on making the profiles accessible from anywhere. However the command to access the app does get shortened to just `desk` instead of `go run main.go` :) but you can only use it locally (inside the directory) so before you run this .
+## :earth_africa: Install as an Executable: 
+This makes command to access the app shortened to just `desk` instead of `go run desk.go` :) but you can only use it locally (inside the directory) - I haven't been able to configure it for `go install` ... yet
 
-NOTE: you can do this before or after you've setup the app with `go run desk.go`. If you plan on moving this folder to a more convenient spot, delete the .env file.
+NOTE: you can do this before or after you've setup the app with `go run desk.go`. If you plan on moving this folder to a more convenient spot, delete the .env and appDir.txt file 
 
 0. If you don't have go installed and a GOPATH, here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go) 
 
-1. Once you download this repo, cd into it and type `go build`. This will create a binary file called desk. 
+1. Once you download this repo, cd into it and type `go build`. This will create a binary file called desk.
 
-2. Go to these [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go), and in that link go through step 5 to make sure your GOPATH in the ~/.bash_profile is created properly. Don't forget to update the file for changes to take place `. ~/.bash_profile` or if you're using zsh as well, create `nano ~/.zshrc` and do the same thing you did for the bash_profile, and update this one too. Verify your path contains the path by making sure `echo $HOME` followed by /go/bin is inside your `echo $PATH`
-
-3. Make sure you're directly inside this DesktopProfiles directory you downloaded. Now we add the executable to your bin file with the command `go install`
-
-4. You should have access to this executable globally - instead of typing `go run main.go` before all your commands, just type `desk` instead! 
+2.  Instead of typing `go run main.go` before all your commands, just type `desk` instead! 
 
 ## :mega: Commands:
 
