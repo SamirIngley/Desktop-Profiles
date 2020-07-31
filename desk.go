@@ -420,7 +420,7 @@ func main() {
 	// CREATE APP DIRECTORY --------------------------------------------------------- appDir text File
 	e := godotenv.Load() // looks for .env file
 	if e != nil {        // if dne, create app dir -> creates .env
-		fmt.Print("creating env")
+		// fmt.Print("creating env")
 		createAppDir()
 		// fmt.Println("1")
 	} else { // if it does exist, assign locals from env
