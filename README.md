@@ -12,21 +12,21 @@ Note: This was built in Go on a Mac (for a Mac)
 
 
 
-![Image1](gopherIMG.png)
+![Image1](READMEimg/gopherIMG.png)
 ************************************************************************************************
 
 ## :floppy_disk: Install:
-
-![Image2](download.png)
-
 
 0. Install go and configure your GOPATH - here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
 1. Download / clone this repo. Then 'cd' into it. Make sure you place the folder where you want it to be for easy access. If you move it after the next step, delete the .env and appDir.txt files and re run the command so it can recalibrate.
 
-2. Run `go run desk.go` -> this will walk you through creating your app directory file
+![Image2](READMEimg/download.png)
 
-3. You're ready to roll! 
+
+2. Run `go run desk.go` -> this will walk you through creating your app directory file. And that's it
+
+![Image3](READMEimg/download2.png)
 
 Do the super easy "Install as an executable" for a *super* convenient command, try out all the commands below for modifying and creating profiles, and checkout the example too
 
@@ -46,7 +46,7 @@ NOTE: you can do this before or after you've setup the app with `go run desk.go`
 
 ## :mega: Commands:
 
-![Image1](using.png)
+![Image1](READMEimg/using.png)
 
 
 * When you download the package, run `go run desk.go`, this will give you instructions on providing the routes to the Applications folders you want to be able to access using this app, if you've done the executable route just type `desk`
