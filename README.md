@@ -30,7 +30,6 @@ Note: This was built in Go on a Mac (for a Mac)
 - If you download new apps, or want to modify, add, or delete the Application folder paths, delete the appDir and run the program
 
 ## :earth_africa: Install as an Executable for simplicity: 
-Do this to access the app from anywhere and have an easier command 
 Unfortunately this currently does not give you global functionality - I am working on making the profiles accessible from anywhere. However the command to access the app does get shortened to just `desk` instead of `go run main.go` :) but you can only use it locally (inside the directory) so before you run this .
 
 NOTE: you can do this before or after you've setup the app with `go run desk.go`. If you plan on moving this folder to a more convenient spot, delete the .env file.
