@@ -27,11 +27,10 @@ Note: Make sure you place the folder where you want it to be for easy access. If
 
 3. You're ready to roll! 
 
-Do the "Install as an executable" for a *super* convenient command, try out all the commands below for modifying and creating profiles, and checkout the example too
+Do the super easy "Install as an executable" for a *super* convenient command, try out all the commands below for modifying and creating profiles, and checkout the example too
 
+- If you run into ANY problems with opening apps, you've downloaded new apps, or added incorrect paths while setting up, or you move your folder, just delete the appDir.txt and the .env file, re run the program `go run desk.go` and you'll be prompted to set it up again :)
 - For a list of the available flags, type `go run desk.go -help`
-- If you move the location of your folder for easier access, delete the .env and appDir.txt files and re run the program `go run desk.go`. You will still have access your profiles.
-- If you download new apps, or want to modify, add, or delete the Application folder paths, also delete the .env and appDir.txt and re run the program `go run desk.go`. You will still have your profiles.
 
 ## :earth_africa: Install as an Executable: 
 This makes command to access the app shortened to just `desk` instead of `go run desk.go` :) but you can only use it locally (inside the directory) - I haven't been able to configure it for `go install` ... yet
