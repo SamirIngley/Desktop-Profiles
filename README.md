@@ -3,7 +3,7 @@
 App & website launcher: 
 Create any number of profiles to open any combination of your frequently used apps and websites from the cli at once! 
 
-** Instructions below ** 
+** Instructions below (it's super simple, but I've just included a lot of info) ** 
 
 Note: This was built in Go on a Mac (for a Mac)
 
@@ -22,9 +22,7 @@ Note: This was built in Go on a Mac (for a Mac)
 
 0. Install go and configure your GOPATH - here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
-1. Download / clone this repo. Then 'cd' into it. 
-
-Note: Make sure you place the folder where you want it to be for easy access. If you move it after the next step, delete the .env and appDir.txt files and re run the command so it can recalibrate.
+1. Download / clone this repo. Then 'cd' into it. Make sure you place the folder where you want it to be for easy access. If you move it after the next step, delete the .env and appDir.txt files and re run the command so it can recalibrate.
 
 2. Run `go run desk.go` -> this will walk you through creating your app directory file
 
