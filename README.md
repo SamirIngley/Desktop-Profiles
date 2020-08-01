@@ -1,6 +1,4 @@
-<p align="center">
-Desktop Profiles 
-</p>
+# Desktop Profiles 
 
 App & website launcher: 
 Create any number of profiles to open any combination of your frequently used apps and websites from the cli at once! 
@@ -9,8 +7,11 @@ Create any number of profiles to open any combination of your frequently used ap
 
 Note: This was built in Go on a Mac (for a Mac)
 
+<p align="right">
+  
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+</p>
 
 ![Image1](READMEimg/gopherIMG.png)
 ************************************************************************************************
