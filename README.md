@@ -10,6 +10,7 @@ Note: This was built in Go on a Mac (for a Mac)
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+[![Samir's github stats](https://github-readme-stats.vercel.app/api?username=SamirIngley)](https://github.com/SamirIngley/Desktop-Profiles)
 
 
 ![Image1](READMEimg/gopherIMG.png)
