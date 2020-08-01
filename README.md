@@ -1,6 +1,5 @@
 <p align="center">
-
-# Desktop Profiles 
+Desktop Profiles 
 </p>
 
 App & website launcher: 
