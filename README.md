@@ -64,7 +64,7 @@ Type `desk` to get started on entering your paths if you haven't.
 
 ### * List available profiles: `go run desk.go` 
 
-### * List contents of a profile: `go run desk.go -pf profile-name -l y` 
+### * List profile contents: `go run desk.go -pf profile-name -l y` 
 
 ### * Open a profile:  `go run desk.go -pf profile-name` 
 
@@ -145,8 +145,8 @@ You should get a confirmation message after making changes to any profile.
 - instead of appending to profile, look for blank line!
 
 ## Contact:
-samir.ingle7@gmail.com
-[my website](https://www.samiringle.com)
+* samir.ingle7@gmail.com
+* [my website](https://www.samiringle.com)
 
 ### Acknowledgements:
 
