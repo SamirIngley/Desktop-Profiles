@@ -26,14 +26,15 @@ Note: This was built in Go on a Mac (for a Mac)
 Here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
 ### 1. Download / clone this repo. 
-Move it where you want, then 'cd' into it. 
-:exclamation: IMPORTANT: If you move the folder after the next step, delete the .env and appDir.txt files and re run the command so it can recalibrate.
+* Move it where you want, then 'cd' into it. 
+* :exclamation: If you move the folder after the next step, delete the .env and appDir.txt files and re run the command so it can recalibrate.
 
 ![Image2](READMEimg/download.png)
 
 
 ### 2. Run `go run desk.go`
-This will walk you through creating your app directory file. Once you complete this step, you're done! The picture shows `go build` and `desk` -> checkout the "install as executable" steps for this more convenient command :)
+* This will walk you through creating your app directory file. Once you complete this step, you're done! 
+* The picture shows `go build` and `desk` -> checkout the "install as executable" steps for this more convenient command :)
 
 ![Image3](READMEimg/download2.png)
 
