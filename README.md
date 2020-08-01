@@ -7,7 +7,7 @@ Create any number of profiles to open any combination of your frequently used ap
 
 Note: This was built in Go on a Mac (for a Mac)
  
-<p align="right">
+<p align="left">
   <a>
     <a href="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" />
     <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" target="_blank" />
