@@ -163,7 +163,7 @@ You should get a confirmation message asking if you're sure you want to delete t
 
 ## Contact:
 * samir.ingle7@gmail.com
-* [my website](www.samiringle.com)
+* https://samiringle.com
 
 ### Acknowledgements:
  
