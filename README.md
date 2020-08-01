@@ -32,15 +32,13 @@ Here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac
 ![Image2](READMEimg/download.png)
 
 
-### 2. Run `go run desk.go`
-* This will walk you through creating your app directory file. Once you complete this step, you're done! 
-* The picture shows `go build` and `desk` -> checkout the "install as executable" steps for this more convenient command :)
+### 2. Run `go run desk.go` 
+* If you want a more convenient way to use the commands - checkout "install as executable" to replace `go run desk.go` with `desk`
+* This will walk you through creating your app directory file. Once you complete this step, you're done! Checkout all the commands below
 
 ![Image3](READMEimg/download2.png)
 
-* When you download the package, run `go run desk.go`, this will give you instructions on providing the routes to the Applications folders you want to be able to access using this app, if you've done the executable route just type `desk`
-
-* 3 of the most common paths for locations of Applications on Mac are there shown at the bottom between the short lines, just like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
+* 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
 
 ## :boom: Problems?? Errors?? - Need more paths?? Or downloaded new apps??
 
@@ -51,43 +49,43 @@ If you run into ANY problems with opening apps, you've downloaded new apps, or a
 Feel free to reach out to me if you run into any issues: samir.ingle7@gmail.com
 
 ## :earth_africa: Install as an Executable: 
-This makes command to access the app shortened to just `desk` instead of `go run desk.go` :) but you can only use it locally (inside the directory) - I haven't been able to configure it for `go install` ... yet
+This makes the command to access this tool shortened to just `desk` instead of `go run desk.go` :) You can do this before or after you've setup the app with `go run desk.go`. If you plan on moving this folder to a more convenient spot, delete the appDir.txt, delete the .env file, and if you did `go build` - also delete the binary file `desk` but NOT `desk.go`  
 
-NOTE: you can do this before or after you've setup the app with `go run desk.go`. If you plan on moving this folder to a more convenient spot, delete the .env and appDir.txt file 
+NOTE: The `go install` will not allow this to work globally - if know of a way for a golang executable to take input and store a persistent string (filepath) in the program or in the bash profile and access it - let me know!
 
 ### 0. Make sure your GOPATH is configured correctly 
 Here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go) 
 
 ### 1. Type `go build`.
-This will create a binary file called desk.
+* This will create a binary file called desk.
 
-### 2.  Type `desk` instead of `go run desk.go`! 
-Type `desk` to get started on entering your paths if you haven't. 
+### 2. Type `desk` instead of `go run desk.go`! 
+* Any time you see `go run desk.go` you can replace that with just `desk` :)
 
 # :mega: Commands:
 
 ![Image1](READMEimg/using.png)
 
-### :bulb: Replace `go run desk.go` with just `desk` if you created an executable (instructions above)
+## :bulb: Replace `go run desk.go` with just `desk` if you created an executable (instructions above)
 
-### >  List input options: `go run desk.go -help`
+### ~ List input options: `go run desk.go -help`
 
-### >  List available profiles: `go run desk.go` 
+### ~ List available profiles: `go run desk.go` 
 
-### >  List profile contents: `go run desk.go -pf profile-name -l y` 
+### ~ List profile contents: `go run desk.go -pf profile-name -l y` 
 
-### >  Open a profile:  `go run desk.go -pf profile-name` 
+### ~ Open a profile:  `go run desk.go -pf profile-name` 
 
-### >  Create a profile or add to an existing profile: 
+### ~ Create a profile or add to an existing profile: 
 Type the name of the profile and the app or url you'd like to add:  `go run desk.go -pf profile-name -add app`. Replace `app` with `url` if you want to add urls. Then type `done` and hit Enter when you're finished.
 
-### >  Delete from profile:  
+### ~ Delete from profile:  
 (Same as adding except use -del instead of -add) `go run desk.go -pf profile-name -del url`. Replace `app` with `url` if you want to add urls. Then type done and hit enter when you're finished.
 
-### >  Delete profile:  `go run desk.go -pf profile-name -del profile-name` 
+### ~ Delete profile:  `go run desk.go -pf profile-name -del profile-name` 
 or `go run desk.go -pf profile-name -del profile` (the word profile instead of the profile's name for the -del flag)
 
-## :goal_net: Example:
+# :goal_net: Example:
 
 An example profile has been provided in the profiles/ folder.
 All your profiles can be found in this folder as well. 
@@ -95,7 +93,7 @@ All your profiles can be found in this folder as well.
 To run the example, type:
 `go run desk.go -pf example`
 
-#### To add an app (Slack) to the example, type:
+### To add an app (Slack) to the example, type:
 `go run desk.go -pf example -add app`
 Then type:
 `Slack`
@@ -107,7 +105,7 @@ Then type:
 `done`
 and hit Enter when you've finished. 
 
-#### To add a website (Google) to the example, type:
+### To add a website (Google) to the example, type:
 `go run desk.go -pf example -add url`
 and hit Enter.
 
