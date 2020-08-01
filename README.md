@@ -68,23 +68,23 @@ Type `desk` to get started on entering your paths if you haven't.
 
 ![Image1](READMEimg/using.png)
 
-   ### :bulb: Replace `go run desk.go` with just `desk` if you created an executable (instructions above)
+### :bulb: Replace `go run desk.go` with just `desk` if you created an executable (instructions above)
 
-### > List input options: `go run desk.go -help`
+### >  List input options: `go run desk.go -help`
 
-### > List available profiles: `go run desk.go` 
+### >  List available profiles: `go run desk.go` 
 
-### > List profile contents: `go run desk.go -pf profile-name -l y` 
+### >  List profile contents: `go run desk.go -pf profile-name -l y` 
 
-### > Open a profile:  `go run desk.go -pf profile-name` 
+### >  Open a profile:  `go run desk.go -pf profile-name` 
 
-### > Create a profile or add to an existing profile: 
+### >  Create a profile or add to an existing profile: 
 Type the name of the profile and the app or url you'd like to add:  `go run desk.go -pf profile-name -add app`. Replace `app` with `url` if you want to add urls. Then type `done` and hit Enter when you're finished.
 
-### > Delete from profile:  
+### >  Delete from profile:  
 (Same as adding except use -del instead of -add) `go run desk.go -pf profile-name -del url`. Replace `app` with `url` if you want to add urls. Then type done and hit enter when you're finished.
 
-### > Delete profile:  `go run desk.go -pf profile-name -del profile-name` 
+### >  Delete profile:  `go run desk.go -pf profile-name -del profile-name` 
 or `go run desk.go -pf profile-name -del profile` (the word profile instead of the profile's name for the -del flag)
 
 ## :goal_net: Example:
