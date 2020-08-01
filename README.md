@@ -22,14 +22,17 @@ Note: This was built in Go on a Mac (for a Mac)
 ![Image2](READMEimg/download.png)
 
 
-2. Run `go run desk.go` -> this will walk you through creating your app directory file. And that's it
+2. Run `go run desk.go` -> this will walk you through creating your app directory file. And you're done! (the picture shows the go build and desk command -> checkout the "install as executable" section :)
 
 ![Image3](READMEimg/download2.png)
 
 Do the super easy "Install as an executable" for a *super* convenient command, try out all the commands below for modifying and creating profiles, and checkout the example too
 
-- If you run into ANY problems with opening apps, you've downloaded new apps, or added incorrect paths while setting up, or you move your folder, just delete the appDir.txt and the .env file, re run the program `go run desk.go` and you'll be prompted to set it up again :)
-- For a list of the available flags, type `go run desk.go -help`
+## :x: Problems?? Errors??
+
+If you run into ANY problems with opening apps, you've downloaded new apps, or added incorrect paths while setting up, or you move your folder, just delete the appDir.txt and the .env file, re run the program `go run desk.go` and you'll be prompted to set it up again :) follow the pictures carefully
+
+Feel free to reach out to me if you run into any issues: samir.ingle7@gmail.com
 
 ## :earth_africa: Install as an Executable: 
 This makes command to access the app shortened to just `desk` instead of `go run desk.go` :) but you can only use it locally (inside the directory) - I haven't been able to configure it for `go install` ... yet
