@@ -1,5 +1,7 @@
 # Desktop Profiles 
 
+[Why I built this](https://medium.com/@SamirIngle/open-groups-of-apps-and-urls-at-once-5a16f3e3ed63?sk=c700d1e77469226ad024dfb60368c17f)
+
 App & website launcher: 
 Create any number of profiles to open any combination of your frequently used apps and websites from the cli at once! 
 
