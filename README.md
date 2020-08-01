@@ -6,11 +6,15 @@ Create any number of profiles to open any combination of your frequently used ap
 ### ** Instructions below ** 
 
 Note: This was built in Go on a Mac (for a Mac)
-
+ 
 <p align="right">
-  
-[![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  <a>
+    <a href="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" />
+    <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" target="_blank" />
+  </a> 
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
 </p>
 
 ![Image1](READMEimg/gopherIMG.png)
@@ -152,6 +156,9 @@ You should get a confirmation message after making changes to any profile.
 * [my website](https://www.samiringle.com)
 
 ### Acknowledgements:
+ 
+[![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Open functionality help from:
 https://github.com/skratchdot/open-golang
