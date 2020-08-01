@@ -68,7 +68,7 @@ Type `desk` to get started on entering your paths if you haven't.
 
 ![Image1](READMEimg/using.png)
 
-    ### :bulb: Replace `go run desk.go` with just `desk` if you created an executable (instructions above)
+   ### :bulb: Replace `go run desk.go` with just `desk` if you created an executable (instructions above)
 
 ### > List input options: `go run desk.go -help`
 
