@@ -3,6 +3,7 @@
 App & website launcher: 
 Create any number of profiles to open any combination of your frequently used apps and websites from the cli at once! 
 
+
 ### ** Instructions below ** 
 
 Note: This was built in Go on a Mac (for a Mac)
@@ -27,63 +28,59 @@ Here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac
 
 ### 1. Download / clone this repo. 
 * Move it where you want, then 'cd' into it. 
-* :exclamation: If you move the folder after the next step, delete the .env and appDir.txt files and re run the command so it can recalibrate.
+* :exclamation: Note: If you move the folder after the next step, delete the appDir.txt, delete the .env file, and if you did `go build` - also delete the binary file "desk" but **NOT** "desk.go"  
 
 ![Image2](READMEimg/download.png)
 
 
-### 2. Run `go run desk.go` 
-* If you want a more convenient way to use the commands - checkout "install as executable" to replace `go run desk.go` with `desk`
-* This will walk you through creating your app directory file. Once you complete this step, you're done! Checkout all the commands below
+### 2. Run `go build` 
+* This will create a binary file called desk. 
+* Although this is a binary in your GOPATH, you must be in the directory to run the program. If you know of a way for a golang program to access a string input globally (through bash profile?) please let me know!
+
+### 3. Run `desk` 
+* This will walk you through creating your app directory file. Follow the image and steps below. 
 
 ![Image3](READMEimg/download2.png)
 
 * 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
+* **Once you complete this step, you're done! Checkout all the commands below**
+
 
 ## :boom: Problems?? Errors?? - Need more paths?? Or downloaded new apps??
 
 If you run into ANY problems with opening apps, you've downloaded new apps, or added incorrect paths while setting up, or you move your folder:
--> Delete the appDir.txt, delete the .env file, and if you did `go build` - also delete the binary file `desk` but NOT `desk.go` 
--> Re run the program `go run desk.go` or `go build` > `desk` and you'll be prompted to set it up again :) follow the pictures carefully
+-> Delete the "appDir.txt" file, delete the ".env" file, and if you did `go build` - also delete the binary file "desk" but **NOT** "desk.go"
+-> If you delete "desk.go" you will have to re download this repo or just that file
+-> Re run the program `go run desk.go` or `go build` & `desk` from there you'll be prompted to set up again :) follow the pictures carefully
+
+If you're having issues with the binary file:
+-> Just type `go run main.go` everywhere instead of `desk` 
 
 Feel free to reach out to me if you run into any issues: samir.ingle7@gmail.com
 
-## :earth_africa: Install as an Executable: 
-This makes the command to access this tool shortened to just `desk` instead of `go run desk.go` :) You can do this before or after you've setup the app with `go run desk.go`. If you plan on moving this folder to a more convenient spot, delete the appDir.txt, delete the .env file, and if you did `go build` - also delete the binary file `desk` but NOT `desk.go`  
-
-NOTE: The `go install` will not allow this to work globally - if know of a way for a golang executable to take input and store a persistent string (filepath) in the program or in the bash profile and access it - let me know!
-
-### 0. Make sure your GOPATH is configured correctly 
-Here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go) 
-
-### 1. Type `go build`.
-* This will create a binary file called desk.
-
-### 2. Type `desk` instead of `go run desk.go`! 
-* Any time you see `go run desk.go` you can replace that with just `desk` :)
 
 # :mega: Commands:
-
+:exclamation: You must be inside the directory to run the commands
 ![Image1](READMEimg/using.png)
 
-## :bulb: Replace `go run desk.go` with just `desk` if you created an executable (instructions above)
+## :bulb: If you didn't create an executable replace `desk` with `go run desk.go` followed by the command
 
-### ~ List input options: `go run desk.go -help`
+### ~ List available profiles: `desk` 
 
-### ~ List available profiles: `go run desk.go` 
+### ~ List input options: `desk -help`
 
-### ~ List profile contents: `go run desk.go -pf profile-name -l y` 
+### ~ List profile contents: `desk -pf profile-name -l y` 
 
-### ~ Open a profile:  `go run desk.go -pf profile-name` 
+### ~ Open a profile:  `desk -pf profile-name` 
 
-### ~ Create a profile or add to an existing profile: 
+### ~ Create a profile or add to an existing profile:  `desk -pf profile-name -add app`
 Type the name of the profile and the app or url you'd like to add:  `go run desk.go -pf profile-name -add app`. Replace `app` with `url` if you want to add urls. Then type `done` and hit Enter when you're finished.
 
-### ~ Delete from profile:  
-(Same as adding except use -del instead of -add) `go run desk.go -pf profile-name -del url`. Replace `app` with `url` if you want to add urls. Then type done and hit enter when you're finished.
+### ~ Delete from profile:  `desk -pf profile-name -del url`
+(Same as adding except use -del instead of -add) or `go run desk.go -pf profile-name -del url`. Replace `app` with `url` if you want to add urls. Then type done and hit enter when you're finished.
 
-### ~ Delete profile:  `go run desk.go -pf profile-name -del profile-name` 
-or `go run desk.go -pf profile-name -del profile` (the word profile instead of the profile's name for the -del flag)
+### ~ Delete profile:  `desk -pf profile-name -del profile` 
+or `go run desk.go -pf profile-name -del profile-name` (after -del write "profile" or the name of the profile)
 
 # :goal_net: Example:
 
@@ -94,37 +91,49 @@ To run the example, type:
 `go run desk.go -pf example`
 
 ### To add an app (Slack) to the example, type:
-`go run desk.go -pf example -add app`
+`desk -pf example -add app`
 Then type:
 `Slack`
 And hit Enter.
 
-You've now added Slack to your profile, type the name of any other apps you'd like in this profile and hit enter after each one. 
+Type the names of any other apps you'd like in this profile and hit Enter after each one. 
 
 Then type:
 `done`
 and hit Enter when you've finished. 
 
+You should see a message saying you added an app to your profile.
+To verify what was added, type:
+`desk -pf example -l y` 
+and a list should show up of the contents of the example profile.
+
+
 ### To add a website (Google) to the example, type:
-`go run desk.go -pf example -add url`
+`desk -pf example -add url`
 and hit Enter.
 
 Now, type:
 `google.com`
 And hit Enter.
 
-You've now added google.com, type the name of any other websites you'd like and hit enter after each one. 
+You've now added "google.com" to the profile example.
+Type the name of any other websites you'd like and hit enter after each one. 
 
 And finally:
 `done`
 when you're finished. 
 
+You should see a message saying you added a url(s) to your profile.
+To verify what was added, type:
+`desk -pf example -l y` 
+and a list should show up of the contents of the example profile.
+
 ### To delete an app or url, do the same as above for adding, except use the `-del` flag instead of `-add`
 
 ### To delete a profile:
-`go run desk.go -pf profile-name -del profile-name`
+`desk -pf profile-name -del profile`
 
-You should get a confirmation message after making changes to any profile. 
+You should get a confirmation message asking if you're sure you want to delete the profile. 
 
 
 ## :warning: IMPORTANT:
@@ -133,7 +142,7 @@ You should get a confirmation message after making changes to any profile.
 
 * No trailing spaces when adding or deleting apps. Must be typed exactly as is in the appDir.txt
 
-* Type anything for yes, type "no" for no, more details can be found about the input by typing the "-help" flag: go run desk.go -help (Exception: for -del flag when deleting a profile -> must be the profile name or "profile")
+* Type anything for yes, type "no" for no, more details can be found about the input by typing the "-help" flag: `desk -help` (Exception: for -del flag when deleting a profile -> must be the profile name or the word "profile")
 
 * Currently case sensitive - apps must be typed exactly as shown on your pc
 
@@ -141,15 +150,16 @@ You should get a confirmation message after making changes to any profile.
 
 ### APP DIRECTORY:
 
-* If you added more new apps to your pc, just delete the appDir file and a new one will be created for you next time you run the program.
-
+* If you added more new apps to your pc, just delete the appDir.txt, .env, and "desk" files, **NOT** "desk.go", and a new ones will be created for you next time you run the program.
+* Same applies if you want to add new paths to other Application folders
 
 ## Future updates:
-- open "file" with "app" 
+- open specific "file" with "app" 
 - needs to handle trailing space when deleting apps
 - need to be able to close apps and urls too
 - DRY for reading profile
 - instead of appending to profile, look for blank line!
+
 
 ## Contact:
 * samir.ingle7@gmail.com
