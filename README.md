@@ -42,7 +42,7 @@ Here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac
 
 * 3 of the most common paths for locations of Applications on Mac are there shown at the bottom between the short lines, just like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
 
-## :boom: Problems?? Errors?? - Need more paths?? Or apps??
+## :boom: Problems?? Errors?? - Need more paths?? Or downloaded new apps??
 
 If you run into ANY problems with opening apps, you've downloaded new apps, or added incorrect paths while setting up, or you move your folder:
 -> Delete the appDir.txt, delete the .env file, and if you did `go build` - also delete the binary file `desk` but NOT `desk.go` 
@@ -68,21 +68,21 @@ Type `desk` to get started on entering your paths if you haven't.
 
 ![Image1](READMEimg/using.png)
 
-### * List input options: `go run desk.go -help`
+#### * List input options: `go run desk.go -help`
 
-### * List available profiles: `go run desk.go` 
+#### * List available profiles: `go run desk.go` 
 
-### * List profile contents: `go run desk.go -pf profile-name -l y` 
+#### * List profile contents: `go run desk.go -pf profile-name -l y` 
 
-### * Open a profile:  `go run desk.go -pf profile-name` 
+#### * Open a profile:  `go run desk.go -pf profile-name` 
 
-### * Create a profile or add to an existing profile: 
+#### * Create a profile or add to an existing profile: 
 Type the name of the profile and the app or url you'd like to add:  `go run desk.go -pf profile-name -add app`. Replace `app` with `url` if you want to add urls. Then type `done` and hit Enter when you're finished.
 
-### * Delete from profile:  
+#### * Delete from profile:  
 (Same as adding except use -del instead of -add) `go run desk.go -pf profile-name -del url`. Replace `app` with `url` if you want to add urls. Then type done and hit enter when you're finished.
 
-### * Delete profile:  `go run desk.go -pf profile-name -del profile-name`
+#### * Delete profile:  `go run desk.go -pf profile-name -del profile-name`
 
 Note: if you have installed the executable in your path (instructions above) then you can replace `go run desk.go` with just `desk`
 
