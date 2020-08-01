@@ -1,4 +1,11 @@
 <p align="center">
+MSConsole
+<br>
+<br>
+A suite of tools that makes your MakeSchool life easier!
+</p>
+
+<p align="center">
   
 # Desktop Profiles 
 
