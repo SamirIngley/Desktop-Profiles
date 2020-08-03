@@ -4,9 +4,9 @@ App & website launcher:
 Create any number of profiles to open any combination of your frequently used apps and websites from the cli at once! 
 
 Example:
-Create a profile called "read"
-Add the Books app, your Notes app, and Merriam-Webster's website
-Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
+1. Create a profile called "read"
+2. Add the Books app, your Notes app, and Merriam-Webster's website
+3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
 
 ### ** Instructions below ** 
 Note: This was built in Go on a Mac (for a Mac)
