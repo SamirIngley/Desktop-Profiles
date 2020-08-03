@@ -1,13 +1,14 @@
 # Desktop Profiles 
 
-[Why I built this](https://medium.com/@SamirIngle/open-groups-of-apps-and-urls-at-once-5a16f3e3ed63?sk=c700d1e77469226ad024dfb60368c17f)
-
 App & website launcher: 
 Create any number of profiles to open any combination of your frequently used apps and websites from the cli at once! 
 
+Example:
+Create a profile called "read"
+Add the Books app, your Notes app, and Merriam-Webster's website
+Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
 
 ### ** Instructions below ** 
-
 Note: This was built in Go on a Mac (for a Mac)
  
 <p align="left">
@@ -26,7 +27,7 @@ Note: This was built in Go on a Mac (for a Mac)
 # :floppy_disk: Install:
 
 ### 0. Install go and configure your GOPATH
-Here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) and here are some detailed [instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
+[Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5) || [Detailed instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
 ### 1. Download / clone this repo. 
 * Move it where you want, then 'cd' into it. 
@@ -36,8 +37,8 @@ Here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac
 
 
 ### 2. Run `go build` 
-* This will create a binary file called desk. 
-* Although this is a binary in your GOPATH, you must be in the directory to run the program. If you know of a way for a golang program to access a string input globally (through bash profile?) please let me know!
+* This will create a binary file (executable) called desk. 
+* Although this is a binary, you must be in the directory to run the program, `go install` will not make this global. If you know of a way for a golang program to store and access a string input saved globally (through bash_profile?) please let me know!
 
 ### 3. Run `desk` 
 * This will walk you through creating your app directory file. Follow the image and steps below. 
@@ -48,23 +49,25 @@ Here are some quick [instructions](https://medium.com/@jimkang/install-go-on-mac
 * **Once you complete this step, you're done! Checkout all the commands below**
 
 
-## :boom: Problems?? Errors?? - Need more paths?? Or downloaded new apps??
+## :boom: Problems?? Errors?? 
 
 If you run into ANY problems with opening apps, you've downloaded new apps, or added incorrect paths while setting up, or you move your folder:
+-> First try to find the app in the "appDir.txt" file and ignore the number in front of it. This is file is a collection of all the apps at all the paths you passed in. If it's not there, then you likely haven't passed the right path in and need to redo that setup (see next step). Your profiles will not reset :)
 -> Delete the "appDir.txt" file, delete the ".env" file, and if you did `go build` - also delete the binary file "desk" but **NOT** "desk.go"
 -> If you delete "desk.go" you will have to re download this repo or just that file
 -> Re run the program `go run desk.go` or `go build` & `desk` from there you'll be prompted to set up again :) follow the pictures carefully
 
 If you're having issues with the binary file:
--> Just type `go run main.go` everywhere instead of `desk` 
+-> Try typing `go run desk.go` everywhere instead of `desk` 
+
+This was built on a Mac and for a Mac. 
 
 Feel free to reach out to me if you run into any issues: samir.ingle7@gmail.com
-
 
 # :mega: Commands:
 :exclamation: You must be inside the directory to run the commands
 ![Image1](READMEimg/using.png)
-
+<br>
 ## :bulb: If you didn't create an executable replace `desk` with `go run desk.go` followed by the command
 
 ### ~ List available profiles: `desk` 
