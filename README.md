@@ -39,7 +39,7 @@ Note: This was built in Go on a Mac (for a Mac)
 
 ### 2. Run `go build` 
 * This will create a binary file (executable) called desk. 
-* Although this is a binary, you must be in the directory to run the program, `go install` will not make this global. If you know of a way for a golang program to store and access a string input saved globally (through bash_profile?) please let me know!
+* Although this is a binary, you must be in the directory to run the program, `go install` will not make this global. If you know of a way for a golang program to store a string input and access it globally (through bash_profile?) please let me know!
 
 ### 3. Run `desk` 
 * This will walk you through creating your app directory file. Follow the image and steps below. 
