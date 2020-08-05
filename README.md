@@ -8,7 +8,7 @@ Create any number of profiles to open any combination of your frequently used ap
 2. Add the Books app, your Notes app, and Merriam-Webster's website
 3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
 
-### ** Instructions below ** 
+### **Instructions below** 
 Note: This was built in Go on a Mac (for a Mac)
  
 <p align="left">
