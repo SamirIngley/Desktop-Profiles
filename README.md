@@ -1,7 +1,8 @@
 # Desktop Profiles 
 
-App & website launcher: 
-Create any number of profiles to open any combination of your frequently used apps and websites from the cli at once! 
+Problem: I got tired of individually clicking through urls and apps each time I switch to a new project. But I did not want a cluttered desktop with everything open all the time which can be a large drain on the computer's resources. 
+
+Solution: With this command line tool, easily create and customize profiles (groups) of apps and/or urls and open any of these profiles with one short command.
 
 ### **Example:**
 1. Create a profile called "read"
