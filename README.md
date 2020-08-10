@@ -57,23 +57,29 @@ Note: This was built in Go on a Mac (for a Mac)
 :exclamation: You must be inside the directory to run the commands
 ![Image1](READMEimg/using.png)
 <br>
-## :bulb: If you didn't create an executable replace `desk` with `go run desk.go` followed by the command
+##### :bulb: If you didn't create an executable replace `desk` with `go run desk.go` followed by the command
 
-### ~ List available profiles: `desk` 
+#### ~ List available profiles: `desk` 
 
-### ~ List input options: `desk -help`
+#### ~ List input options: `desk -help`
 
-### ~ List profile contents: `desk -pf profile-name -l y` 
+#### ~ List profile contents: `desk -pf profile-name -l y` 
 
-### ~ Open a profile:  `desk -pf profile-name` 
+#### ~ Open a profile:  `desk -pf profile-name` 
 
-### ~ Create a profile or add to an existing profile:  `desk -pf profile-name -add app`
-Type the name of the profile and the app or url you'd like to add:  `go run desk.go -pf profile-name -add app`. Replace `app` with `url` if you want to add urls. Then type `done` and hit Enter when you're finished.
+#### ~ Add url(s): `desk -pf profile-name -add url`
+Enter the url, and hit Enter after each one, type "done" when you've finished.
 
-### ~ Delete from profile:  `desk -pf profile-name -del url`
-(Same as adding except use -del instead of -add) or `go run desk.go -pf profile-name -del url`. Replace `app` with `url` if you want to add urls. Then type done and hit enter when you're finished.
+#### ~ Add app(s): `desk -pf profile-name -add app`
+Enter the exact app name (ei: VS Code won't work but Visual Studio Code will), and hit Enter after each one, type "done" when you've finished.
 
-### ~ Delete profile:  `desk -pf profile-name -del profile` 
+#### ~ Create a profile (or add to an existing profile):  `desk -pf profile-name -add app`
+Type the name of the profile you want to create and the app or url you'd like to add. Replace `app` with `url` if you want to add urls. Add each app or url, hit Enter after typing each one, then type `done` and hit Enter when you're finished.
+
+#### ~ Delete from profile:  `desk -pf profile-name -del url`
+(Same as adding except use -del instead of -add) or `go run desk.go -pf profile-name -del url`. Replace `url` with `app` if you want to add apps. Add each app or url, hit Enter after typing each one, then type `done` and hit Enter when you're finished.
+
+#### ~ Delete profile:  `desk -pf profile-name -del profile` 
 or `go run desk.go -pf profile-name -del profile-name` (after -del write "profile" or the name of the profile)
 
 # :goal_net: Example:
