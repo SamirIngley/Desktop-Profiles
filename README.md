@@ -1,17 +1,17 @@
 # Desktop Profiles 
 
-##### Problem:
+#### Problem:
 > I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project. But I did not want a cluttered desktop with > everything open all the time which can be a large drain on the computer's resources. 
 
-##### Solution: 
+#### Solution: 
 > With this command line tool, easily create and customize profiles (groups) of apps and/or urls and open any of these profiles with one short command.
 
-### **Example:**
+#### **Example:**
 1. Create a profile called "read"
 2. Add the Books app, your Notes app, and Merriam-Webster's website
 3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
 
-### **Instructions below** 
+#### **Instructions below** 
 Note: This was built in Go on a Mac (for a Mac)
  
 <p align="left">
