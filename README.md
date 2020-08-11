@@ -34,7 +34,7 @@ Note: This was built in Go on a Mac (for a Mac)
 
 ### 1. Download / clone this repo. 
 * Move it where you want, then 'cd' into it. 
-* :exclamation: Note: If you move the folder after the next step, refer to the Errors section at the bottom.
+* Note: If you move the folder after the next step, refer to the :boom:Errors section at the bottom.
 
 ![Image2](READMEimg/download.png)
 
