@@ -1,5 +1,5 @@
 # Desktop Profiles 
-<p align="left">
+<p align="right">
   <a>
     <a href="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" />
     <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" target="_blank" />
@@ -8,7 +8,6 @@
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
 </p>
-
 #### Problem:
 > I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. I also did not want a cluttered > > > desktop with everything open all the time, as this can be a large drain on the computer's resources. 
 
