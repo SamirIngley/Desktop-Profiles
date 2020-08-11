@@ -34,7 +34,7 @@ Note: This was built in Go on a Mac (for a Mac)
 
 ### 1. Download / clone this repo. 
 * Move it where you want, then 'cd' into it. 
-* :exclamation: Note: If you move the folder after the next step, delete the appDir.txt, delete the .env file, and if you did `go build` - also delete the binary file "desk" but **NOT** "desk.go"  
+* :exclamation: Note: If you move the folder after the next step, refer to the Errors section at the bottom.
 
 ![Image2](READMEimg/download.png)
 
@@ -160,16 +160,19 @@ You should get a confirmation message asking if you're sure you want to delete t
 - instead of appending to profile, look for blank line!
 
 
-## :boom: Problems?? Errors?? 
+## :boom: Errors
 
-If you run into ANY problems with opening apps, you've downloaded new apps, or added incorrect paths while setting up, or you move your folder:
--> First try to find the app in the "appDir.txt" file and ignore the number in front of it. This is file is a collection of all the apps at all the paths you passed in. If it's not there, then you likely haven't passed the right path in and need to redo that setup (see next step). Your profiles will not reset :)
--> Delete the "appDir.txt" file, delete the ".env" file, and if you did `go build` - also delete the binary file "desk" but **NOT** "desk.go"
--> If you delete "desk.go" you will have to re download this repo or just that file
--> Re run the program `go run desk.go` or `go build` & `desk` from there you'll be prompted to set up again :) follow the pictures carefully
+If you run into ANY problems with opening apps, you've downloaded new apps, added incorrect paths while setting up, or you move your folder:
+
+- First try to find the app in the "appDir.txt" file (ignore the number in front of it). This file is a collection of all the apps at all the paths you passed in. If it's not there, then you likely haven't passed the path to that app during setup and need to redo this step - see next step for instructions on how to do this. Your profiles will still exist afterwards.
+- To Redo Setup: Delete the "appDir.txt" file, delete the ".env" file, and if you did `go build` - also delete the binary file "desk" but **NOT** "desk.go".
+- If you do delete "desk.go" you will have to re download this repo or just that file.
+- Re run the program with the install commands:`go run desk.go` or `go build` & `desk` 
+
+From there you'll be prompted to set up your application paths again :) follow the pictures carefully.
 
 If you're having issues with the binary file:
--> Try typing `go run desk.go` everywhere instead of `desk` 
+- Try typing `go run desk.go` everywhere instead of `desk` 
 
 This was built on a Mac and for a Mac. 
 
