@@ -3,6 +3,7 @@
   <a>
     <a href="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" />
     <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" target="_blank" />
+    <a href="https://img.shields.io/github/downloads/SamirIngley/Desktop-Profiles/total"/>
   </a> 
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
