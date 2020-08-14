@@ -10,19 +10,19 @@
   </a>
 </p>
 
-#### Problem:
+#### :anger: Problem:
 > I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. 
 > I also did not want a cluttered desktop with everything open all the time, as this can be a large drain on the computer's resources and my attention span. 
 
-#### Solution: 
+#### :potable_water: Solution: 
 > With this command line tool, easily create and customize profiles (groups) of apps and/or urls and open any of these profiles with one short command.
 
-#### **Example:**
+#### :sweat_drops: Example:
 1. Create a profile called "read"
 2. Add the Books app, your Notes app, and Merriam-Webster's website
 3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
 
-#### **Instructions below** 
+#### :1234: Instructions below
 Note: This was built in Go on a Mac (for a Mac)
  
 ![Image1](READMEimg/gopherIMG.png)
@@ -30,7 +30,7 @@ Note: This was built in Go on a Mac (for a Mac)
 
 # :floppy_disk: Install:
 
-### 0. Install go and configure your GOPATH
+### 0. Install Go and configure your GOPATH
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
 * [Detailed instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
