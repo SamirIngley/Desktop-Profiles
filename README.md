@@ -17,7 +17,7 @@
 #### :potable_water: Solution: 
 > With this command line tool, easily create and customize profiles (groups) of apps and/or urls and open any of these profiles with one short command.
 
-#### :sweat_drops: Example:
+#### :sun: Example:
 1. Create a profile called "read"
 2. Add the Books app, your Notes app, and Merriam-Webster's website
 3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
