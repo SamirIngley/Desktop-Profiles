@@ -28,7 +28,7 @@ Note: This was built in Go on a Mac (for a Mac)
 ![Image1](READMEimg/gopherIMG.png)
 ************************************************************************************************
 
-# :floppy_disk: Install:
+# :floppy_disk: Install: [](#){name=install}
 
 ### 0. Install Go and configure your GOPATH
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
