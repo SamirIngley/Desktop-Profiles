@@ -24,7 +24,8 @@
 
 #### :1234: Instructions below
 Note: This was built in Go on a Mac (for a Mac)
- 
+[install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)
+
 ![Image1](READMEimg/gopherIMG.png)
 ************************************************************************************************
 
