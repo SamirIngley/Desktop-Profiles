@@ -63,7 +63,7 @@
 
 
 # :mega: Commands:
-:exclamation: You must be inside the directory to run the commands \
+:exclamation: You must be inside the directory to run the commands
 :exclamation: If you didn't create an executable replace `desk` with `go run desk.go` followed by the command
 
 #### > List available profiles: `desk` 
