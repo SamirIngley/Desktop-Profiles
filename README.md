@@ -1,5 +1,13 @@
 # Desktop Profiles 
 
+
+________               ______  _____                        ________                _____________ ______              
+___  __ \_____ ___________  /____  /_______ ________        ___  __ \______________ ___  __/___(_)___  /_____ ________
+__  / / /_  _ \__  ___/__  //_/_  __/_  __ \___  __ \       __  /_/ /__  ___/_  __ \__  /_  __  / __  / _  _ \__  ___/
+_  /_/ / /  __/_(__  ) _  ,<   / /_  / /_/ /__  /_/ /       _  ____/ _  /    / /_/ /_  __/  _  /  _  /  /  __/_(__  ) 
+/_____/  \___/ /____/  /_/|_|  \__/  \____/ _  .___/        /_/      /_/     \____/ /_/     /_/   /_/   \___/ /____/  
+                                            /_/                                                                       
+
 <p align="left">
   <a>
     <a href="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" />
@@ -33,20 +41,7 @@
 
 :bulb: Note: This was built in Go on a Mac :apple: (for a Mac)
 
-________               ______  _____                        ________                _____________ ______              
-___  __ \_____ ___________  /____  /_______ ________        ___  __ \______________ ___  __/___(_)___  /_____ ________
-__  / / /_  _ \__  ___/__  //_/_  __/_  __ \___  __ \       __  /_/ /__  ___/_  __ \__  /_  __  / __  / _  _ \__  ___/
-_  /_/ / /  __/_(__  ) _  ,<   / /_  / /_/ /__  /_/ /       _  ____/ _  /    / /_/ /_  __/  _  /  _  /  /  __/_(__  ) 
-/_____/  \___/ /____/  /_/|_|  \__/  \____/ _  .___/        /_/      /_/     \____/ /_/     /_/   /_/   \___/ /____/  
-                                            /_/                                                                       
-
-
-App & website launcher: 
-Create any number of profiles to open any combination of your frequently used apps and websites from the cli at once! 
-
 ### ** Instructions below ** 
-
-Note: This was built in Go on a Mac (for a Mac)
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
