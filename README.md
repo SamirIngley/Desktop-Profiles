@@ -28,7 +28,7 @@ Note: This was built in Go on a Mac (for a Mac)
 ![Image1](READMEimg/gopherIMG.png)
 ************************************************************************************************
 
-# :floppy_disk: Install: [](#){name=install}
+# :floppy_disk: Install: 
 
 ### 0. Install Go and configure your GOPATH
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
@@ -194,3 +194,14 @@ https://github.com/skratchdot/open-golang
 
 go doc
 https://make-school-courses.github.io/BEW-2.5-Strongly-Typed-Languages/#/Lessons/DocsDeploy
+
+
+
+# Table of Contents
+1. [Example](#example)
+2. [Example2](#example2)
+3. [Third Example](#third-example)
+
+## Example [](#){name=example}
+## Example2 [](#){name=example2}
+## [Third Example](#){name=third-example}
