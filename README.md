@@ -20,18 +20,19 @@ _  /_/ / /  __/_(__  ) _  ,<   / /_  / /_/ /__  /_/ /       _  ____/ _  /    / /
   </a>
 </p>
 
-#### :anger: Problem:
+#### :anger: Problem
 > I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. 
 > I also did not want a cluttered desktop with everything open all the time, as this can be a large drain on the computer's resources and my attention span. 
 
-#### :potable_water: Solution: 
+#### :potable_water: Solution
 > With this command line tool, easily create and customize profiles (groups) of apps and/or urls and open any of these profiles with one short command.
 
-#### :green_apple: Example:
+#### :green_apple: Example
 1. Create a profile called "read"
 2. Add the Books app, your Notes app, and Merriam-Webster's website
 3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
 
+### :scroll: Contents
 [:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install) \
 [:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands) \
 [:goal_net: Example](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#goal_net-example) \
@@ -45,7 +46,7 @@ _  /_/ / /  __/_(__  ) _  ,<   / /_  / /_/ /__  /_/ /       _  ____/ _  /    / /
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-![Image1](READMEimg/gopherIMG.png)
+![Image1](READMEimg/gopherIMG.png =100x20)
 ************************************************************************************************
 
 # :floppy_disk: Install: 
