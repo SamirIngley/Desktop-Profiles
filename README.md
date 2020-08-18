@@ -37,7 +37,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-![Image1](READMEimg/gopherIMG.png=100x20)
+![GOpher](READMEimg/gopherIMG.png)
 ************************************************************************************************
 
 # :floppy_disk: Install: 
