@@ -1,12 +1,12 @@
 # Desktop Profiles 
 
 
-	________               ______  _____                        ________                _____________ ______              
-	___  __ \_____ ___________  /____  /_______ ________        ___  __ \______________ ___  __/___(_)___  /_____ ________
-	__  / / /_  _ \__  ___/__  //_/_  __/_  __ \___  __ \       __  /_/ /__  ___/_  __ \__  /_  __  / __  / _  _ \__  ___/
-	_  /_/ / /  __/_(__  ) _  ,<   / /_  / /_/ /__  /_/ /       _  ____/ _  /    / /_/ /_  __/  _  /  _  /  /  __/_(__  ) 
-	/_____/  \___/ /____/  /_/|_|  \__/  \____/ _  .___/        /_/      /_/     \____/ /_/     /_/   /_/   \___/ /____/  
-						    /_/                                                                       
+________               ______  _____                        ________                _____________ ______              
+___  __ \_____ ___________  /____  /_______ ________        ___  __ \______________ ___  __/___(_)___  /_____ ________
+__  / / /_  _ \__  ___/__  //_/_  __/_  __ \___  __ \       __  /_/ /__  ___/_  __ \__  /_  __  / __  / _  _ \__  ___/
+_  /_/ / /  __/_(__  ) _  ,<   / /_  / /_/ /__  /_/ /       _  ____/ _  /    / /_/ /_  __/  _  /  _  /  /  __/_(__  ) 
+/_____/  \___/ /____/  /_/|_|  \__/  \____/ _  .___/        /_/      /_/     \____/ /_/     /_/   /_/   \___/ /____/  
+					    /_/                                                                       
 	
 
 <p align="left">
@@ -32,7 +32,6 @@
 2. Add the Books app, your Notes app, and Merriam-Webster's website
 3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
 
-#### :scroll: Table of Contents
 [:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install) \
 [:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands) \
 [:goal_net: Example](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#goal_net-example) \
@@ -41,8 +40,6 @@
 [:inbox_tray: Contact Me](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact)
 
 :bulb: Note: This was built in Go on a Mac :apple: (for a Mac)
-
-### ** Instructions below ** 
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
