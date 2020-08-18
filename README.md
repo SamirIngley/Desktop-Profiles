@@ -194,14 +194,3 @@ https://github.com/skratchdot/open-golang
 
 go doc
 https://make-school-courses.github.io/BEW-2.5-Strongly-Typed-Languages/#/Lessons/DocsDeploy
-
-
-
-# Table of Contents
-1. [Example](#example)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
-
-## Example [](#){name=example}
-## Example2 [](#){name=example2}
-## [Third Example](#){name=third-example}
