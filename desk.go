@@ -130,14 +130,7 @@ func createAppDir() {
 	// If you know the path you can change rootToApps to the path here, and in the
 	// getApplications function
 	fmt.Println(" ")
-	fmt.Println("""
-	________               ______  _____                        ________                _____________ ______              
-	___  __ \_____ ___________  /____  /_______ ________        ___  __ \______________ ___  __/___(_)___  /_____ ________
-	__  / / /_  _ \__  ___/__  //_/_  __/_  __ \___  __ \       __  /_/ /__  ___/_  __ \__  /_  __  / __  / _  _ \__  ___/
-	_  /_/ / /  __/_(__  ) _  ,<   / /_  / /_/ /__  /_/ /       _  ____/ _  /    / /_/ /_  __/  _  /  _  /  /  __/_(__  ) 
-	/_____/  \___/ /____/  /_/|_|  \__/  \____/ _  .___/        /_/      /_/     \____/ /_/     /_/   /_/   \___/ /____/  
-												/_/                                                                       
-	""")
+	fmt.Println(">>>>>>>>>>>>> WELCOME TO DESKTOP PROFILES")
 	fmt.Println(" ")
 
 	fmt.Println("We know the default locations of the Apps on your Mac, this step gives you the chance to modify those defaults if you've changed them,")
