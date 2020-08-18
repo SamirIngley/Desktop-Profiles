@@ -17,14 +17,19 @@
 #### :potable_water: Solution: 
 > With this command line tool, easily create and customize profiles (groups) of apps and/or urls and open any of these profiles with one short command.
 
-#### :apple: Example:
+#### :green_apple: Example:
 1. Create a profile called "read"
 2. Add the Books app, your Notes app, and Merriam-Webster's website
 3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
 
 #### :1234: Instructions below
-Note: This was built in Go on a Mac (for a Mac)
+Note: This was built in Go on a Mac :apple: (for a Mac)
+
 [Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)
+[Commands]()
+[Example]()
+[Notes]()
+[:boom: Errors]()
 
 ![Image1](READMEimg/gopherIMG.png)
 ************************************************************************************************
@@ -138,7 +143,7 @@ and a list should show up of the contents of the example profile.
 You should get a confirmation message asking if you're sure you want to delete the profile. 
 
 
-## :warning: IMPORTANT:
+## :warning: Important Notes:
 
 ### Input: 
 
