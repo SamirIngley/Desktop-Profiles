@@ -64,7 +64,7 @@
 
 # :mega: Commands:
 :exclamation: You must be inside the directory to run the commands
-![Image1](READMEimg/using.png)
+
 <br>
 ##### :bulb: If you didn't create an executable replace `desk` with `go run desk.go` followed by the command
 
@@ -92,6 +92,8 @@ Type the name of the profile you want to create and the app or url you'd like to
 or `go run desk.go -pf profile-name -del profile-name` (after -del write "profile" or the name of the profile)
 
 # :goal_net: Example:
+
+![Image1](READMEimg/using.png)
 
 An example profile has been provided in the profiles/ folder.
 All your profiles can be found in this folder as well. 
