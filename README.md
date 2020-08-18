@@ -23,13 +23,13 @@
 2. Add the Books app, your Notes app, and Merriam-Webster's website
 3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
 
-### :scroll: Contents
+### :scroll: Table of Contents
 [:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install) \
 [:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands) \
 [:goal_net: Example](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#goal_net-example) \ 
 [:warning: Notes](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#warning-important-notes) \ 
 [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors) \
-[:inbox_tray: Contact Me](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact) 
+[:inbox_tray: Contact Me](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact) \
 
 :bulb: Note: This was built in Go on a Mac :apple: (for a Mac)
 
