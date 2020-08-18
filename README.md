@@ -24,12 +24,12 @@
 3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
 
 ### :scroll: Table of Contents
-[:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install) \
-[:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands) \
-[:goal_net: Example](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#goal_net-example) \ 
-[:warning: Notes](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#warning-important-notes) \ 
+[:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)\
+[:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands)\
+[:goal_net: Example](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#goal_net-example) \
+[:warning: Notes](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#warning-important-notes) \
 [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors) \
-[:inbox_tray: Contact Me](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact) \
+[:inbox_tray: Contact Me](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact)
 
 :bulb: Note: This was built in Go on a Mac :apple: (for a Mac)
 
@@ -63,7 +63,7 @@
 
 
 # :mega: Commands:
-:exclamation: You must be inside the directory to run the commands
+:exclamation: You must be inside the directory to run the commands\
 :exclamation: If you didn't create an executable replace `desk` with `go run desk.go` followed by the command
 
 #### > List available profiles: `desk` 
