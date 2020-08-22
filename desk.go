@@ -354,18 +354,18 @@ func main() {
 	// if profile exists, will be added to profile
 	// if profile dne, will be created and added to
 	yo := flag.String("help", "GO HERE", "https://github.com/SamirIngley/Desktop-Profiles")
-	pf := flag.String("pf", "profile-name", "name of the profile")
+	p := flag.String("p", "profile-name", "name of the profile")
 	l := flag.String("l", "no", "list contents of the profile")
 	o := flag.String("o", "yes", "open this profile")
-	add := flag.String("add", "no", "specify 'app' or 'url' to create new profile or add to an existing profile")
-	del := flag.String("del", "no", "deletes profile if 'profile' or name of profile is typed, otherwise deletes app or url entered")
+	a := flag.String("a", "no", "specify 'app' or 'url' to create new profile or add to an existing profile")
+	d := flag.String("d", "no", "deletes profile if 'profile' or name of profile is typed, otherwise deletes app or url entered")
 	flag.Parse()
 
 	// FLAG STATUSES
 	// fmt.Println("list: ", *l)
 	// fmt.Println("open: ", *o)
-	// fmt.Println("add: ", *add)
-	// fmt.Println("del: ", *del)
+	// fmt.Println("a: ", *a)
+	// fmt.Println("d: ", *d)
 
 	ext := ".txt"
 
@@ -404,7 +404,7 @@ func main() {
 	// fmt.Println("APPS ", apps)
 
 	// SHOW ALL AVAILABLE PROFILES
-	if *pf == "profile-name" && *o == "yes" && *l == "no" && *add == "no" && *del == "no" {
+	if *p == "profile-name" && *o == "yes" && *l == "no" && *a == "no" && *d == "no" {
 		// path, err := os.Getwd()
 		// if err != nil {
 		// log.Fatal(err)
@@ -428,23 +428,23 @@ func main() {
 	}
 
 	// CHECKS IF THE PROFILE EXISTS AND OPENS IT---------------------------------- if no other flags are called
-	if seekProfile(ext, *pf) {
+	if seekProfile(ext, *p) {
 		// fmt.Println("Accessing file...")
 
 		// LISTS CURRENT PROFILE CONTENTS----------------------------------------------------------
 		if *l != "no" {
-			profpathplus := profpath + "/" + *pf + ext
+			profpathplus := profpath + "/" + *p + ext
 			data := readFile(profpathplus)
 			fmt.Println(data)
 		}
 
 		// OPENS PROFILE -------------------------------------------------------------------------------------
-		if *o == "yes" && *l == "no" && *add == "no" && *del == "no" {
-			fmt.Println("Opening " + *pf)
+		if *o == "yes" && *l == "no" && *a == "no" && *d == "no" {
+			fmt.Println("Opening " + *p)
 
 			// access file, open them
 
-			profpathplus := profpath + "/" + *pf + ext
+			profpathplus := profpath + "/" + *p + ext
 
 			// access file, open them
 			data := readFile(profpathplus)
@@ -491,15 +491,15 @@ func main() {
 
 	// CREATES PROFILE IF NEEDED or ADDS TO PROFILE ------------------------------------------------------
 
-	if *add == "app" {
+	if *a == "app" {
 
-		fileLoc := profpath + "/" + *pf + ext
+		fileLoc := profpath + "/" + *p + ext
 
 		// data := readFile("profiles/" + *profile + ext)
-		// addMe := "\n" + *add + "\n"
+		// addMe := "\n" + *a + "\n"
 		// fmt.Print("ADDING file: ", file, addMe)
-		if seekProfile(ext, *pf) == false {
-			fmt.Println("Creating new profile", *pf)
+		if seekProfile(ext, *p) == false {
+			fmt.Println("Creating new profile", *p)
 		}
 
 		fmt.Println("Enter apps one by one, type 'done' when finished: ")
@@ -534,14 +534,14 @@ func main() {
 			defer currentFile.Close()
 			// fmt.Println(item)
 		}
-		fmt.Println("Added to ", *pf)
+		fmt.Println("Added to ", *p)
 
-	} else if *add == "url" {
+	} else if *a == "url" {
 		// access file, open them
-		fileLoc := profpath + "/" + *pf + ext
+		fileLoc := profpath + "/" + *p + ext
 
-		if seekProfile(ext, *pf) == false {
-			fmt.Println("Creating new profile ", *pf)
+		if seekProfile(ext, *p) == false {
+			fmt.Println("Creating new profile ", *p)
 		}
 
 		fmt.Println("Enter urls one by one, type 'done' when finished: ")
@@ -576,14 +576,14 @@ func main() {
 			defer currentFile.Close()
 			// fmt.Println(item)
 		}
-		fmt.Println("Added to ", *pf)
+		fmt.Println("Added to ", *p)
 
-	} else if *add != "no" {
-		fmt.Println("Try again - specify what you want to add '-add app' or '-add url'")
+	} else if *a != "no" {
+		fmt.Println("Try again - specify what you want to add '-a app' or '-a url'")
 	}
 
 	// DELETES SPECIFIC LINES (APP OR URL) FROM PROFILE --------------------------------------------------
-	if *del == "app" {
+	if *d == "app" {
 		// fmt.Print("not working yet\n")
 
 		fmt.Println("Enter apps one by one, type 'done' when finished: ")
@@ -605,9 +605,9 @@ func main() {
 			}
 		}
 
-		profpathplus := profpath + "/" + *pf + ext
+		profpathplus := profpath + "/" + *p + ext
 
-		if seekProfile(ext, *pf) {
+		if seekProfile(ext, *p) {
 			// access file, open it
 
 			// fmt.Printf(data)
@@ -629,13 +629,13 @@ func main() {
 							panic(err)
 						} else {
 							found = true
-							fmt.Println("Deleted ", item, " from ", *pf)
+							fmt.Println("Deleted ", item, " from ", *p)
 						}
 					}
 				}
 				// loop through all the lines and if found still false, let us know
 				if found == false {
-					fmt.Println("Could not find ", item, " in ", *pf)
+					fmt.Println("Could not find ", item, " in ", *p)
 				}
 			}
 
@@ -643,7 +643,7 @@ func main() {
 			fmt.Println("Typo? We couldn't find that profile")
 		}
 
-	} else if *del == "url" {
+	} else if *d == "url" {
 		// fmt.Print("not working yet\n")
 		fmt.Println("Enter urls one by one, type 'done' when finished: ")
 
@@ -664,10 +664,10 @@ func main() {
 
 		// fmt.Println(urlsToDel)
 
-		if seekProfile(ext, *pf) {
+		if seekProfile(ext, *p) {
 			// access file, open it
 
-			profpathplus := profpath + "/" + *pf + ext
+			profpathplus := profpath + "/" + *p + ext
 
 			for _, item := range urlsToDel {
 				found := false
@@ -686,13 +686,13 @@ func main() {
 							panic(err)
 						} else {
 							found = true
-							fmt.Println("Deleted ", item, " from ", *pf)
+							fmt.Println("Deleted ", item, " from ", *p)
 						}
 					}
 				}
 				// loop through all the lines and if found still false, let us know
 				if found == false {
-					fmt.Println("Could not find ", item, " in ", *pf, "make sure it's spelled correctly and has no trailing spaces")
+					fmt.Println("Could not find ", item, " in ", *p, "make sure it's spelled correctly and has no trailing spaces")
 				}
 			}
 
@@ -700,20 +700,20 @@ func main() {
 			fmt.Println("Typo? We couldn't find that profile")
 		}
 
-	} else if *del != "no" || *del != *pf || *del != "profile" {
-		fmt.Println("Try again - specify what you want to delete '-del app' or '-del url'")
+	} else if *d != "no" || *d != *p || *d != "profile" {
+		fmt.Println("Try again - specify what you want to delete '-d app' or '-d url'")
 	}
 
 	// DELETES THE WHOLE PROFILE --------------------------------------------------------------------------
-	if *del == "profile" || *del == *pf {
-		fileLoc := "profiles/" + *pf + ext
+	if *d == "profile" || *d == *p {
+		fileLoc := "profiles/" + *p + ext
 
-		profpathplus := profpath + "/" + *pf + ext
+		profpathplus := profpath + "/" + *p + ext
 		data := readFile(profpathplus)
 		fmt.Println(data)
 
 		var yn string
-		fmt.Print("Are you sure you want to delete ", *pf, " profile? [y/n]..")
+		fmt.Print("Are you sure you want to delete ", *p, " profile? [y/n]..")
 		fmt.Scanln(&yn)
 		if yn == "y" || yn == "yes" {
 			var err = os.Remove(fileLoc)

@@ -77,24 +77,24 @@
 
 #### > List input options: `desk -help`
 
-#### > List profile contents: `desk -pf profile-name -l y` 
+#### > List profile contents: `desk -p profile-name -l y` 
 
-#### > Open a profile:  `desk -pf profile-name` 
+#### > Open a profile:  `desk -p profile-name` 
 
-#### > Add url(s): `desk -pf profile-name -add url`
+#### > Add url(s): `desk -p profile-name -a url`
 Enter the url, and hit Enter after each one, type "done" when you've finished.
 
-#### > Add app(s): `desk -pf profile-name -add app`
+#### > Add app(s): `desk -p profile-name -a app`
 Enter the exact app name (ei: VS Code won't work but Visual Studio Code will), and hit Enter after each one, type "done" when you've finished.
 
-#### > Create a profile (or add to an existing profile):  `desk -pf profile-name -add app`
+#### > Create a profile (or add to an existing profile):  `desk -p profile-name -a app`
 Type the name of the profile you want to create and the app or url you'd like to add. Replace `app` with `url` if you want to add urls. Add each app or url, hit Enter after typing each one, then type `done` and hit Enter when you're finished.
 
-#### > Delete from profile:  `desk -pf profile-name -del url`
-(Same as adding except use -del instead of -add) or `go run desk.go -pf profile-name -del url`. Replace `url` with `app` if you want to add apps. Add each app or url, hit Enter after typing each one, then type `done` and hit Enter when you're finished.
+#### > Delete from profile:  `desk -p profile-name -d url`
+(Same as adding except use -d instead of -a) or `go run desk.go -p profile-name -d url`. Replace `url` with `app` if you want to add apps. Add each app or url, hit Enter after typing each one, then type `done` and hit Enter when you're finished.
 
-#### > Delete profile:  `desk -pf profile-name -del profile` 
-or `go run desk.go -pf profile-name -del profile-name` (after -del write "profile" or the name of the profile)
+#### > Delete profile:  `desk -p profile-name -d profile` 
+or `go run desk.go -p profile-name -d profile-name` (after -d write "profile" or the name of the profile)
 
 # :goal_net: Example:
 
@@ -104,10 +104,10 @@ An example profile has been provided in the profiles/ folder.
 All your profiles can be found in this folder as well. 
 
 To run the example, type:
-`go run desk.go -pf example`
+`go run desk.go -p example`
 
 ### To add an app (Slack) to the example, type:
-`desk -pf example -add app`
+`desk -p example -a app`
 Then type:
 `Slack`
 And hit Enter.
@@ -120,12 +120,12 @@ and hit Enter when you've finished.
 
 You should see a message saying you added an app to your profile.
 To verify what was added, type:
-`desk -pf example -l y` 
+`desk -p example -l y` 
 and a list should show up of the contents of the example profile.
 
 
 ### To add a website (Google) to the example, type:
-`desk -pf example -add url`
+`desk -p example -a url`
 and hit Enter.
 
 Now, type:
@@ -141,13 +141,13 @@ when you're finished.
 
 You should see a message saying you added a url(s) to your profile.
 To verify what was added, type:
-`desk -pf example -l y` 
+`desk -p example -l y` 
 and a list should show up of the contents of the example profile.
 
-### To delete an app or url, do the same as above for adding, except use the `-del` flag instead of `-add`
+### To delete an app or url, do the same as above for adding, except use the `-d` flag instead of `-a`
 
 ### To delete a profile:
-`desk -pf profile-name -del profile`
+`desk -p profile-name -d profile`
 
 You should get a confirmation message asking if you're sure you want to delete the profile. 
 
@@ -158,7 +158,7 @@ You should get a confirmation message asking if you're sure you want to delete t
 
 * No trailing spaces when adding or deleting apps. Must be typed exactly as is in the appDir.txt
 
-* Type anything for yes, type "no" for no, more details can be found about the input by typing the "-help" flag: `desk -help` (Exception: for -del flag when deleting a profile -> must be the profile name or the word "profile")
+* Type anything for yes, type "no" for no, more details can be found about the input by typing the "-help" flag: `desk -help` (Exception: for -d flag when deleting a profile -> must be the profile name or the word "profile")
 
 * Currently case sensitive - apps must be typed exactly as shown on your pc
 
