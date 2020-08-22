@@ -17,7 +17,7 @@ import (
 	"github.com/skratchdot/open-golang/open"
 )
 
-// GLOBAL VAR FOR LOCATION OF PROFILES AND APPDIR
+// GLOBAL VAR FOR (easier access to) LOCATION OF PROFILES AND APPDIR
 var dir string
 var profpath string
 var apps string
@@ -25,25 +25,6 @@ var apps string
 func seekProfile(ext string, name string) bool {
 
 	extList := []string{}
-	// apps := readFile("appDir.txt")
-	// var apps string
-	// scan through appDir
-	// scanner := bufio.NewScanner(strings.NewReader(apps))
-
-	// var profpath string
-	// i := 0
-	// for scanner.Scan() {
-	// 	if i == 0 {
-	// 		profpath = scanner.Text()
-	// 		// fmt.Println("profpath ", profpath)
-	// 		i++
-	// 	} else if i == 1 {
-	// 		apps = readFile(scanner.Text())
-	// 		i++
-	// 	} else {
-	// 		break
-	// 	}
-	// }
 
 	// finds all txt files in current directory
 	filepath.Walk(profpath, func(profpath string, fileInfo os.FileInfo, _ error) error {
@@ -198,24 +179,6 @@ func createAppDir() {
 	dir = os.Getenv("DIR")
 	profpath = os.Getenv("PROFPATH")
 	apps = os.Getenv("APPS")
-	// ADDING PROFILE PATH AT LINE 0 and APP DIR PATH AT LINE 1
-	// get permanent path to profiles (append -> first line of appList, next few lines will the the paths)
-	// path, err := os.Getwd()
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
-	// dir = path
-	// profpath = dir + "/profiles"
-	// apps = dir + "/appDir.txt"
-
-	// fmt.Println("create app dir DIR ", dir)
-	// fmt.Println("PROF ", profpath)
-	// fmt.Println("APPS ", apps)
-
-	// appList += profpath
-	// appList += apps
-	// fmt.Print("PROF PATH", profpath)
 
 	// ADDS DIRS FROM os.STDIN to DIRS ARRAY and APPLIST
 	scanner := bufio.NewScanner(os.Stdin)
@@ -448,28 +411,6 @@ func main() {
 		// }
 
 		extList := []string{}
-		// path = path + "/profiles"
-		// fmt.Print("PATH ", path)
-
-		// apps := readFile("appDir.txt")
-
-		// scan through appDir
-		// scanner := bufio.NewScanner(strings.NewReader(apps))
-
-		// var profpath string
-		// i := 0
-		// for scanner.Scan() {
-		// 	if i == 0 {
-		// 		profpath = scanner.Text()
-		// 		i++
-		// 	} else {
-		// 		break
-		// 	}
-		// }
-		// fmt.Println("prof path in show available profiles", profpath)
-		// fmt.Println(dir)
-		// fmt.Println(profpath)
-		// fmt.Println(apps)
 
 		// finds all txt files in directory
 		filepath.Walk(profpath, func(profpath string, fileInfo os.FileInfo, _ error) error {
@@ -492,20 +433,6 @@ func main() {
 
 		// LISTS CURRENT PROFILE CONTENTS----------------------------------------------------------
 		if *l != "no" {
-			// access file, open them
-			// apps := readFile("appDir.txt")
-			// scan through appDir
-			// scanner := bufio.NewScanner(strings.NewReader(apps))
-			// var profpathplus string
-			// i := 0
-			// for scanner.Scan() {
-			// 	if i == 0 {
-			// 		profpathplus = scanner.Text() + "/" + *pf + ext
-			// 		i++
-			// 	} else {
-			// 		break
-			// 	}
-			// }
 			profpathplus := profpath + "/" + *pf + ext
 			data := readFile(profpathplus)
 			fmt.Println(data)
@@ -516,23 +443,6 @@ func main() {
 			fmt.Println("Opening " + *pf)
 
 			// access file, open them
-			// apps := readFile("appDir.txt")
-			// scan through appDir
-			// scanner := bufio.NewScanner(strings.NewReader(apps))
-			// var profpathplus string
-			// i := 0
-			// for scanner.Scan() {
-			// 	if i == 0 {
-			// 		profpathplus = scanner.Text() + "/" + *pf + ext
-			// 		i++
-			// 	} else {
-			// 		break
-			// 	}
-			// }
-			// fmt.Println("OPENNING")
-			// fmt.Println("DIR ", dir)
-			// fmt.Println("PROF ", profpath)
-			// fmt.Println("APPS ", apps)
 
 			profpathplus := profpath + "/" + *pf + ext
 
@@ -583,20 +493,6 @@ func main() {
 
 	if *add == "app" {
 
-		// access file, open them
-		// apps := readFile("appDir.txt")
-		// scan through appDir
-		// scanner := bufio.NewScanner(strings.NewReader(apps))
-		// var fileLoc string
-		// i := 0
-		// for scanner.Scan() {
-		// 	if i == 0 {
-		// 		fileLoc = scanner.Text() + "/" + *pf + ext
-		// 		i++
-		// 	} else {
-		// 		break
-		// 	}
-		// }
 		fileLoc := profpath + "/" + *pf + ext
 
 		// data := readFile("profiles/" + *profile + ext)
@@ -642,22 +538,6 @@ func main() {
 
 	} else if *add == "url" {
 		// access file, open them
-		// apps := readFile("appDir.txt")
-		// scan through appDir
-		// scanner := bufio.NewScanner(strings.NewReader(apps))
-		// var fileLoc string
-		// i := 0
-		// for scanner.Scan() {
-		// 	if i == 0 {
-		// 		fileLoc = scanner.Text() + "/" + *pf + ext
-		// 		i++
-		// 	} else {
-		// 		break
-		// 	}
-		// }
-		// data := readFile("profiles/" + *profile + ext)
-		// addMe := "\n" + *add + "\n"
-		// fmt.Print("ADDING file: ", file, addMe)
 		fileLoc := profpath + "/" + *pf + ext
 
 		if seekProfile(ext, *pf) == false {
@@ -725,21 +605,6 @@ func main() {
 			}
 		}
 
-		// fmt.Println(appsToDel)
-		// access file, open them
-		// apps := readFile("appDir.txt")
-		// scan through appDir
-		// scanner := bufio.NewScanner(strings.NewReader(apps))
-		// var profpathplus string
-		// i := 0
-		// for scanner.Scan() {
-		// 	if i == 0 {
-		// 		profpathplus = scanner.Text() + "/" + *pf + ext
-		// 		i++
-		// 	} else {
-		// 		break
-		// 	}
-		// }
 		profpathplus := profpath + "/" + *pf + ext
 
 		if seekProfile(ext, *pf) {
@@ -802,22 +667,6 @@ func main() {
 		if seekProfile(ext, *pf) {
 			// access file, open it
 
-			// fmt.Printf(data)
-			// FOR EACH APP IN APPS TO DELETE, DO A SCANNER ON THE FILE AND COMPARE EACH LINE to the app
-			// access file, open them
-			// apps := readFile("appDir.txt")
-			// scan through appDir
-			// scanner := bufio.NewScanner(strings.NewReader(apps))
-			// var profpathplus string
-			// i := 0
-			// for scanner.Scan() {
-			// 	if i == 0 {
-			// 		profpathplus = scanner.Text() + "/" + *pf + ext
-			// 		i++
-			// 	} else {
-			// 		break
-			// 	}
-			// }
 			profpathplus := profpath + "/" + *pf + ext
 
 			for _, item := range urlsToDel {
@@ -851,13 +700,17 @@ func main() {
 			fmt.Println("Typo? We couldn't find that profile")
 		}
 
-	} else if *del != "no" && *del != *pf && *del != "profile" {
+	} else if *del != "no" || *del != *pf || *del != "profile" {
 		fmt.Println("Try again - specify what you want to delete '-del app' or '-del url'")
 	}
 
 	// DELETES THE WHOLE PROFILE --------------------------------------------------------------------------
 	if *del == "profile" || *del == *pf {
 		fileLoc := "profiles/" + *pf + ext
+
+		profpathplus := profpath + "/" + *pf + ext
+		data := readFile(profpathplus)
+		fmt.Println(data)
 
 		var yn string
 		fmt.Print("Are you sure you want to delete ", *pf, " profile? [y/n]..")
@@ -869,8 +722,10 @@ func main() {
 				log.Fatal(err)
 			}
 
-			fmt.Println("Profile Deleted")
+			fmt.Println("Profile deleted")
 
+		} else {
+			fmt.Println("Profile not deleted")
 		}
 	}
 
