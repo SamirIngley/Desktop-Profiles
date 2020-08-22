@@ -353,7 +353,7 @@ func main() {
 	// figure out if adding to a profile or opening a profile
 	// if profile exists, will be added to profile
 	// if profile dne, will be created and added to
-	yo := flag.String("help", "GO HERE", "https://github.com/SamirIngley/Desktop-Profiles")
+	yo := flag.String("h", "help", "https://github.com/SamirIngley/Desktop-Profiles")
 	p := flag.String("p", "profile-name", "name of the profile")
 	l := flag.String("l", "no", "list contents of the profile")
 	o := flag.String("o", "yes", "open this profile")
