@@ -47,7 +47,8 @@
 
 ### 1. Download / clone this repo. 
 * Move it where you want, then 'cd' into it. 
-* Note: If you move the folder after the next step, refer to the :boom:Errors section at the bottom.
+* Note: If you move the folder after the next step, refer to the [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
+
 
 ![Image2](READMEimg/download.png)
 
@@ -181,8 +182,10 @@ You should get a confirmation message asking if you're sure you want to delete t
 If you run into ANY problems with opening apps, you've downloaded new apps, added incorrect paths while setting up, or you move your folder:
 
 - First try to find the app in the "appDir.txt" file (ignore the number in front of it). This file is a collection of all the apps at all the paths you passed in. If it's not there, then you likely haven't passed the path to that app during setup and need to redo this step - see next step for instructions on how to do this. Your profiles will still exist afterwards.
-- To Redo Setup: Delete the "appDir.txt" file, delete the ".env" file, and if you did `go build` - also delete the binary file "desk" but **NOT** "desk.go".
+
+- **To Redo Setup:** Delete the "appDir.txt" file, delete the ".env" file, and if you did `go build` - also delete the binary file "desk" but **NOT** "desk.go".
 - If you do delete "desk.go" you will have to re download this repo or just that file.
+- If you'd like to save the profiles you've made, save the folder to your computer.
 - Re run the program with the install commands:`go run desk.go` or `go build` & `desk` 
 
 From there you'll be prompted to set up your application paths again :) follow the pictures carefully.
