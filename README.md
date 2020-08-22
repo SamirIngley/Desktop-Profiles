@@ -66,8 +66,11 @@
 
 
 # :mega: Commands:
+
 :exclamation: You must be inside the directory to run the commands\
-:exclamation: If you didn't create an executable replace `desk` with `go run desk.go` followed by the command
+:exclamation: If you didn't create an executable replace `desk` with `go run desk.go` followed by the command\
+
+:bulb: Combine flags to make more powerful commands! For example use the `-del` flag and the `-l` flag together so you can see the contents of the profile and copy and paste the app or url you want to delete
 
 #### > List available profiles: `desk` 
 
