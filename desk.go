@@ -353,7 +353,7 @@ func main() {
 	// figure out if adding to a profile or opening a profile
 	// if profile exists, will be added to profile
 	// if profile dne, will be created and added to
-	yo := flag.String("h", "help", "https://github.com/SamirIngley/Desktop-Profiles")
+	h := flag.String("h", "help", "https://github.com/SamirIngley/Desktop-Profiles")
 	p := flag.String("p", "profile-name", "name of the profile")
 	l := flag.String("l", "no", "list contents of the profile")
 	o := flag.String("o", "yes", "open this profile")
@@ -371,7 +371,7 @@ func main() {
 
 	// seekProfile(ext, *profile)
 	// openBrowser("https://www.google.com")
-	if *yo == "me" {
+	if *h == "me" {
 		fmt.Println("Here's the github: https://github.com/SamirIngley/Desktop-Profiles")
 	}
 
@@ -381,7 +381,7 @@ func main() {
 	// fmt.Println("APPS ", os.Getenv("APPS"))
 
 	// CREATE APP DIRECTORY --------------------------------------------------------- appDir text File
-	e := godotenv.Load() // looks for .env file
+	e := godotenv.Load() // looks for .env file (e is the error - golang returns errors, so if there's an error, it will createAppDir())
 	if e != nil {        // if dne, create app dir -> creates .env
 		// fmt.Print("creating env")
 		createAppDir()
@@ -700,7 +700,7 @@ func main() {
 			fmt.Println("Typo? We couldn't find that profile")
 		}
 
-	} else if *d != "no" || *d != *p || *d != "profile" {
+	} else if *d != "profile" && *d != "no" && *d != *p {
 		fmt.Println("Try again - specify what you want to delete '-d app' or '-d url'")
 	}
 

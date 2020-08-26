@@ -1,0 +1,10 @@
+github.com/debber/debber-v0.3 v0.0.0-20160226200915-cf10fd052975 h1:WnS6xbOw6xZABYTIpTZ4NAjrXh0iQFO8XJhvXNMY/9I=
+github.com/debber/debber-v0.3 v0.0.0-20160226200915-cf10fd052975/go.mod h1:TCVRstzD4Q5cPZofOCFtaeBwCr5WXJdG3hxzFmYYnZ0=
+github.com/joho/godotenv v1.3.0 h1:Zjp+RcGpHhGlrMbJzXTrZZPrWj+1vfm90La1wgB6Bhc=
+github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
+github.com/laher/argo v0.0.0-20140722103944-11d91c83cc0f h1:fQ8JwxJN77cxE0foUmSHkKQebcxyd6vAfWCv7Bs5r34=
+github.com/laher/argo v0.0.0-20140722103944-11d91c83cc0f/go.mod h1:Ymqfd31XvifvQ001Ty97DbYjQoeJPnb1WVkFhGeNYA4=
+github.com/laher/goxc v0.18.1 h1:b5KJsjerACeEBsFWBveVzdUjc5wetTA5IQhOSjFJx50=
+github.com/laher/goxc v0.18.1/go.mod h1:NdnX1aggrtsAowOUacIAYkuGKn2Md8Ej2DpoPUUqofs=
+github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966 h1:JIAuq3EEf9cgbU6AtGPK4CTG3Zf6CKMNqf0MHTggAUA=
+github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966/go.mod h1:sUM3LWHvSMaG192sy56D9F7CNvL7jUJVXoqM1QKLnog=
