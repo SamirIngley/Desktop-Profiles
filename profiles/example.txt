@@ -1,2 +1,2 @@
 app:Postman
-url:makeschool.com/portal
+url:https://github.com/SamirIngley/Desktop-Profiles
