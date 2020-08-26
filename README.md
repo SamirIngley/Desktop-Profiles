@@ -166,7 +166,7 @@ You should get a confirmation message asking if you're sure you want to delete t
 
 ### APP DIRECTORY:
 
-* If you added more new apps to your pc, just delete the appDir.txt, .env, and "desk" files, **NOT** "desk.go", and a new ones will be created for you next time you run the program.
+* If you added more new apps to your pc, just delete the appDir.txt and .env files and a new ones will be created for you next time you run the program.
 * Same applies if you want to add new paths to other Application folders
 
 ## Future updates:
@@ -183,8 +183,8 @@ If you run into ANY problems with opening apps, you've downloaded new apps, adde
 
 - First try to find the app in the "appDir.txt" file (ignore the number in front of it). This file is a collection of all the apps at all the paths you passed in. If it's not there, then you likely haven't passed the path to that app during setup and need to redo this step - see next step for instructions on how to do this. Your profiles will still exist afterwards.
 
-- **To Redo Setup:** Delete the "appDir.txt" file, delete the ".env" file, and if you did `go build` - also delete the binary file "desk" but **NOT** "desk.go".
-- If you do delete "desk.go" you will have to re download this repo or just that file.
+- **To Redo Setup:** Delete the "appDir.txt" file and delete the ".env" file
+- If you delete "desk.go" you will have to re download this repo or just that file.
 - If you'd like to save the profiles you've made, save the folder to your computer.
 - Re run the program with the install commands:`go run desk.go` or `go build` & `desk` 
 
