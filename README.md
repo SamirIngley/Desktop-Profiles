@@ -71,7 +71,7 @@ final fix: Embed static assets for global install
 
 # :mega: Commands:
 
-:exclamation: You must be inside the directory to run the commands\
+:exclamation: For now, you must be inside the directory to run the commands\
 :exclamation: If you didn't create an executable replace `desk` with `go run desk.go` followed by the command\
 
 :bulb: Pro-tip use multiple flags together for a better experience :)
