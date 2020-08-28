@@ -11,8 +11,8 @@
   </a>
 </p>
 
-status: Available on Homebrew next week!
-final fix: Embed static assets for global install 
+Status: Live! Soon available on Homebrew\
+Fix: Embed static assets for global install 
 
 ### :anger: Problem
 > I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. 
