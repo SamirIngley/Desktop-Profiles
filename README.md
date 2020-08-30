@@ -28,7 +28,7 @@ Fix: Embed static assets for global install
 
 ************************************************************************************************
 
-### Table of Contents
+## Table of Contents
 :bulb: Note: This was built in Go on a Mac :apple: (for a Mac)
 
 **[:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)\
