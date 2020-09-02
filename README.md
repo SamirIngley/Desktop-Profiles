@@ -55,9 +55,6 @@
 ### 2. Move it where you want, then 'cd' into it. 
 * :non-potable_water: You will run into issues if you move this folder after completing step 3. However, you won't ever need to access this folder. If you do move the folder after this step refer to [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
-
-![Image2](READMEimg/download.png)
-
 ### 3. Run `go generate`
 * You should see a success message
 * This stores your directory paths globally so we can access this program globally
@@ -72,7 +69,7 @@
 ### 6. Run `desk` 
 * This will walk you through creating your app directory file. Follow the image and steps below. 
 
-![Image3](READMEimg/download2.png)
+![Image3](READMEimg/global_download.png)
 
 * 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
 * **Once you complete this step, you're done! Checkout all the commands below**
@@ -80,6 +77,7 @@
 ### 7. Lastly, again run `go generate`, then `go build`, and finally `go install` in that order one at a time
 
 ### 8. Whew, we're done - and you're ready to rock! Type `desk` to see your existing profiles or any of the other commands (see below) from *any directory in the terminal*
+* There's a small glitch that happens sometimes where you get asked to the WELCOME screen and are asked to re enter the "/Volumes..." paths again. Just ype "ctl + c" to exit that. Then try running `desk` again and it should work now. If it doesn't, [hit my line - let me know](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact)
 
 # :mega: Commands:
 
