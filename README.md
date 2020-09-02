@@ -26,8 +26,8 @@
 ************************************************************************************************
 
 ## Table of Contents
-:bulb: This was built in Go on a Mac :apple: (for a Mac)\
-:bulb: This works from *anywhere* on your terminal :) 
+:bulb: This was built in Go on a Mac, for a Mac :apple:\
+:bulb: This works from *anywhere* on your terminal :earth_africa:
 
 **[:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)\
 [:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands)\
@@ -53,7 +53,7 @@
 * `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
 
 ### 2. Move it where you want, then 'cd' into it. 
-* :warning: You will run into issues if you move this folder after completing step 3. However, you won't ever need to access this folder. If you do move the folder after this step refer to [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
+* :non-potable_water: You will run into issues if you move this folder after completing step 3. However, you won't ever need to access this folder. If you do move the folder after this step refer to [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
 
 ![Image2](READMEimg/download.png)
@@ -82,9 +82,6 @@
 ### 8. Whew, we're done - and you're ready to rock! Type `desk` to see your existing profiles or any of the other commands (see below) from *any directory in the terminal*
 
 # :mega: Commands:
-
-:exclamation: For now, you must be inside the directory to run the commands\
-:exclamation: If you didn't create an executable replace `desk` with `go run desk.go` followed by the command\
 
 :bulb: Pro-tip use multiple flags together for a better experience :)
 
