@@ -255,7 +255,7 @@ func createAppDir() {
 	fmt.Println("For a detailed guide, visit: https://github.com/SamirIngley/Desktop-Profiles")
 	fmt.Println("type 'go run desk.go -help' for a list of options")
 	fmt.Println(" ")
-	fmt.Println("Important Info about using the app: ")
+	fmt.Println("Debugging Info about the app: ")
 	fmt.Println("- If you encounter an error with this step and your apps won't load, find the correct paths to your Applications folders, delete the appDir.txt & .env files, re-run this program, and specify those App directories as well as or instead of the default ones supplied")
 	fmt.Println("- Apps are case sensitive, apps must be typed EXACTLY as shown on your pc / in the app directory")
 	fmt.Println("- If you're having trouble specifying an app, look for it in the appDir.txt file (which will be created after this step) and ignore the number in front of it when typing it in")
