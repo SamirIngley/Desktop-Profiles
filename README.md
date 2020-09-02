@@ -76,7 +76,8 @@
 
 ### 7. Lastly, again run `go generate`, then `go build`, and finally `go install` in that order one at a time
 
-### 8. Whew, we're done - and you're ready to rock! Type `desk` to see your existing profiles or any of the other commands (see below) from *any directory in the terminal*
+### 8. To confirm it's complete, type `desk` to see your existing profiles! If you see the example profile you're all set. 
+* Try any of the other commands below from *any directory in the terminal* 
 * There's a small glitch that may happen sometimes where you get sent to the WELCOME screen and are asked to re enter the "/Volumes..." paths again. Just ype "ctl + c" to exit that. Delete the txt files created in that directory. 
 * Then try running `desk` again and it should work now. If it doesn't, [hit my line - let me know](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact)
 
