@@ -26,7 +26,7 @@
 ************************************************************************************************
 
 ## Table of Contents
-:bulb: This was built in Go on a Mac :apple: (for a Mac)
+:bulb: This was built in Go on a Mac :apple: (for a Mac)\
 :bulb: This works from *anywhere* on your terminal :) 
 
 **[:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)\
