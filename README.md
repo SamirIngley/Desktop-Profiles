@@ -11,9 +11,6 @@
   </a>
 </p>
 
-Status: Live! Soon available on Homebrew\
-Fix: Embed static assets for global install 
-
 ### :anger: Problem
 > I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. 
 > I also did not want a cluttered desktop with everything open all the time, as this can be a large drain on the computer's resources and my attention span. 
@@ -29,7 +26,8 @@ Fix: Embed static assets for global install
 ************************************************************************************************
 
 ## Table of Contents
-:bulb: Note: This was built in Go on a Mac :apple: (for a Mac)
+:bulb: This was built in Go on a Mac :apple: (for a Mac)
+:bulb: This works from *anywhere* on your terminal :) 
 
 **[:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)\
 [:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands)\
@@ -52,18 +50,26 @@ Fix: Embed static assets for global install
 * [Detailed instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
 ### 1. Download / clone this repo. 
-* Move it where you want, then 'cd' into it. 
-* Note: If you move the folder after the next step, refer to the [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
+* `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
+
+### 2. Move it where you want, then 'cd' into it. 
+* :caution: You will run into issues if you move this folder after completing step 3. However, you won't ever need to access this folder. If you do move the folder after this step refer to [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
 
 ![Image2](READMEimg/download.png)
 
+### 3. Run `go generate`
+* You should see a success message
+* This stores your directory paths globally so we can access this program globally
 
-### 2. Run `go build` 
+### 4. Run `go build` 
 * This will create a binary file (executable) called desk. 
 * Although this is a binary, you must be in the directory to run the program, `go install` will not make this global. If you know of a way for a golang program to store a string input and access it globally (through bash_profile?) please let me know!
 
-### 3. Run `desk` 
+### 5. Run `go install`
+* This will install it for you to use globally!
+
+### 6. Run `desk` 
 * This will walk you through creating your app directory file. Follow the image and steps below. 
 
 ![Image3](READMEimg/download2.png)
@@ -71,6 +77,9 @@ Fix: Embed static assets for global install
 * 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
 * **Once you complete this step, you're done! Checkout all the commands below**
 
+### 7. Lastly, again run `go generate`, then `go build`, then `go install` in that order one at a time
+
+### 8. You're ready to rock! Type `desk` to see your existing profiles or any of the other commands (see below) from *any directory in the terminal*
 
 # :mega: Commands:
 
@@ -189,7 +198,9 @@ If you run into ANY problems with opening apps, you've downloaded new apps, adde
 
 - First try to find the app in the "appDir.txt" file (ignore the number in front of it). This file is a collection of all the apps at all the paths you passed in. If it's not there, then you likely haven't passed the path to that app during setup and need to redo this step - see next step for instructions on how to do this. Your profiles will still exist afterwards.
 
-- **To Redo Setup:** Delete the "appDir.txt" file and delete the ".env" file
+**To Redo Setup:** It may be simpler to delete the whole folder and go through the installation again and save your profile folder if you want to keep your profiles
+
+- Delete the "appDir.txt" file, ".env", "dirFile.txt", "appsFile.txt", "profFile.txt", and "generate.go"
 - If you delete "desk.go" you will have to re download this repo or just that file.
 - If you'd like to save the profiles you've made, save the folder to your computer.
 - Re run the program with the install commands:`go run desk.go` or `go build` & `desk` 
