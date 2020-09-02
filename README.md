@@ -77,9 +77,9 @@
 * 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
 * **Once you complete this step, you're done! Checkout all the commands below**
 
-### 7. Lastly, again run `go generate`, then `go build`, then `go install` in that order one at a time
+### 7. Lastly, again run `go generate`, then `go build`, and finally `go install` in that order one at a time
 
-### 8. You're ready to rock! Type `desk` to see your existing profiles or any of the other commands (see below) from *any directory in the terminal*
+### 8. Whew, we're done - and you're ready to rock! Type `desk` to see your existing profiles or any of the other commands (see below) from *any directory in the terminal*
 
 # :mega: Commands:
 
