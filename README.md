@@ -77,9 +77,7 @@
 ### 7. Lastly, again run `go generate`, then `go build`, and finally `go install` in that order one at a time
 
 ### 8. Type `desk`. If you see the example profile you're all set.
-* Try any of the other commands below from *any directory in the terminal* 
-* There's a small glitch that may happen sometimes where you get sent to the WELCOME screen and are asked to re enter the "/Volumes..." paths again. Just ype "ctl + c" to exit that. Delete the txt files created in that directory. 
-* Then try running `desk` again and it should work now. If it doesn't, [hit my line - let me know](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact)
+* Any trouble? [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
 # :mega: Commands:
 
@@ -204,6 +202,10 @@ If you run into ANY problems with opening apps, you've downloaded new apps, adde
 
 From there you'll be prompted to set up your application paths again :) follow the pictures carefully.
 
+**desk command back to WELCOME**
+* There's a small glitch that may happen sometimes where you get sent to the WELCOME screen and are asked to re enter the "/Volumes..." paths again. Just ype "ctl + c" to exit that. Delete the txt files created in that directory. 
+* Then try running `desk` again and it should work now. If it doesn't, [hit my line - let me know](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact)
+
 If you're having issues with the binary file:
 - Try typing `go run desk.go` everywhere instead of `desk` 
 
@@ -214,6 +216,9 @@ Feel free to reach out to me if you run into any issues: samir.ingle7@gmail.com
 ## Contact:
 * samir.ingle7@gmail.com
 * https://www.samiringle.com
+
+:coffee: Buy Me a Coffee! :smile:
+Venmo @SamirIngle
 
 ### Acknowledgements:
  
