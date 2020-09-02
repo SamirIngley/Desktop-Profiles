@@ -52,7 +52,7 @@
 ### 1. Git clone this repo. 
 * `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
 
-### 2. Move it where you want, then 'cd' into it. 
+### 2. Move it where you want, then `cd` into it. 
 * :non-potable_water: You will run into issues if you move this folder after completing step 3. However, you won't ever need to access this folder. If you do move the folder after this step refer to [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
 ### 3. Run `go generate`
