@@ -87,6 +87,7 @@ func checkIfAppDir() bool {
 	extList := []string{}
 
 	// if app dir exists, return true
+	// fmt.Println("DUHRRRRR", dir)
 	if len(dir) > 0 && dir != "reset" {
 		filepath.Walk(dir, func(dir string, fileInfo os.FileInfo, _ error) error {
 			// fmt.Println(fileInfo.Name())
@@ -96,8 +97,6 @@ func checkIfAppDir() bool {
 			}
 			return nil
 		})
-	} else {
-		createAppDir()
 	}
 
 	return exists
@@ -105,7 +104,7 @@ func checkIfAppDir() bool {
 
 func createAppDir() {
 
-	// THIS FUNCTION CREATES YOUR APP DIRECTORY FILE WHICH IS NEEDED FOR THIS PROGRAM TO RUN
+	// THIS FUNCTION CREATES YOUR APP DIRECTORY FILE and .env WHICH IS NEEDED FOR THIS PROGRAM TO RUN
 	// **** YOUR rootToApps SHOULD BE THE PATH TO YOUR APPLICATIONS FOLDER *****
 	// The commented out portion below can help you get the path to your applications folder.
 	// If you know the path you can change rootToApps to the path here, and in the
@@ -182,6 +181,17 @@ func createAppDir() {
 	dir = os.Getenv("DIR")
 	profpath = os.Getenv("PROFPATH")
 	apps = os.Getenv("APPS")
+
+	dirFile, _ := os.Create("dirFile.txt")
+	dirFile.Write([]byte(Hdir))
+
+	profFile, _ := os.Create("profFile.txt")
+	profFile.Write([]byte(Hprofpath))
+
+	appsFile, _ := os.Create("appsFile.txt")
+	appsFile.Write([]byte(Happs))
+
+	// fmt.Println("HARDCOAT complete")
 
 	// ADDS DIRS FROM os.STDIN to DIRS ARRAY and APPLIST
 	scanner := bufio.NewScanner(os.Stdin)
@@ -351,12 +361,15 @@ func writeToFile(file string, content string, ext string) {
 	// fmt.Println("Added ", content, " to ", file)
 }
 
+// HOW WE GENERATE BINARY FILE EMBEDDED IN OUR PROJECT :)
+//go:generate go run generators/generateBinary.go
+
 func main() {
 
 	// figure out if adding to a profile or opening a profile
 	// if profile exists, will be added to profile
 	// if profile dne, will be created and added to
-	h := flag.String("h", "help", "https://github.com/SamirIngley/Desktop-Profiles")
+	h := flag.String("h", "no", "https://github.com/SamirIngley/Desktop-Profiles")
 	p := flag.String("p", "profile-name", "name of the profile")
 	l := flag.String("l", "no", "list contents of the profile")
 	o := flag.String("o", "yes", "open this profile")
@@ -374,7 +387,7 @@ func main() {
 
 	// seekProfile(ext, *profile)
 	// openBrowser("https://www.google.com")
-	if *h == "me" {
+	if *h == "help" {
 		fmt.Println("Here's the github: https://github.com/SamirIngley/Desktop-Profiles")
 	}
 
@@ -387,24 +400,37 @@ func main() {
 	e := godotenv.Load() // looks for .env file (e is the error - golang returns errors, so if there's an error, it will createAppDir())
 	if e != nil {        // if dne, create app dir -> creates .env
 		// fmt.Print("creating env")
+		// fmt.Println("YOOHOOOOOO")
 		createAppDir()
+
 		// fmt.Println("1")
 	} else { // if it does exist, assign locals from env
-		dir = os.Getenv("DIR")
-		profpath = os.Getenv("PROFPATH")
-		apps = os.Getenv("APPS")
+		dir = string(dirFile["dirFile.txt"])
+		profpath = string(profFile["profFile.txt"])
+		apps = string(appsFile["appsFile.txt"])
 		// fmt.Println("2")
 		if !(checkIfAppDir()) { // if dotenv exists, but app dir doesn't
+			// fmt.Println("YOOHOOOOOO 2")
 			createAppDir()
 		}
+
 	}
 
-	dir = os.Getenv("DIR")
-	profpath = os.Getenv("PROFPATH")
-	apps = os.Getenv("APPS")
+	// Setting local Path Variables for use in a single function call
+	// dir = os.Getenv("DIR")
+	// profpath = os.Getenv("PROFPATH")
+	// apps = os.Getenv("APPS")
 	// fmt.Println("yeetDIR ", dir)
 	// fmt.Println("PROF ", profpath)
 	// fmt.Println("APPS ", apps)
+
+	dir = string(dirFile["dirFile.txt"])
+	profpath = string(profFile["profFile.txt"])
+	apps = string(appsFile["appsFile.txt"])
+
+	// fmt.Println("EMBED", string(dirFile["dirFile.txt"]))
+	// fmt.Println("EMBED", string(profFile["profFile.txt"]))
+	// fmt.Println("EMBED", string(appsFile["appsFile.txt"]))
 
 	// SHOW ALL AVAILABLE PROFILES
 	if *p == "profile-name" && *o == "yes" && *l == "no" && *a == "no" && *d == "no" {
@@ -415,17 +441,20 @@ func main() {
 
 		extList := []string{}
 
+		fmt.Println("Profiles: ")
+
 		// finds all txt files in directory
 		filepath.Walk(profpath, func(profpath string, fileInfo os.FileInfo, _ error) error {
 			// fmt.Println(profpath)
 			if filepath.Ext(profpath) == ext {
 				extList = append(extList, fileInfo.Name())
+				noExt := len(fileInfo.Name()) - 4
+				fmt.Println(fileInfo.Name()[0:noExt])
 			}
 			return nil
 		})
 
-		fmt.Println("Profiles: ")
-		fmt.Println(extList)
+		// fmt.Println(extList)
 
 		return
 	}
