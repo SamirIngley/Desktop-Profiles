@@ -49,10 +49,10 @@
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
 * [Detailed instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
-### 1. Git clone this repo. 
+### 1. Git clone this repo and `cd` into it.
 * `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
 
-### 2. Move it where you want, then `cd` into it. 
+### 2. `cd` into it. 
 * :non-potable_water: You will run into issues if you move this folder after completing step 3. However, you won't ever need to access this folder. If you do move the folder after this step refer to [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
 ### 3. Run `go generate`
