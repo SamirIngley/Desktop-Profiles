@@ -55,28 +55,21 @@
 
 ### 2. `cd` into it. 
 
-### 3. Run `go generate`
-* You should see a success message
-* This stores your directory paths globally so we can access this program globally
+### 3. Run `go generate`, then `go build`, next `go install`, and finally `desk`. Don't stop here, after running desk and configuring your paths, we still have one more step!
+* go generate: You should see a success message. This stores your directory paths globally so we can access this program globally
 
-### 4. Run `go build` 
-* This will create a binary file (executable) called desk. 
-* Although this is a binary, you must be in the directory to run the program, `go install` will not make this global. If you know of a way for a golang program to store a string input and access it globally (through bash_profile?) please let me know!
+* go build: This will create a binary file (executable) called desk. 
 
-### 5. Run `go install`
-* This will install it for you to use globally!
+* go install: This will install it for you to use globally!
 
-### 6. Run `desk` 
-* This will walk you through creating your app directory file. Follow the image and steps below. 
+* desk: This will walk you through creating your app directory file. Follow the image and steps below. 
 
 ![Image3](READMEimg/global_download.png)
 
 * 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
-* **Once you complete this step, you're done! Checkout all the commands below**
 
-### 7. Lastly, again run `go generate`, then `go build`, and finally `go install` in that order one at a time
+### 4. Lastly, repeat step 3 after you got a success message for creating the app directory. Now, when you type desk you should see the example profile show up, if you do - you're done, check out the commands below! If you are prompted to enter the paths again, just hist Ctrl + C to exit and type `desk` again - now you should see the example profile show up!
 
-### 8. Type `desk`. If you see the example profile you're all set.
 * Any trouble? [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
 # :mega: Commands:
