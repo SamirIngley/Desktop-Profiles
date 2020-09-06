@@ -55,7 +55,7 @@
 
 ### 2. `cd` into it. 
 
-### 3. Run `go generate`, then `go build`, next `go install`, and finally `desk`. Don't stop here, after running desk and configuring your paths, we still have one more step!
+### 3. Run `go generate`, then `go build`, next `go install`, and finally `desk`.\ Don't stop here, after running desk and configuring your paths, we still have one more step!
 * go generate: You should see a success message. This stores your directory paths globally so we can access this program globally
 
 * go build: This will create a binary file (executable) called desk. 
@@ -68,7 +68,7 @@
 
 * 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
 
-### 4. Lastly, repeat step 3 after you got a success message for creating the app directory. Now, when you type desk you should see the example profile show up, if you do - you're done, check out the commands below! If you are prompted to enter the paths again, just hist Ctrl + C to exit and type `desk` again - now you should see the example profile show up!
+### 4. Lastly, repeat step 3 after you got a success message for creating the app directory.\ Now, when you type desk you should see the example profile show up, if you do - you're done, check out the commands below! If you are prompted to enter the paths again, just hist Ctrl + C to exit and type `desk` again - now you should see the example profile show up!
 
 * Any trouble? [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
