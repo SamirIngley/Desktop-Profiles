@@ -45,18 +45,18 @@
 
 # :floppy_disk: Install: 
 
-### 0. Install Go and configure your GOPATH
+### 1. Install Go and configure your GOPATH
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
 * [Detailed instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
-### 1. Git clone this repo into a location you want.
+### 2. Clone this repo to a location you want.
 * `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
 * :non-potable_water: You will run into issues if you move this folder after completing step 3. However, you won't ever need to access this folder. If you do move the folder after this step refer to [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
-### 2. `cd` into it. 
+### 3. `cd` into it. 
 
-### 3. Run `go generate`, then `go build`, next `go install`, and finally `desk`.
-#### Don't stop here, after running desk and configuring your paths, we still have one more step!
+### 4. Run `go generate`, then `go build`, next `go install`, and finally `desk`. There's one more important step left below.
+
 * go generate: You should see a success message. This stores your directory paths globally so we can access this program globally
 
 * go build: This will create a binary file (executable) called desk. 
@@ -69,8 +69,11 @@
 
 * 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
 
-### 4. Lastly, repeat step 3 after you got a success message for creating the app directory.
-#### Now, when you type desk you should see the example profile show up, if you do - you're done, check out the commands below! If you are prompted to enter the paths again, just hist Ctrl + C to exit and type `desk` again - now you should see the example profile show up!
+### 5. Lastly, repeat step 3 after you successfully created the app directory. One of two things will have happened... 
+
+* If the example profile shows up - you're done! The `desk` command shows you the available profiles. 
+
+* However, if it asks you to input the paths again, just type `Ctrl` + `C` to exit and type `desk` again - now you should see the example profile show up!
 
 * Any trouble? [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
