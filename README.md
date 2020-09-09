@@ -1,5 +1,7 @@
 # Desktop Profiles 
 
+STATUS UPDATE: there's a :lady-bug: where directories get created wherever you call `desk` from. 
+
 <p align="left">
   <a>
     <a href="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" />
