@@ -738,7 +738,6 @@ func main() {
 
 	// DELETES THE WHOLE PROFILE --------------------------------------------------------------------------
 	if *d == "profile" || *d == *p {
-		fileLoc := "profiles/" + *p + ext
 
 		profpathplus := profpath + "/" + *p + ext
 		data := readFile(profpathplus)
@@ -748,7 +747,7 @@ func main() {
 		fmt.Print("Are you sure you want to delete ", *p, " profile? [y/n]..")
 		fmt.Scanln(&yn)
 		if yn == "y" || yn == "yes" {
-			var err = os.Remove(fileLoc)
+			var err = os.Remove(profpathplus)
 			if err != nil {
 				fmt.Println("Error deleting file.")
 				log.Fatal(err)
