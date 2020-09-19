@@ -13,8 +13,8 @@
 
 Recent Updates:
 1) Added shell script for super simple download process!
-2) Fixed bug where generated files aren't recognized
-Current Status: Live and running smoothely!
+2) Fixed bug where generated files aren't recognized\
+**Current Status: Live and running smoothely!
 
 ### :anger: Problem
 > I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. 
