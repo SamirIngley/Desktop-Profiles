@@ -75,6 +75,7 @@ Then, follow the shell script installation steps below, and you're all set!
 
 **SETUP COMPLETE, you're ready to roll!**
 **For a full list of commands, checkout the Commands section below**
+Don't forget to make sure your apps are spelled exactly as they're shown in your Applications folders
 
 **Any trouble?** Refer to the [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
  section and try the "Manual Install" process.
