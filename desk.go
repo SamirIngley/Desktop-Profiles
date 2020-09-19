@@ -250,8 +250,8 @@ func createAppDir() {
 	fmt.Println("bytes written: ", n)
 	fmt.Println("-----------------------------------------------------------")
 	fmt.Println("SUCCESS: We've created your App Directory (appDir.txt) ")
-	fmt.Println("Your final step: first run 'go generate', then go build, next 'go install', and finally 'desk'")
-	fmt.Println("After typing desk, you should see the 'example' profile, or your existing profiles. You're all set!")
+	fmt.Println("Final step: run `bash script.sh` one more time
+	fmt.Println("")
 	fmt.Println("Refer to the documentation to see the other available commands")
 	fmt.Println("For a detailed guide, visit: https://github.com/SamirIngley/Desktop-Profiles")
 	
