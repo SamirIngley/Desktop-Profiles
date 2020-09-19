@@ -11,6 +11,10 @@
   </a>
 </p>
 
+Recent Updates:
+1) Added shell script for super simple download process!
+2) Fixed bug where generated files aren't recognized
+
 ### :anger: Problem
 > I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. 
 > I also did not want a cluttered desktop with everything open all the time, as this can be a large drain on the computer's resources and my attention span. 
@@ -44,6 +48,28 @@
 ************************************************************************************************
 
 # :floppy_disk: Install: 
+
+You will need to install Go lang 
+
+### 1. Install Go and configure your GOPATH
+* [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
+* [Detailed instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
+
+If the shell script method does not work, the "Manual Setup" instructions are also provided below. 
+
+## Shell Script:
+
+1) In your terminal, run the command `bash script.sh`
+
+2) After that, you should have been prompted with instructions to enter your paths
+
+2) Once you've done that, repeat step 1. 
+* This time, you should see the current profiles listed
+* If it's your first time - you'll see "example"
+
+**Setup is complete, for a full list of commands, checkout the Commands section below**
+
+## Manual:
 
 ### 1. Install Go and configure your GOPATH
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
