@@ -140,8 +140,6 @@ func createAppDir() {
 
 	fmt.Println("4.  When you've finished adding paths, type 'done' on a new line and hit Enter")
 	fmt.Println(" ")
-	fmt.Println(" ")
-
 	fmt.Println("----------------------------")
 	fmt.Println("/Volumes/Macintosh HD/System/Applications")
 	fmt.Println("/Volumes/Macintosh HD/Applications")
@@ -250,7 +248,7 @@ func createAppDir() {
 	fmt.Println("bytes written: ", n)
 	fmt.Println("-----------------------------------------------------------")
 	fmt.Println("SUCCESS: We've created your App Directory (appDir.txt) ")
-	fmt.Println("Final step: run `bash script.sh` one more time
+	fmt.Println("Final step: run `bash script.sh` one more time")
 	fmt.Println("")
 	fmt.Println("Refer to the documentation to see the other available commands")
 	fmt.Println("For a detailed guide, visit: https://github.com/SamirIngley/Desktop-Profiles")
