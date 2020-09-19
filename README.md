@@ -55,7 +55,7 @@
 
 ### 3. `cd` into it. 
 
-### 4. Run `go generate`, then `go build`, next `go install`, and `desk`. Finally, we repeat these steps in step 5!
+### 4. Run `go generate`, then `go build`, next `go install`, and `desk`. We repeat these commands in the last step.
 
 * go generate: You should see a success message. This stores your directory paths globally so we can access this program globally
 
