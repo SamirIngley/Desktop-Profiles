@@ -11,10 +11,6 @@
   </a>
 </p>
 
-**RECENT UPDATES:**
-1) Added shell script for super simple download process!
-2) Fixed bug where generated files aren't recognized
-
 **CURRENT STATUS: Live and running smoothely!**
 
 **DEMO https://youtu.be/CynbOIZtDZo**
