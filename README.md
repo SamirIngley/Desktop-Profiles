@@ -55,7 +55,7 @@
 
 ### 3. `cd` into it. 
 
-### 4. Run `go generate`, then `go build`, next `go install`, and finally `desk`. We need to repeat these steps in step 5!
+### 4. Run `go generate`, then `go build`, next `go install`, and `desk`. Finally, we repeat these steps in step 5!
 
 * go generate: You should see a success message. This stores your directory paths globally so we can access this program globally
 
@@ -69,11 +69,9 @@
 
 * 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
 
-### 5. Lastly, repeat step 3 after you successfully created the app directory. One of two things will have happened... 
+### 5. Last, repeat step 3 after you successfully created the app directory - and you're done!  
 
-* If the example profile shows up - you're done! The `desk` command shows you the available profiles. 
-
-* However, if it asks you to input the paths again, just type `Ctrl` + `C` to exit and type `desk` again - now you should see the example profile show up!
+* If you type in `desk` you should see the "example" profile. Try opening it with `desk -p example` or make your own using the other commands in the section below
 
 * Any trouble? [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
@@ -85,23 +83,23 @@
 
 #### > List input options: `desk -help`
 
-#### > List profile contents: `desk -p profile-name -l y` 
+#### > List profile contents: `desk -p {profile name} -l y` 
 
-#### > Open a profile:  `desk -p profile-name` 
+#### > Open a profile:  `desk -p {profile name}` 
 
-#### > Add url(s): `desk -p profile-name -a url`
+#### > Add url(s): `desk -p {profile name} -a url`
 Enter the url, and hit Enter after each one, type "done" when you've finished.
 
-#### > Add app(s): `desk -p profile-name -a app`
+#### > Add app(s): `desk -p {profile name} -a app`
 Enter the exact app name (ei: VS Code won't work but Visual Studio Code will), and hit Enter after each one, type "done" when you've finished.
 
-#### > Create a profile (or add to an existing profile):  `desk -p profile-name -a app`
+#### > Create a profile (or add to an existing profile):  `desk -p {profile name} -a app`
 Type the name of the profile you want to create and the app or url you'd like to add. Replace `app` with `url` if you want to add urls. Add each app or url, hit Enter after typing each one, then type `done` and hit Enter when you're finished.
 
-#### > Delete from profile:  `desk -p profile-name -d url`
+#### > Delete from profile:  `desk -p {profile name} -d url`
 (Same as adding except use -d instead of -a) or `go run desk.go -p profile-name -d url`. Replace `url` with `app` if you want to add apps. Add each app or url, hit Enter after typing each one, then type `done` and hit Enter when you're finished.
 
-#### > Delete profile:  `desk -p profile-name -d profile` 
+#### > Delete profile:  `desk -p {profile name} -d profile` 
 or `go run desk.go -p profile-name -d profile-name` (after -d write "profile" or the name of the profile)
 
 # :goal_net: Example:
