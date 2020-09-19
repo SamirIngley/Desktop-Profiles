@@ -12,7 +12,6 @@
 </p>
 
 **CURRENT STATUS: Live and running smoothely!**
-
 **DEMO https://youtu.be/CynbOIZtDZo**
 
 ### :anger: Problem
