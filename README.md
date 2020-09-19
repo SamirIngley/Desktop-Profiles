@@ -17,6 +17,8 @@ Recent Updates:
 
 **Current Status: Live and running smoothely!**
 
+QUICK YOUTUBE DEMO: https://youtu.be/CynbOIZtDZo
+
 ### :anger: Problem
 > I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. 
 > I also did not want a cluttered desktop with everything open all the time, as this can be a large drain on the computer's resources and my attention span. 
