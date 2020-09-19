@@ -14,6 +14,7 @@
 Recent Updates:
 1) Added shell script for super simple download process!
 2) Fixed bug where generated files aren't recognized
+Current Status: Live and running smoothely!
 
 ### :anger: Problem
 > I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. 
@@ -49,13 +50,13 @@ Recent Updates:
 
 # :floppy_disk: Install: 
 
-You will need to install Go lang 
+First, you will need to install Go lang. (don't worry it's not hard and won't take long)
 
-### 1. Install Go and configure your GOPATH
+### Install Go and configure your GOPATH
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
 * [Detailed instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
-If the shell script method does not work, the "Manual Setup" instructions are also provided below. 
+Next, try the shell script steps listed below. If the shell script method does not work, the "Manual Setup" instructions are also provided below. 
 
 ## Shell Script:
 
@@ -71,17 +72,15 @@ If the shell script method does not work, the "Manual Setup" instructions are al
 
 ## Manual:
 
-### 1. Install Go and configure your GOPATH
-* [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
-* [Detailed instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
+Only try these steps if the Shell Script steps above do not work. 
 
-### 2. Clone this repo to a location you want.
+### 1. Clone this repo to a location you want.
 * `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
 * :non-potable_water: You will run into issues if you move this folder after completing step 3. However, you won't ever need to access this folder. If you do move the folder after this step refer to [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
 
-### 3. `cd` into it. 
+### 2. `cd` into it. 
 
-### 4. Run `go generate`, then `go build`, next `go install`, and `desk`. We repeat these commands in the last step.
+### 3. Run `go generate`, then `go build`, next `go install`, and `desk`. We repeat these commands in the last step.
 
 * go generate: You should see a success message. This stores your directory paths globally so we can access this program globally
 
@@ -95,7 +94,7 @@ If the shell script method does not work, the "Manual Setup" instructions are al
 
 * 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
 
-### 5. Last, repeat step 3 after you successfully created the app directory - and you're done!  
+### 4. Last, repeat step 3 after you successfully created the app directory - and you're done!  
 
 * If you type in `desk` you should see the "example" profile. Try opening it with `desk -p example` or make your own using the other commands in the section below
 
