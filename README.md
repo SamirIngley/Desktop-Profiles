@@ -1,7 +1,5 @@
 # Desktop Profiles 
 
-STATUS UPDATE: there's a :bug: where directories get created wherever you call `desk` from. 
-
 <p align="left">
   <a>
     <a href="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" />
@@ -57,7 +55,7 @@ STATUS UPDATE: there's a :bug: where directories get created wherever you call `
 
 ### 3. `cd` into it. 
 
-### 4. Run `go generate`, then `go build`, next `go install`, and finally `desk`. There's one more important step left below.
+### 4. Run `go generate`, then `go build`, next `go install`, and finally `desk`. We need to repeat these steps in step 5!
 
 * go generate: You should see a success message. This stores your directory paths globally so we can access this program globally
 
