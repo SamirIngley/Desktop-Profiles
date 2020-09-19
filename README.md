@@ -69,7 +69,7 @@ Then, follow the shell script installation steps below, and you're all set!
 ### 3) You should have been prompted with instructions to enter your paths, do that now.
 * This will take a minute, should receive a success message after saying your App Directory was created
 
-### 4) Once you've done that, repeat step 2 - run the bash script `bash script.sh`**
+### 4) Once you've done that, repeat step 2 - run the bash script `bash script.sh`
 * This time, you should see the existing profiles listed
 * If it's your first time - you'll see "example"
 
