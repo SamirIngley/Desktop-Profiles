@@ -76,14 +76,13 @@ Then, follow the shell script installation steps below, and you're all set!
 **SETUP COMPLETE, you're ready to roll!**
 **For a full list of commands, checkout the Commands section below**
 
-**and remember this works globally from anywhere you are in the terminal :) happy customizing**
-
-Any trouble? Refer to the [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
- section and try the **Manual Install process.**
+**Any trouble?** Refer to the [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
+ section and try the "Manual Install" process.
 
 # :mega: Commands:
 
-:bulb: Pro-tip use multiple flags together for a better experience :)
+:bulb: Use multiple flags together for a better experience :)
+:bulb: You can call commands from wherever you are in the terminal!
 
 #### > List available profiles: `desk` 
 
