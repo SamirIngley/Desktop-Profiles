@@ -11,7 +11,7 @@
   </a>
 </p>
 
-**CURRENT STATUS: Live and running smoothely!**
+**CURRENT STATUS: Live and running smoothely!**\
 **DEMO https://youtu.be/CynbOIZtDZo**
 
 ### :anger: Problem
