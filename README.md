@@ -77,36 +77,8 @@ Next, try the shell script steps listed below. If the shell script method does n
 **and remember this works globally from anywhere you are in the terminal :) happy customizing**
 
 
-IF YOU RUN INTO ERRORS WITH THE SHELL SCRIPT STEPS, ONLY THEN TRY THE MANUAL STEPS 
-## Manual:
-
-Only try these steps if the Shell Script steps above do not work. 
-
-### 1. Clone this repo to a location you want.
-* `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
-* :non-potable_water: You will run into issues if you move this folder after completing step 3. However, you won't ever need to access this folder. If you do move the folder after this step refer to [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
-
-### 2. `cd` into it. 
-
-### 3. Run `go generate`, then `go build`, next `go install`, and `desk`. We repeat these commands in the last step.
-
-* go generate: You should see a success message. This stores your directory paths globally so we can access this program globally
-
-* go build: This will create a binary file (executable) called desk. 
-
-* go install: This will install it for you to use globally!
-
-* desk: This will walk you through creating your app directory file. Follow the image and steps below. 
-
-![Image3](READMEimg/global_download.png)
-
-* 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
-
-### 4. Last, repeat step 3 after you successfully created the app directory - and you're done!  
-
-* If you type in `desk` you should see the "example" profile. Try opening it with `desk -p example` or make your own using the other commands in the section below
-
-* Any trouble? [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
+Any trouble? Refer to the [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
+ section and try the **Manual Install process.**
 
 # :mega: Commands:
 
@@ -237,6 +209,35 @@ From there you'll be prompted to set up your application paths again :) follow t
 
 If you're having issues with the binary file:
 - Try typing `go run desk.go` everywhere instead of `desk` 
+
+**Manual Install**
+### Manual:
+
+Try these steps if the Shell Script steps do not work. 
+
+1. Clone this repo to a location you want.
+* `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
+* :non-potable_water: You will run into issues if you move this folder after completing step 3. However, you won't ever need to access this folder. If you do move the folder after this step refer to [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
+
+2. `cd` into it. 
+
+3. Run `go generate`, then `go build`, next `go install`, and `desk`. We repeat these commands in the last step.
+
+* go generate: You should see a success message. This stores your directory paths globally so we can access this program globally
+
+* go build: This will create a binary file (executable) called desk. 
+
+* go install: This will install it for you to use globally!
+
+* desk: This will walk you through creating your app directory file. Follow the image and steps below. 
+
+![Image3](READMEimg/global_download.png)
+
+* 3 of the most common paths for locations of Applications on Mac are shown there at the bottom between the short lines, like in the picture, copy and paste those -> don't forget to change {USER-NAME} to your computer user name, then type `done`
+
+4. Last, repeat step 3 after you successfully created the app directory - and you're done!  
+
+* If you type in `desk` you should see the "example" profile. Try opening it with `desk -p example` or make your own using the other commands in the section below
 
 This was built on a Mac and for a Mac. 
 
