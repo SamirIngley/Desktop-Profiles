@@ -192,7 +192,7 @@ You should get a confirmation message asking if you're sure you want to delete t
 
 If you run into ANY problems with opening apps, you've downloaded new apps, added incorrect paths while setting up, or you move your folder:
 
-- First see if you typed the name of the Application correctly - remember shorthand names are not recognized (for example "VS Code" is not recognized, but "Visual Studio Code" is recognized)
+- First see if you typed the name of the Application correctly - remember shorthand names are not recognized. For example "VS Code" is not recognized, but "Visual Studio Code" is recognized. Also "Zoom" might be "zoom.us" on your computer. Check your Applications folder
 - Next try to find the app in the "appDir.txt" file (ignore the number in front of it). Use `Cmd` + `f` to search for it. This file is a collection of all the apps at all the paths you passed in. If it's not there, then you likely haven't passed the path to that app during setup and need to redo this step - see next step for instructions on how to do this. Your profiles will still exist afterwards.
 
 **To Redo Setup:** It's going to easier to delete the whole folder and go through the installation again, save your profile folder if you want to keep your profiles 
