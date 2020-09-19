@@ -13,8 +13,8 @@
 
 **CURRENT STATUS: Live and running smoothely!**
 
-**DEMO https://youtu.be/CynbOIZtDZo\
-INSTALL https://youtu.be/c-Yz02v1Le0**
+**DEMO: https://youtu.be/CynbOIZtDZo \
+INSTALL: https://youtu.be/c-Yz02v1Le0**
 
 *********************************************************************************************
 
