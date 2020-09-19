@@ -57,7 +57,8 @@ First, you will need to install Go lang. (don't worry it's not hard and won't ta
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
 * [Detailed instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
-Next, try the shell script steps listed below. If the shell script method does not work, the "Manual Setup" instructions are also provided below. 
+Then, follow the shell script installation steps below, and you're all set! If you have any trouble, refer to the [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
+ section and try the **Manual Install process.**
 
 ## Shell Script:
 
@@ -66,7 +67,7 @@ Next, try the shell script steps listed below. If the shell script method does n
 
 ### 2) In your terminal, run the command `bash script.sh`
 
-### 3) After that, you should have been prompted with instructions to enter your paths, do that now.
+### 3) You should have been prompted with instructions to enter your paths, do that now.
 * You should receive a success message saying your App Directory was created
 
 ### 4) Once you've done that, repeat step 2. Run the bash script `bash script.sh`**
@@ -75,7 +76,6 @@ Next, try the shell script steps listed below. If the shell script method does n
 
 **Setup is complete, you're ready to go! For a full list of commands, checkout the Commands section below**
 **and remember this works globally from anywhere you are in the terminal :) happy customizing**
-
 
 Any trouble? Refer to the [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
  section and try the **Manual Install process.**
