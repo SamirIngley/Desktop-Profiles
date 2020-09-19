@@ -69,7 +69,8 @@ Next, try the shell script steps listed below. If the shell script method does n
 * This time, you should see the current profiles listed
 * If it's your first time - you'll see "example"
 
-**Setup is complete, for a full list of commands, checkout the Commands section below**
+**Setup is complete, you're ready to go! For a full list of commands, checkout the Commands section below**
+**and remember this works globally from anywhere you are in the terminal :) happy customizing**
 
 ## Manual:
 
