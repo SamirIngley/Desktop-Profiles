@@ -12,7 +12,11 @@
 </p>
 
 **CURRENT STATUS: Live and running smoothely!**\
+
 **DEMO https://youtu.be/CynbOIZtDZo**
+**INSTALL https://youtu.be/c-Yz02v1Le0**
+
+*********************************************************************************************
 
 ### :anger: Problem
 > I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. 
