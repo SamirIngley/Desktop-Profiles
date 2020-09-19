@@ -61,15 +61,15 @@ Next, try the shell script steps listed below. If the shell script method does n
 
 ## Shell Script:
 
-**1) Clone this repo, then `cd` into it.**
+### 1) Clone this repo and `cd` into it.
 * `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
 
-**2) In your terminal, run the command `bash script.sh`**
+### 2) In your terminal, run the command `bash script.sh`
 
-**3) After that, you should have been prompted with instructions to enter your paths, do that now.**
+### 3) After that, you should have been prompted with instructions to enter your paths, do that now.
 * You should receive a success message saying your App Directory was created
 
-**4) Once you've done that, repeat step 2. Run the bash script `bash script.sh`**
+### 4) Once you've done that, repeat step 2. Run the bash script `bash script.sh`**
 * This time, you should see the existing profiles listed
 * If it's your first time - you'll see "example"
 
