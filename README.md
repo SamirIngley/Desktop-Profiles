@@ -57,8 +57,7 @@ First, you will need to install Go lang. (don't worry it's not hard and won't ta
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
 * [Detailed instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
-Then, follow the shell script installation steps below, and you're all set! If you have any trouble, refer to the [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
- section and try the **Manual Install process.**
+Then, follow the shell script installation steps below, and you're all set! 
 
 ## Shell Script:
 
@@ -74,7 +73,9 @@ Then, follow the shell script installation steps below, and you're all set! If y
 * This time, you should see the existing profiles listed
 * If it's your first time - you'll see "example"
 
-**Setup is complete, you're ready to go! For a full list of commands, checkout the Commands section below**
+**SETUP COMPLETE, you're ready to roll!**
+**For a full list of commands, checkout the Commands section below**
+
 **and remember this works globally from anywhere you are in the terminal :) happy customizing**
 
 Any trouble? Refer to the [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)
