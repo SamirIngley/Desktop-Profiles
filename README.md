@@ -69,7 +69,7 @@ Then, follow the shell script installation steps below, and you're all set!
 ### 3) You should have been prompted with instructions to enter your paths, do that now.
 * This will take a minute, should receive a success message after saying your App Directory was created
 
-### 4) Once you've done that, repeat step 2. Run the bash script `bash script.sh`**
+### 4) Once you've done that, repeat step 2 - run the bash script `bash script.sh`**
 * This time, you should see the existing profiles listed
 * If it's your first time - you'll see "example"
 
@@ -192,26 +192,21 @@ You should get a confirmation message asking if you're sure you want to delete t
 
 If you run into ANY problems with opening apps, you've downloaded new apps, added incorrect paths while setting up, or you move your folder:
 
-- First try to find the app in the "appDir.txt" file (ignore the number in front of it). This file is a collection of all the apps at all the paths you passed in. If it's not there, then you likely haven't passed the path to that app during setup and need to redo this step - see next step for instructions on how to do this. Your profiles will still exist afterwards.
+- First see if you typed the name of the Application correctly - remember shorthand names are not recognized (for example "VS Code" is not recognized, but "Visual Studio Code" is recognized)
+- Next try to find the app in the "appDir.txt" file (ignore the number in front of it). Use `Cmd` + `f` to search for it. This file is a collection of all the apps at all the paths you passed in. If it's not there, then you likely haven't passed the path to that app during setup and need to redo this step - see next step for instructions on how to do this. Your profiles will still exist afterwards.
 
-**To Redo Setup:** It may be simpler to delete the whole folder and go through the installation again and save your profile folder if you want to keep your profiles
+**To Redo Setup:** It's going to easier to delete the whole folder and go through the installation again, save your profile folder if you want to keep your profiles 
 
-- Delete the "appDir.txt" file, ".env", "dirFile.txt", "appsFile.txt", "profFile.txt", and "generate.go"
-- If you delete "desk.go" you will have to re download this repo or just that file.
-- If you'd like to save the profiles you've made, save the folder to your computer.
-- Re run the program with the install commands:`go run desk.go` or `go build` & `desk` 
-
-From there you'll be prompted to set up your application paths again :) follow the pictures carefully.
+From there you'll be prompted to set up your application paths again :) follow the pictures carefully and add any additional paths you want to. 
 
 **desk command back to WELCOME**
-* There's a small glitch that may happen sometimes where you get sent to the WELCOME screen and are asked to re enter the "/Volumes..." paths again. Just ype "ctl + c" to exit that. Delete the txt files created in that directory. 
+* If you are prompted to re enter the paths - you may have missed a step. Try typing `Ctrl` + `c` to exit and check the steps, or redo setup. 
 * Then try running `desk` again and it should work now. If it doesn't, [hit my line - let me know](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact)
 
 If you're having issues with the binary file:
 - Try typing `go run desk.go` everywhere instead of `desk` 
 
-**Manual Install**
-### Manual:
+#### Manual Install:
 
 Try these steps if the Shell Script steps do not work. 
 
