@@ -14,6 +14,7 @@
 Recent Updates:
 1) Added shell script for super simple download process!
 2) Fixed bug where generated files aren't recognized\
+
 **Current Status: Live and running smoothely!**
 
 ### :anger: Problem
