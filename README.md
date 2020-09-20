@@ -66,19 +66,19 @@ Then, follow the shell script installation steps below, and you're all set!
 
 ## Shell Script:
 
-![Video walkthrough](https://youtu.be/c-Yz02v1Le0)
+Video walkthrough: https://youtu.be/c-Yz02v1Le0
 
 ### 1) Clone this repo and `cd` into it.
 * `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
 
-### 2) In your terminal, run the command `bash script.sh`
+### 2) In your terminal, run the command `bash script.sh`, this will have prompted you with instructions to enter your paths, do that now.
+* You can find your username by typing the command `echo $USERNAME`
+* Watch the video linked just above Step 1 if you're confused about entering your paths for this step 
+* This will take a minute and you should receive a success message afterward saying your App Directory was created
 
-### 3) You should have been prompted with instructions to enter your paths, do that now.
-* This will take a minute, should receive a success message after saying your App Directory was created
-
-### 4) Once you've done that, repeat step 2 - run the bash script `bash script.sh`
-* This time, you should see the existing profiles listed
-* If it's your first time - you'll see "example"
+### 3) Once you've done that, run the bash script `bash script.sh` one more time.
+* This time, you should see the existing profiles listed, and if it's your first time - you'll see "example"
+* :exclamation: If you are prompted again to enter your paths even after you already did it. Make sure you run the `bash script.sh` again in step 3. If you've already done that, this may be a rare bug that I haven't sorted out yet. Please delete this folder and try again - if you've installed Go and followed all the steps, it should work this time. :)
 
 **SETUP COMPLETE, you're ready to roll!**
 **For a full list of commands, checkout the Commands section below**
