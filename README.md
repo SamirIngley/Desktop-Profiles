@@ -13,7 +13,7 @@
 
 
 ## Status
-:bike: Live and running smoothly
+Live and running smoothly :bike:
 
 Demo: https://youtu.be/CynbOIZtDZo
 
