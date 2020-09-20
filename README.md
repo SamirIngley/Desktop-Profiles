@@ -12,15 +12,15 @@
 </p>
 
 
-### Status
-Live and running smoothe
-### Bugs
-1 bug I'm having trouble reproducing. See Bugs section for more details.
-*********************************************************************************************
+### :dancer: Current status: Live and running smoothe!
 
-## See it in action
-**Demo: https://youtu.be/CynbOIZtDZo \
-Install: https://youtu.be/c-Yz02v1Le0**
+### :arrow_up: Recent Updates
+latest update: Sept 19, 2020\
+1) Added a shell script for easy install\
+2) Stored binary assets globally so program is functional anywhere on the cli
+
+## :movie_camera: See it in action 
+**Demo: https://youtu.be/CynbOIZtDZo**
 
 *********************************************************************************************
 
@@ -67,6 +67,8 @@ First, you will need to install Go lang. (don't worry it's not hard and won't ta
 Then, follow the shell script installation steps below, and you're all set! 
 
 ## Shell Script:
+
+![Video walkthrough](https://youtu.be/c-Yz02v1Le0)
 
 ### 1) Clone this repo and `cd` into it.
 * `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
@@ -169,7 +171,6 @@ and a list should show up of the contents of the example profile.
 `desk -p profile-name -d profile`
 
 You should get a confirmation message asking if you're sure you want to delete the profile. 
-
 
 ## :warning: Important Notes:
 
