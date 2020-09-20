@@ -55,9 +55,9 @@ Works from *anywhere* :earth_africa: on your terminal
 
 ### :question: How does it work? 
 1. First, you **download** this repository as a folder on your computer.
-2. Then, we run the script which **stores the paths to the folder** inside the program to we can reference/run it from anywhere. 
-3. Next, the program **asks you for the paths to all the application folders you'd like to include.** 
-4. We then save these locations and go through them in order and store the names of all the apps that exist at each of these locations, **we assign a code to each app name that corresponds with the path used to get it**. This is file is called the appDir or Application Directory. 
+2. Then, we run the script which **stores the paths to the folder** inside the program so we can reference/run it from anywhere once installed.
+3. Next, the program **asks you for the paths to all the application folders you'd like to include**.
+4. The program saves these locations and goes through them in order and stores the names of all the apps that exist at each of these locations, **we assign a code to each app name that corresponds with the path used to get it**. This is file is called the appDir or Application Directory. 
 5. I then use a package from another user on github (shown in acknowledgements section at the bottom) which consolidates the golang Open functionality to open an application given a path. 
 6. I created a program to easily create **txt files to store combinations of apps and urls**. You must specify whether you are adding apps or urls, then add them, this way the program can tag them as apps or urls.  
 7. When you run the program for a specific group, the program parses what has been stored and determines if it's an app or a url. 
