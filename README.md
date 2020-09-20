@@ -13,9 +13,9 @@
 
 
 **Status:
-Live and running smoothely**
+Live and running smoothe**
 
-**See it in action**
+**See it in action**\
 **Demo: https://youtu.be/CynbOIZtDZo \
 Install: https://youtu.be/c-Yz02v1Le0**
 
