@@ -12,8 +12,9 @@
 </p>
 
 
-### :dancer: Current status: Live and running smoothe!
-### :movie_camera: Demo https://youtu.be/CynbOIZtDZo
+### :movie_camera: :dancer: Current status: 
+Live and running smoothly\
+Demo https://youtu.be/CynbOIZtDZo
 
 *********************************************************************************************
 
