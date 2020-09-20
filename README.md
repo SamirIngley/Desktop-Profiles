@@ -13,9 +13,9 @@
 
 
 ## Status: 
-Live and running smoothly\
+Live and running smoothly
 
-Demo https://youtu.be/CynbOIZtDZo
+Demo: https://youtu.be/CynbOIZtDZo
 
 *********************************************************************************************
 
@@ -60,7 +60,7 @@ latest update: Sept 19, 2020
 
 First, you will need to install Go lang. (don't worry it's not hard and won't take long)
 
-### Install Go and configure your GOPATH
+## Install Go and configure your GOPATH
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
 * [Detailed instructions](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-go)
 
@@ -70,15 +70,15 @@ Then, follow the shell script installation steps below, and you're all set!
 
 Video walkthrough: https://youtu.be/c-Yz02v1Le0
 
-### 1) Clone this repo and `cd` into it.
+### 1. Clone this repo and `cd` into it.
 * `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
 
-### 2) In your terminal, run the command `bash script.sh`, this will have prompted you with instructions to enter your paths, do that now.
+### 2. In your terminal, run the command `bash script.sh`, this will have prompted you with instructions to enter your paths, do that now.
 * You can find your username by typing the command `echo $USERNAME`
 * Watch the video linked just above Step 1 if you're confused about entering your paths for this step 
 * This will take a minute and you should receive a success message afterward saying your App Directory was created
 
-### 3) Once you've done that, run the bash script `bash script.sh` one more time.
+### 3. Once you've done that, run the bash script `bash script.sh` one more time.
 * This time, you should see the existing profiles listed, and if it's your first time - you'll see "example"
 * :exclamation: If you are prompted again to enter your paths even after you already did it. Make sure you run the `bash script.sh` again in step 3. If you've already done that, this may be a rare bug that I haven't sorted out yet. Please delete this folder and try again - if you've installed Go and followed all the steps, it should work this time. :)
 
