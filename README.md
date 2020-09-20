@@ -11,10 +11,13 @@
   </a>
 </p>
 
-**CURRENT STATUS: Live and running smoothely!**
 
-**DEMO: https://youtu.be/CynbOIZtDZo \
-INSTALL: https://youtu.be/c-Yz02v1Le0**
+**CURRENT STATUS: 
+Live and running smoothely**
+
+**See it in action**
+**Demo: https://youtu.be/CynbOIZtDZo \
+Install: https://youtu.be/c-Yz02v1Le0**
 
 *********************************************************************************************
 
