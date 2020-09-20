@@ -36,8 +36,8 @@
 Built in Go on a :apple: Mac, for a Mac\
 Works from *anywhere* :earth_africa: on your terminal 
 
-**[How does it work?](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#question-how-does-it-work)\
-[Recent Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#arrow_up-recent-updates)**
+**[:question: How does it work](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#question-how-does-it-work)\
+[:arrow_up: Recent Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#arrow_up-recent-updates)**
 
 **[:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)\
 [:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands)\
