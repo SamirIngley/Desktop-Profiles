@@ -36,8 +36,8 @@
 Built in Go on a :apple: Mac, for a Mac\
 Works from *anywhere* :earth_africa: on your terminal 
 
-**[How does it work?](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#question-how-does-it-work?)\
-**[Recent Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#arrow_up-recent-updates)\
+**[How does it work?](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#question-how-does-it-work)\
+[Recent Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#arrow_up-recent-updates)**
 
 **[:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)\
 [:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands)\
@@ -107,8 +107,8 @@ Don't forget to make sure your apps are spelled exactly as they're shown in your
 
 # :mega: Commands:
 
-:bulb: You can call commands from wherever you are in the terminal!
-:bulb: Use multiple flags together for a better experience :)\
+:bulb: You can call commands from wherever you are in the terminal!\
+:bulb: Use multiple flags together for a better experience :)
 
 :exclamation: If an app does not open, make sure the app is labeled exactly as in the Applications folder. ("Zoom" might be "zoom.us", VS Code is "Visual Studio Code")\
 
