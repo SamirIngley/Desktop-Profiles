@@ -12,7 +12,7 @@
 </p>
 
 
-## Status: 
+## Status
 Live and running smoothly
 
 Demo: https://youtu.be/CynbOIZtDZo
