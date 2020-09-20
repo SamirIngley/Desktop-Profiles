@@ -13,12 +13,6 @@
 
 
 ### :dancer: Current status: Live and running smoothe!
-
-### :arrow_up: Recent Updates
-latest update: Sept 19, 2020
-1) Added a shell script for easy install
-2) Stored binary assets globally so program is functional anywhere on the cli
-
 ### :movie_camera: Demo https://youtu.be/CynbOIZtDZo
 
 *********************************************************************************************
@@ -50,6 +44,11 @@ latest update: Sept 19, 2020
 
 
 **[:inbox_tray: Contact Me](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact)**
+
+### :arrow_up: Recent Updates
+latest update: Sept 19, 2020
+1) Added a shell script for easy install
+2) Stored binary assets globally so program is functional anywhere on the cli
 
 ![GOpher](READMEimg/gopherIMG.png)
 
