@@ -13,15 +13,7 @@
 
 
 ## Status
-:blue_heart: Live and running smoothly
-
-**:star2: Demo: https://youtu.be/CynbOIZtDZo**
-
-<p align="right">
-  <a>
-    :star2: Demo: https://youtu.be/CynbOIZtDZo
-  </a> 
-</p>
+:blue_heart: Live and running smoothly ------  :star2: Demo: https://youtu.be/CynbOIZtDZo**
 
 *********************************************************************************************
 
