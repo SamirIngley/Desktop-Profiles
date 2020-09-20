@@ -15,12 +15,11 @@
 ### :dancer: Current status: Live and running smoothe!
 
 ### :arrow_up: Recent Updates
-latest update: Sept 19, 2020\
-1) Added a shell script for easy install\
+latest update: Sept 19, 2020
+1) Added a shell script for easy install
 2) Stored binary assets globally so program is functional anywhere on the cli
 
-## :movie_camera: See it in action 
-**Demo: https://youtu.be/CynbOIZtDZo**
+### :movie_camera: Demo https://youtu.be/CynbOIZtDZo
 
 *********************************************************************************************
 
