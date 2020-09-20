@@ -36,8 +36,8 @@
 Built in Go on a :apple: Mac, for a Mac\
 Works from *anywhere* :earth_africa: on your terminal 
 
-**[How does it work?]\
-**[Recent Updates]\
+**[How does it work?](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#question-how-does-it-work?)\
+**[Recent Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#arrow_up-recent-updates)\
 
 **[:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)\
 [:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands)\
@@ -45,16 +45,30 @@ Works from *anywhere* :earth_africa: on your terminal
 
 **[:warning: Notes](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#warning-important-notes)\
 [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)\
-[:beetle: Bugs]**
+[:beetle: Bugs](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#beetle-bugs)**
 
 **[:inbox_tray: Contact Me](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact)**
+
+![GOpher](READMEimg/gopherIMG.png)
+
+************************************************************************************************
+
+### :question: How does it work? 
+1. First, you download this repository as a folder on your computer.
+2. Then, we run the script which stores the paths to the folder in the program.
+3. Next, the program asks you for the paths to all the application folders you'd like to include. 
+4. We then save these locations and go through them in order and store the names of all the apps that exist at each of these locations, we assign a code to each app name that corresponds with the path used to get it. This is file is called the appDir or Application Directory. 
+5. I then use a package from another user on github (shown in acknowledgements section at the bottom) which consolidates the golang Open functionality to open an application given a path. 
+6. I created a program to store combinations of apps and urls. You must specify whether you are adding apsp or urls, then add as many as you like, this way the program can tag them as apps or urls.  
+7. When you run the program for a specific group, the program parses what has been stored and determines if it's an app or a url. 
+8. If it's an app it locates the app in the appDir, grabs the code assigned to it and uses the corresponding path to open the file. 
+9. If it's a url we open it immediately using the Go land built in Open library. 
+
 
 ### :arrow_up: Recent Updates
 latest update: Sept 19, 2020
 1) Added a shell script for easy install
 2) Stored binary assets globally so program is functional anywhere on the cli
-
-![GOpher](READMEimg/gopherIMG.png)
 
 ************************************************************************************************
 
@@ -93,8 +107,10 @@ Don't forget to make sure your apps are spelled exactly as they're shown in your
 
 # :mega: Commands:
 
-:bulb: Use multiple flags together for a better experience :)
 :bulb: You can call commands from wherever you are in the terminal!
+:bulb: Use multiple flags together for a better experience :)\
+
+:exclamation: If an app does not open, make sure the app is labeled exactly as in the Applications folder. ("Zoom" might be "zoom.us", VS Code is "Visual Studio Code")\
 
 #### > List available profiles: `desk` 
 
@@ -174,6 +190,8 @@ and a list should show up of the contents of the example profile.
 
 You should get a confirmation message asking if you're sure you want to delete the profile. 
 
+************************************************************************************************
+
 ## :warning: Important Notes:
 
 ### Input: 
@@ -249,6 +267,11 @@ This was built on a Mac and for a Mac.
 
 Feel free to reach out to me if you run into any issues: samir.ingle7@gmail.com
 
+## :beetle: Bugs
+1. Rare but Fatal: There's a rare bug I'm having trouble reproducing or finding the cause of.. Maybe I unknowingly fixed in with a recent update? Sometimes when `desk` is called, the generated binary assets are not recognized and you are asked to re-enter the Application locations. At this point one needs to exit the program and re-install to avoid it happening in the future, as well as delete the static assests that get generated inside the folder it was called from. This must be some form of an improper installation. 
+
+************************************************************************************************
+
 ## Contact:
 * samir.ingle7@gmail.com
 * https://www.samiringle.com
@@ -264,5 +287,4 @@ Venmo @SamirIngle
 Open functionality help from:
 https://github.com/skratchdot/open-golang
 
-go doc
 https://make-school-courses.github.io/BEW-2.5-Strongly-Typed-Languages/#/Lessons/DocsDeploy
