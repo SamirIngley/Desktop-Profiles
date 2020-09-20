@@ -110,7 +110,7 @@ Don't forget to make sure your apps are spelled exactly as they're shown in your
 :bulb: You can call commands from anywhere in the terminal!\
 :bulb: Use multiple flags together for a better experience :)
 
-:exclamation: If an app does not open, make sure the app is labeled exactly as in the Applications folder. ("Zoom" might be "zoom.us", VS Code is "Visual Studio Code")
+:exclamation: If an app does not open, make sure the app name is entered exactly as in the Applications folder that you open it from. ("Zoom" might be "zoom.us", VS Code is "Visual Studio Code")
 
 #### > List available profiles: `desk` 
 
@@ -210,6 +210,7 @@ You should get a confirmation message asking if you're sure you want to delete t
 * Same applies if you want to add new paths to other Application folders
 
 ## Future updates:
+- currently finds the first app with the specified name regardless of location. Apps with the same will conflict here and only the app specified first will open.
 - open specific "file" with "app" 
 - needs to handle trailing space when deleting apps
 - need to be able to close apps and urls too
