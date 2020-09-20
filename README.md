@@ -12,10 +12,13 @@
 </p>
 
 
-**Status:
-Live and running smoothe**
+### Status
+Live and running smoothe
+### Bugs
+1 bug I'm having trouble reproducing. See Bugs section for more details.
+*********************************************************************************************
 
-**See it in action**\
+## See it in action
 **Demo: https://youtu.be/CynbOIZtDZo \
 Install: https://youtu.be/c-Yz02v1Le0**
 
