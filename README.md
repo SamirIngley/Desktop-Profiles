@@ -44,6 +44,7 @@ Works from *anywhere* :earth_africa: on your terminal
 [:goal_net: Example](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#goal_net-example)**
 
 **[:warning: Notes](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#warning-important-notes)\
+[:crystal_ball: Future Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#crystal_ball-future-updates)\
 [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)\
 [:beetle: Bugs](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#beetle-bugs)**
 
@@ -192,7 +193,7 @@ You should get a confirmation message asking if you're sure you want to delete t
 
 ************************************************************************************************
 
-## :warning: Important Notes:
+## :warning: Important Notes
 
 ### Input: 
 
@@ -209,7 +210,7 @@ You should get a confirmation message asking if you're sure you want to delete t
 * If you added more new apps to your pc, just delete the appDir.txt and .env files and a new ones will be created for you next time you run the program.
 * Same applies if you want to add new paths to other Application folders
 
-## Future updates:
+## :crystal_ball: Future updates
 - currently finds the first app with the specified name regardless of location. Apps with the same will conflict here and only the app specified first will open.
 - open specific "file" with "app" 
 - needs to handle trailing space when deleting apps
