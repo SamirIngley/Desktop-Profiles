@@ -12,7 +12,7 @@
 </p>
 
 
-**CURRENT STATUS: 
+**Status:
 Live and running smoothely**
 
 **See it in action**
