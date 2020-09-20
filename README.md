@@ -15,7 +15,7 @@
 ## Status
 :blue_heart: Live and running smoothly
 
-Demo: https://youtu.be/CynbOIZtDZo
+**Demo:** https://youtu.be/CynbOIZtDZo
 
 *********************************************************************************************
 
