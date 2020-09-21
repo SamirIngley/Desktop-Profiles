@@ -11,7 +11,7 @@
   </a>
 </p>
 
-## Every time you sit down at your computer, wish you could open all the apps and websites you're going to use - instantly?
+## Every time you sit down at your computer, wish you could open all the apps and websites you're going to use - *instantly*?
 ### Demo https://youtu.be/CynbOIZtDZo
 
 :star2: :briefcase: 💨 Have the apps and websites for **important tasks ready to go at a moment's notice**\
