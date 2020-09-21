@@ -11,7 +11,7 @@
   </a>
 </p>
 
-# Every time you sit down at your computer, open all the apps and websites you're going to use - instantly!
+## Every time you sit down at your computer, instantly open all the apps and websites you're going to use
 
 ## Status
 **:blue_heart: Live** and running smoothly\
