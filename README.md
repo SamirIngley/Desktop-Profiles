@@ -13,9 +13,9 @@
 
 ## Every time you sit down at your computer, instantly open all the apps and websites you're going to use. Demo https://youtu.be/CynbOIZtDZo
 
-:star2: Have the apps and websites for important meetings ready to go at a moment's notice 
-:star2: Organize repetitive tasks into groups of apps and urls - for better efficiency
-:star: Remove the clutter from your desktop by consolidating tasks into groups (aka profiles)
+:star2: Have the apps and websites for important meetings ready to go at a moment's notice\
+:star2: Organize repetitive tasks into groups of apps and urls - for better efficiency\
+:star2: Remove the clutter from your desktop by consolidating tasks into groups (aka profiles)
 
 ### Status: :blue_heart: Live and running smoothly!
 *********************************************************************************************
