@@ -11,12 +11,15 @@
   </a>
 </p>
 
-## Every time you sit down at your computer, instantly open all the apps and websites you're going to use
+## Every time you sit down at your computer, instantly open all the apps and websites you're going to use. Demo https://youtu.be/CynbOIZtDZo
 
-## Status
-**:blue_heart: Live** and running smoothly\
-**:star2: Demo:** https://youtu.be/CynbOIZtDZo
+* Have the apps and websites ready to go at a moment's notice  for important meetings
+* Organize your day better, instead of making decisions about what to open and when
+* far better efficiency / workflow
+* better organization of tasks and categories
+* better control over time management
 
+### Status: :blue_heart: Live and running smoothly!
 *********************************************************************************************
 
 ### :anger: Problem
