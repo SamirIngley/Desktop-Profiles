@@ -195,6 +195,8 @@ You should get a confirmation message asking if you're sure you want to delete t
 
 ## :warning: Important Notes
 
+* Only apps that have been "Quit" or have not been opened will be opened 
+
 ### Input: 
 
 * No trailing spaces when adding or deleting apps. Must be typed exactly as is in the appDir.txt
