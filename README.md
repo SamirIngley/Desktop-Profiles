@@ -14,11 +14,19 @@
 ## Wish you could *instantly* open all the apps and websites needed for a given task?
 ### Demo https://youtu.be/CynbOIZtDZo
 
+<p align="center">
+  <a>
+    <p>Demo https://youtu.be/CynbOIZtDZo</p>
+  </a> 
+  <a href="#" target="_blank">
+    <p> Status: :blue_heart: Live and running smoothly! </p>
+  </a>
+</p>
+
 ### :briefcase: 💨 Have the apps and websites for **important tasks ready to go at a moment's notice**
 ### :brain: :open_file_folder: **Organize repetitive tasks** into groups for a more efficient experience
 ### 🧹 🗑 **Remove clutter** from having websites and apps always open and improve computer performance
 
-### Status: :blue_heart: Live and running smoothly!
 *********************************************************************************************
 
 ### :anger: Problem
