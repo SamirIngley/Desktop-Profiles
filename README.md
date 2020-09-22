@@ -14,12 +14,12 @@
 ## Wish you could *instantly* open all the apps and websites needed for a given task?
 ### Demo https://youtu.be/CynbOIZtDZo
 
-<p align="right">
+<p align="left">
   <a>
-    <p>Demo https://youtu.be/CynbOIZtDZo</p>
+    hi
   </a> 
-  <a>
-    <p> Status: :blue_heart: Live and running smoothly! </p>
+  <a href="#" target="_blank">
+    hi
   </a>
 </p>
 
