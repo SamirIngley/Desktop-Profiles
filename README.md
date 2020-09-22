@@ -14,7 +14,7 @@
 ## Wish you could *instantly* open all the apps and websites needed for a given task?
 ### Demo https://youtu.be/CynbOIZtDZo
 
-<p align="right">
+<p align="center">
   <a>
     hi
   </a> 
