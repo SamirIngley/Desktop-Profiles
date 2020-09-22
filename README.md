@@ -19,20 +19,6 @@
 ### :brain: :open_file_folder: **Organize repetitive tasks** into groups for a more efficient experience
 ### 🧹 🗑 **Remove clutter** from having websites and apps always open and improve computer performance
 
-*********************************************************************************************
-
-### :anger: Problem
-> I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. 
-> I also did not want a cluttered desktop with everything open all the time, as this can be a large drain on the computer's resources and my attention span. 
-
-### :potable_water: Solution
-> With this command line tool, easily create and customize profiles (groups) of apps and/or urls and open any of these profiles with one short command.
-
-### :green_apple: Example
-1. Create a profile called "read"
-2. Add the Books app, your Notes app, and Merriam-Webster's website
-3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
-
 ************************************************************************************************
 
 ## Table of Contents
@@ -57,7 +43,21 @@ Works from *anywhere* :earth_africa: on your terminal
 
 ************************************************************************************************
 
-### :question: How does it work? 
+## :question: How does it work? 
+
+### :anger: Problem
+> I got tired of individually clicking through urls and apps to open what I need each time I switch to a new project or task. 
+> I also did not want a cluttered desktop with everything open all the time, as this can be a large drain on the computer's resources and my attention span. 
+
+### :potable_water: Solution
+> With this command line tool, easily create and customize profiles (groups) of apps and/or urls and open any of these profiles with one short command.
+
+### :green_apple: Example
+1. Create a profile called "read"
+2. Add the Books app, your Notes app, and Merriam-Webster's website
+3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
+
+### :robot: How the program does it
 1. First, you **download** this repository as a folder on your computer.
 2. Then, we run the script which **stores the paths to the folder** inside the program so we can reference/run it from anywhere once installed.
 3. Next, the program **asks you for the paths to all the application folders you'd like to include**.
