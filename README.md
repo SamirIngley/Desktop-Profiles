@@ -12,12 +12,12 @@
 </p>
 
 ## Wish you could *instantly* open all the apps and websites for a given task?
-### Demo https://youtu.be/CynbOIZtDZo
 
 ### :briefcase: 💨 Have the apps and websites for **important tasks ready to go at a moment's notice**
 ### :brain: :open_file_folder: **Organize repetitive tasks** into groups of apps and urls for better efficiency and organization
 ### 🧹 🗑 **Remove clutter** from having sites and apps always open and improve computer performance
 
+### Demo https://youtu.be/CynbOIZtDZo
 ### Status: :blue_heart: Live and running smoothly!
 *********************************************************************************************
 
