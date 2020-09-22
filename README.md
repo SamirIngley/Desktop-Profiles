@@ -13,15 +13,7 @@
 
 ## Wish you could *instantly* open all the apps and websites needed for a given task?
 ### Demo https://youtu.be/CynbOIZtDZo
-
-<p align="center">
-  <a>
-    hi
-  </a> 
-  <a href="#" target="_blank">
-    hi
-  </a>
-</p>
+### Status: Live
 
 ### :briefcase: 💨 Have the apps and websites for **important tasks ready to go at a moment's notice**
 ### :brain: :open_file_folder: **Organize repetitive tasks** into groups for a more efficient experience
