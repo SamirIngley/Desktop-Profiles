@@ -29,20 +29,20 @@
     Built in Go on a :apple: Mac, for a Mac\
     Works from *anywhere* :earth_africa: on your terminal
     
-    
-    **[:question: How does it work](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#question-how-does-it-work)\
-    [:arrow_up: Recent Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#arrow_up-recent-updates)**
 
-    **[:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)\
-    [:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands)\
-    [:goal_net: Example](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#goal_net-example)**
+  **[:question: How does it work](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#question-how-does-it-work)\
+  [:arrow_up: Recent Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#arrow_up-recent-updates)**
 
-    **[:warning: Notes](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#warning-important-notes)\
-    [:crystal_ball: Future Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#crystal_ball-future-updates)\
-    [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)\
-    [:beetle: Bugs](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#beetle-bugs)**
+  **[:floppy_disk: Install](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#floppy_disk-install)\
+  [:mega: Commands](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#mega-commands)\
+  [:goal_net: Example](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#goal_net-example)**
 
-    **[:inbox_tray: Contact Me](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact)**
+  **[:warning: Notes](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#warning-important-notes)\
+  [:crystal_ball: Future Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#crystal_ball-future-updates)\
+  [:boom: Errors](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#boom-errors)\
+  [:beetle: Bugs](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#beetle-bugs)**
+
+  **[:inbox_tray: Contact Me](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#contact)**
 
   </a> 
 </p>
