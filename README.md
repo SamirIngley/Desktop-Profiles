@@ -12,11 +12,11 @@
 </p>
 
 ## *Instantly* open groups of apps and websites
+:sparkles: If you found this useful, consider a small donation Venmo @SamirIngle :sparkles:
 
 ### Status: :white_check_mark: Live
 ### Demo: :dancer: https://youtu.be/CynbOIZtDZo
 
-:sparkles: If you found this useful, consider a small donation Venmo @SamirIngle :sparkles:
 ************************************************************************************************
 
 ## Table of Contents
