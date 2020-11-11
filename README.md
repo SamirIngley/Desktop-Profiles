@@ -16,7 +16,7 @@
 ### Status: :white_check_mark: Live
 ### Demo :dancer: https://youtu.be/CynbOIZtDZo
 
-:star: If you found this useful, consider a dollar donation Venmo @SamirIngle
+:sparkles: If you found this useful, consider a small donation Venmo @SamirIngle
 ************************************************************************************************
 
 ## Table of Contents
