@@ -11,14 +11,12 @@
   </a>
 </p>
 
-## Wish you could *instantly* open custom groups of apps and websites?
+## *Instantly* open groups of apps and websites
+
+### Status: :white_check_mark: Live
 ### Demo https://youtu.be/CynbOIZtDZo
-### Status: Live
 
-### :briefcase: Have the apps and websites for important tasks ready to go at a moment's notice
-### :open_file_folder: Organize repetitive tasks into groups for a more efficient experience
-### 🗑 Remove clutter from your desktop instead of keeping apps and websites open
-
+If you found this useful, consider a dollar donation Venmo @SamirIngle
 ************************************************************************************************
 
 ## Table of Contents
