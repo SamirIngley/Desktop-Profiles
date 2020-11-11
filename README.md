@@ -11,13 +11,13 @@
   </a>
 </p>
 
-## Wish you could *instantly* open all the apps and websites needed for a given task?
+## Wish you could *instantly* open custom groups of apps and websites?
 ### Demo https://youtu.be/CynbOIZtDZo
 ### Status: Live
 
-### :briefcase: 💨 Have the apps and websites for **important tasks ready to go at a moment's notice**
-### :brain: :open_file_folder: **Organize repetitive tasks** into groups for a more efficient experience
-### 🧹 🗑 **Remove clutter** from having websites and apps always open and improve computer performance
+### :briefcase: Have the apps and websites for important tasks ready to go at a moment's notice
+### :open_file_folder: Organize repetitive tasks into groups for a more efficient experience
+### 🗑 Remove clutter from your desktop instead of keeping apps and websites open
 
 ************************************************************************************************
 
@@ -57,12 +57,12 @@ Works from *anywhere* :earth_africa: on your terminal
 2. Add the Books app, your Notes app, and Merriam-Webster's website
 3. Anytime you want to read, open the "read" profile and voila, there they are, as you last left them!
 
-### :robot: How the program does it
+### :robot: How the program does works
 1. First, you **download** this repository as a folder on your computer.
 2. Then, we run the script which **stores the paths to the folder** inside the program so we can reference/run it from anywhere once installed.
 3. Next, the program **asks you for the paths to all the application folders you'd like to include**.
 4. The program saves these locations and goes through them in order and stores the names of all the apps that exist at each of these locations, **we assign a code to each app name that corresponds with the path used to get it**. This is file is called the appDir or Application Directory. 
-5. I then use a package from another user on github (shown in acknowledgements section at the bottom) which consolidates the golang Open functionality to open an application given a path. 
+5. I then use a package  which consolidates the golang Open functionality to open an application given a path. 
 6. I created a program to easily create **txt files to store combinations of apps and urls**. You must specify whether you are adding apps or urls, then add them, this way the program can tag them as apps or urls.  
 7. When you run the program for a specific group, the program parses what has been stored and determines if it's an app or a url. 
 8. **If it's an app it locates the app in the appDir, grabs the code assigned to it and uses the corresponding path to open the file.**
@@ -93,12 +93,12 @@ Video walkthrough: https://youtu.be/c-Yz02v1Le0
 ### 1. Clone this repo and `cd` into it.
 * `git clone https://github.com/SamirIngley/Desktop-Profiles.git`
 
-### 2. In your terminal, run the command `bash script.sh`, this will have prompted you with instructions to enter your paths, do that now.
-* You can find your username by typing the command `echo $USERNAME`
+### 2. Run the command `bash script.sh`, this will prompt you with instructions to enter your paths, do that now.
+* You can find your username by typing the command `echo $USERNAME` in another terminal window
 * Watch the video linked just above Step 1 if you're confused about entering your paths for this step 
 * This will take a minute and you should receive a success message afterward saying your App Directory was created
 
-### 3. Once you've done that, run the bash script `bash script.sh` one more time.
+### 3. After that, run the bash script `bash script.sh` one more time.
 * This time, you should see the existing profiles listed, and if it's your first time - you'll see "example"
 * :exclamation: If you are prompted again to enter your paths even after you already did it. Make sure you run the `bash script.sh` again in step 3. If you've already done that, this may be a rare bug that I haven't sorted out yet. Please delete this folder and try again - if you've installed Go and followed all the steps, it should work this time. :)
 
