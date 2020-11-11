@@ -14,9 +14,9 @@
 ## *Instantly* open groups of apps and websites
 
 ### Status: :white_check_mark: Live
-### Demo :dancer: https://youtu.be/CynbOIZtDZo
+### Demo: :dancer: https://youtu.be/CynbOIZtDZo
 
-:sparkles: If you found this useful, consider a small donation Venmo @SamirIngle
+#### :sparkles: If you found this useful, consider a small donation Venmo @SamirIngle
 ************************************************************************************************
 
 ## Table of Contents
