@@ -99,10 +99,9 @@ Video walkthrough: https://youtu.be/c-Yz02v1Le0
 
 ### 3. After that, run the bash script `bash script.sh` one more time.
 * This time, you should see the existing profiles listed, and if it's your first time - you'll see "example"
-* :exclamation: Rare Bug:
-  - If you are prompted again to enter your paths even after you already did it. 
-  1) Make sure you are inside the directory when you run the `bash script.sh` again in step 3.\
-  2) If you are not in the directory and called `desk`, 4 additional files were created wherever you ran the command (appsFile.txt, dirFile.txt, profFile.txt, and .env) delete them.\
+* :exclamation: Rare Bug: If you are prompted again to enter your paths even after you already did it. 
+  1) Make sure you are inside the directory when you run the `bash script.sh` again in step 3.
+  2) If you are not in the directory and called `desk` or `bash scripct.sh`, 4 additional files were created wherever you ran the command (appsFile.txt, dirFile.txt, profFile.txt, and .env) delete them.
   3) This is a rare bug that I haven't sorted out yet. Delete the app and try again - if you've installed Go and followed all the steps, it should work this time around. :)
 
 **SETUP COMPLETE, you're ready to roll!**
