@@ -37,7 +37,7 @@ changelog:
 brews:
     - github:
           owner: SamirIngley
-          name: homebrew-desktopprofiles
+          name: homebrew-desktop-profiles
       folder: Formula
       homepage: https://github.com/SamirIngley/Desktop-Profiles
       description: Homebrew tap for Desktop Profiles
