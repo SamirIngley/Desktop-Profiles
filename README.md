@@ -77,7 +77,8 @@ latest update: Sept 19, 2020
 
 # :floppy_disk: Install: 
 
-First, you will need to install Go lang. (don't worry it's not hard and won't take long)
+First, install XCode from the Mac App Store. 
+Next, you will need to install Go lang. (don't worry it's not hard and won't take long)
 
 ## Install Go and configure your GOPATH
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
