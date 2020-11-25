@@ -18,6 +18,7 @@
 
 Built in Go on a :apple: Mac, for a Mac\
 Works from *anywhere* :earth_africa: on your terminal
+Only opens websites and apps for now
 
 ************************************************************************************************
 
