@@ -1,25 +1,27 @@
 # Desktop Profiles 
 
 <p align="left">
+  <a>
+    <a href="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" />
+    <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" target="_blank" />
+    <a href="https://img.shields.io/github/downloads/SamirIngley/Desktop-Profiles/total"/>
+  </a> 
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
 </p>
 
 ## *Instantly* open groups of apps and websites
+:sparkles: If you found this useful, consider a small donation Venmo @SamirIngle :sparkles:
 
 ### Status: :white_check_mark: Live
 ### Demo: :dancer: https://youtu.be/CynbOIZtDZo
 
-
-* Built in Go on a :apple: Mac, for a Mac
-* Works from *anywhere* :earth_africa: on your terminal
-* Only opens apps and websites for now
-
-Requires: Go lang and XCode
 ************************************************************************************************
 
 ## Table of Contents
+Built in Go on a :apple: Mac, for a Mac\
+Works from *anywhere* :earth_africa: on your terminal
     
 **[:question: How does it work](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#question-how-does-it-work)\
 [:arrow_up: Recent Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#arrow_up-recent-updates)**
@@ -74,8 +76,7 @@ latest update: Sept 19, 2020
 
 # :floppy_disk: Install: 
 
-First, you will need to install XCode, you can do this in the apple app store. 
-Next, you'll need Go lang. (don't worry it's not hard and won't take long)
+First, you will need to install Go lang. (don't worry it's not hard and won't take long)
 
 ## Install Go and configure your GOPATH
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
@@ -284,12 +285,7 @@ Feel free to reach out to me if you run into any issues: samir.ingle7@gmail.com
 Venmo @SamirIngle
 
 ### Acknowledgements:
- <a>
-    <a href="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" />
-    <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" target="_blank" />
-    <a href="https://img.shields.io/github/downloads/SamirIngley/Desktop-Profiles/total"/>
-  </a> 
-  
+ 
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
