@@ -13,11 +13,17 @@ builds:
   binary: desk
 archives:
 - replacements:
-    darwin: Darwin
+    amd64: 64bit
+    386: 32bit
+    arm: ARM
+    arm64: ARM64
+    darwin: macOS
     linux: Linux
     windows: Windows
-    386: i386
-    amd64: x86_64
+    openbsd: OpenBSD
+    netbsd: NetBSD
+    freebsd: FreeBSD
+    dragonfly: DragonFlyBSD
 checksum:
   name_template: 'checksums.txt'
 snapshot:
