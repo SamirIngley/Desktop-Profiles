@@ -21,6 +21,7 @@
 * Works from *anywhere* :earth_africa: on your terminal
 * Only opens apps and websites for now
 
+Requires: Go lang and XCode
 ************************************************************************************************
 
 ## Table of Contents
@@ -78,7 +79,8 @@ latest update: Sept 19, 2020
 
 # :floppy_disk: Install: 
 
-First, you will need to install Go lang. (don't worry it's not hard and won't take long)
+First, you will need to install XCode, you can do this in the apple app store. 
+Next, you'll need Go lang. (don't worry it's not hard and won't take long)
 
 ## Install Go and configure your GOPATH
 * [Quick instructions](https://medium.com/@jimkang/install-go-on-mac-with-homebrew-5fa421fc55f5)
