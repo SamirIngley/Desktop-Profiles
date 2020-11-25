@@ -1,11 +1,6 @@
 # Desktop Profiles 
 
 <p align="left">
-  <a>
-    <a href="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" />
-    <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" target="_blank" />
-    <a href="https://img.shields.io/github/downloads/SamirIngley/Desktop-Profiles/total"/>
-  </a> 
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -289,7 +284,12 @@ Feel free to reach out to me if you run into any issues: samir.ingle7@gmail.com
 Venmo @SamirIngle
 
 ### Acknowledgements:
- 
+ <a>
+    <a href="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" />
+    <img alt="goreportcard" src="https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles" target="_blank" />
+    <a href="https://img.shields.io/github/downloads/SamirIngley/Desktop-Profiles/total"/>
+  </a> 
+  
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamirIngley/Desktop-Profiles)](https://goreportcard.com/report/github.com/SamirIngley/Desktop-Profiles)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
