@@ -12,16 +12,15 @@
 </p>
 
 ## *Instantly* open groups of apps and websites
-:sparkles: If you found this useful, consider a small donation Venmo @SamirIngle :sparkles:
 
 ### Status: :white_check_mark: Live
 ### Demo: :dancer: https://youtu.be/CynbOIZtDZo
 
+* Built in Go on a :apple: Mac, for a Mac
+* Works from *anywhere* :earth_africa: on your terminal
 ************************************************************************************************
 
 ## Table of Contents
-Built in Go on a :apple: Mac, for a Mac\
-Works from *anywhere* :earth_africa: on your terminal
     
 **[:question: How does it work](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#question-how-does-it-work)\
 [:arrow_up: Recent Updates](https://github.com/SamirIngley/Desktop-Profiles/blob/master/README.md#arrow_up-recent-updates)**
