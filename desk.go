@@ -122,9 +122,6 @@ func createAppDir() {
 	fmt.Println(" ")
 	fmt.Println(">>>>>>>>>> INSTRUCTIONS ~~ ~~ ")
 	fmt.Println(" ")
-	fmt.Println("HELP: if you run into any issues try the Errors page -> https://github.com/SamirIngley/Desktop-Profiles/README.md")
-	fmt.Println("And you can always find the github in the profile 'example', or with the help flag `go run desk.go -help`")
-	fmt.Println(" ")
 
 	fmt.Println("**** Below are the 3 default paths to locations of app directories on a Mac *****")
 	fmt.Println(" ")
