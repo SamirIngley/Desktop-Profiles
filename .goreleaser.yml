@@ -9,6 +9,8 @@ before:
 builds:
 - env:
   - CGO_ENABLED=0
+  main: ./desk.go
+  binary: desk
 archives:
 - replacements:
     darwin: Darwin
