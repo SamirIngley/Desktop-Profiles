@@ -13,7 +13,7 @@
 
 ## *Instantly* open groups of apps and websites
 
-### Status: :white_check_mark: Live ~ there is one fatal, hard to reproduce bug atm, haven't had time to fix it yet
+### Status: :white_check_mark: Live ~ there is one impermissble, hard to reproduce bug atm, haven't had time to fix it yet
 ### Demo: :dancer: https://youtu.be/CynbOIZtDZo
 
 * Built in Go on a :apple: Mac, for a Mac
